@@ -183,11 +183,11 @@
       position: sticky;
       top: 0;
       z-index: 30;
-      margin-top: 24px;
       background: rgba(248,246,240,0.96);
       backdrop-filter: blur(12px);
       border-top: 1px solid rgba(222,221,212,0.8);
       border-bottom: 1px solid rgba(222,221,212,0.8);
+      transition: all 0.2s ease;
     }
 
     .category-bar {
@@ -195,7 +195,7 @@
       margin: 0 auto;
       padding: 12px 20px;
       display: flex;
-      gap: 8px;
+      gap: 10px;
       overflow-x: auto;
       scrollbar-width: none;
     }
@@ -203,25 +203,30 @@
 
     .category-button {
       flex: 0 0 auto;
-      border: 1px solid #d8d8cf;
-      color: #696b62;
+      border: 1px solid #d4d2c7;
+      color: #61645a;
       background: white;
       border-radius: 999px;
       padding: 8px 18px;
-      font-size: 12px;
-      font-weight: 700;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
       transition: all 0.2s ease;
     }
-    .category-button.active {
-      background: #191c18;
-      color: #f7f6f2;
+    .category-button:hover {
       border-color: #191c18;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      color: #191c18;
+    }
+    .category-button.active {
+      background: #191c18 !important;
+      color: #f7f6f2 !important;
+      border-color: #191c18 !important;
+      box-shadow: 0 3px 10px rgba(25,28,24,0.18);
     }
 
     .menu-section {
-      padding-top: 32px;
-      scroll-margin-top: 76px;
+      padding-top: 36px;
+      scroll-margin-top: 80px;
     }
 
     .menu-grid {
@@ -230,7 +235,7 @@
       gap: 16px;
     }
     @media (min-width: 640px) {
-      .menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
     }
     @media (min-width: 1024px) {
       .menu-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
@@ -286,21 +291,37 @@
       font-weight: 700;
     }
 
-    .variant-pill {
-      border: 1px solid #d8d8cf;
-      background: #fafaf9;
-      color: #44403c;
-      border-radius: 8px;
-      padding: 5px 8px;
-      font-size: 11px;
-      font-weight: 600;
+    /* Redesigned Variant Button Row: Guarantees zero clipping and prominent bold price */
+    .variant-row-btn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      border: 1px solid #dedcd1;
+      background: #fafaf7;
+      color: #2c2f27;
+      border-radius: 10px;
+      padding: 7px 11px;
+      font-size: 12px;
+      font-weight: 500;
       transition: all 0.18s ease;
-      text-align: center;
+      cursor: pointer;
     }
-    .variant-pill:hover {
+    .variant-row-btn:hover {
       background: #191c18;
       color: white;
       border-color: #191c18;
+    }
+    .variant-row-btn:hover .variant-price-tag {
+      color: #f7f6f2;
+    }
+    .variant-price-tag {
+      font-weight: 700;
+      color: #191c18;
+      white-space: nowrap;
+      font-feature-settings: "tnum";
+      letter-spacing: -0.01em;
     }
 
     .floating-cart {
@@ -420,10 +441,10 @@
       <!-- Sticky Category Navigation -->
       <div class="category-bar-wrap">
         <nav class="category-bar" aria-label="Menu categories">
-          <button class="category-button active" onclick="scrollToCategory('mains', this)">Mains</button>
-          <button class="category-button" onclick="scrollToCategory('snacks', this)">Snacks</button>
-          <button class="category-button" onclick="scrollToCategory('beverages', this)">Beverages</button>
-          <button class="category-button" onclick="scrollToCategory('desserts', this)">Desserts</button>
+          <button class="category-button active" data-target="mains" onclick="scrollToCategory('mains')">Mains</button>
+          <button class="category-button" data-target="snacks" onclick="scrollToCategory('snacks')">Snacks</button>
+          <button class="category-button" data-target="beverages" onclick="scrollToCategory('beverages')">Beverages</button>
+          <button class="category-button" data-target="desserts" onclick="scrollToCategory('desserts')">Desserts</button>
         </nav>
       </div>
 
@@ -852,7 +873,7 @@
           id: "chai",
           name: "Chai (Medium Cup)",
           tag: "Fresh Brew",
-          image: "chai.jpg",
+          image: "https://images.unsplash.com/photo-1561336313-0bd5e0b27ec8?auto=format&fit=crop&w=600&q=80",
           fallbackImage: "https://placehold.co/600x400/232620/f8f6f0?text=Chai",
           customizable: true,
           customType: "chai",
@@ -890,26 +911,26 @@
             { label: "Plain", price: 50 },
             { label: "+ Choco Sauce", price: 60 },
             { label: "+ Ice Cream", price: 70 },
-            { label: "+ Combo", price: 80 }
+            { label: "+ Combo (Ice Cream & Choco)", price: 80 }
           ]
         },
         {
           id: "custard",
           name: "Fruit Custard",
           tag: "Chilled Sweet",
-          image: "fruit-custard.jpg",
+          image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80",
           fallbackImage: "https://placehold.co/600x400/232620/f8f6f0?text=Fruit+Custard",
           customizable: false,
-          variants: [{ label: "Serving", price: 70 }]
+          variants: [{ label: "Portion", price: 70 }]
         },
         {
           id: "halwa",
           name: "Halwa",
           tag: "Desi Ghee",
-          image: "halwa.jpg",
+          image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80",
           fallbackImage: "https://placehold.co/600x400/232620/f8f6f0?text=Halwa",
           customizable: false,
-          variants: [{ label: "Portion", price: 60 }]
+          variants: [{ label: "Desi Ghee Portion", price: 60 }]
         }
       ]
     };
@@ -946,17 +967,49 @@
       return "₹" + Math.round(amount).toLocaleString("en-IN");
     }
 
-    // Category smooth scroll
-    function scrollToCategory(id, buttonEl) {
-      document.querySelectorAll(".category-button").forEach(b => b.classList.remove("active"));
-      buttonEl.classList.add("active");
+    // Category smooth scroll and active tab updates
+    function updateActiveCategoryButton(targetId) {
+      document.querySelectorAll(".category-button").forEach(btn => {
+        if (btn.getAttribute("data-target") === targetId) {
+          btn.classList.add("active");
+          btn.scrollIntoView({ behavior: "smooth", inline: "nearest", block: "nearest" });
+        } else {
+          btn.classList.remove("active");
+        }
+      });
+    }
+
+    function scrollToCategory(id) {
+      updateActiveCategoryButton(id);
       const target = document.getElementById(id);
       if (target) {
         target.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     }
 
-    // Render Menu Cards
+    // IntersectionObserver to sync category highlighting as the user scrolls
+    function initCategoryObserver() {
+      const categories = ["mains", "snacks", "beverages", "desserts"];
+      const sections = categories.map(id => document.getElementById(id)).filter(Boolean);
+
+      const observerOptions = {
+        root: null,
+        rootMargin: "-20% 0px -65% 0px",
+        threshold: [0, 0.25, 0.5]
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            updateActiveCategoryButton(entry.target.id);
+          }
+        });
+      }, observerOptions);
+
+      sections.forEach(section => observer.observe(section));
+    }
+
+    // Render Menu Cards with fully visible, unclipped variant rows
     function renderMenuCards() {
       Object.entries(menuData).forEach(([cat, items]) => {
         const grid = document.getElementById(`${cat}Grid`);
@@ -968,21 +1021,22 @@
           let variantHtml = "";
           if (item.customizable) {
             variantHtml = `
-              <div class="grid grid-cols-2 gap-1.5 pt-1">
+              <div class="space-y-1.5 pt-1">
                 ${item.variants.map(v => `
-                  <button onclick="openCustomModal('${item.name} (${v.label})', ${v.price}, '${item.customType}')" class="variant-pill truncate">
-                    + ${v.label} ₹${v.price}
+                  <button onclick="openCustomModal('${item.name} (${v.label})', ${v.price}, '${item.customType}')" class="variant-row-btn" title="Add ${v.label}">
+                    <span class="truncate pr-1.5 text-left">+ ${v.label}</span>
+                    <span class="variant-price-tag">₹${v.price}</span>
                   </button>
                 `).join("")}
               </div>
             `;
           } else {
-            const cols = item.variants.length > 3 ? "grid-cols-2" : (item.variants.length > 1 ? "grid-cols-2 sm:grid-cols-3" : "grid-cols-1");
             variantHtml = `
-              <div class="grid ${cols} gap-1.5 pt-1">
+              <div class="space-y-1.5 pt-1">
                 ${item.variants.map(v => `
-                  <button onclick="addToCartDirect('${item.name} (${v.label})', ${v.price})" class="variant-pill truncate">
-                    + ${v.label} ₹${v.price}
+                  <button onclick="addToCartDirect('${item.name} (${v.label})', ${v.price})" class="variant-row-btn" title="Add ${v.label}">
+                    <span class="truncate pr-1.5 text-left">+ ${v.label}</span>
+                    <span class="variant-price-tag">₹${v.price}</span>
                   </button>
                 `).join("")}
               </div>
@@ -995,10 +1049,10 @@
                 <img src="${item.image}" alt="${item.name}" ${fallback} class="menu-image" loading="lazy" />
                 <span class="menu-tag">${item.tag}</span>
               </div>
-              <div class="p-4 flex flex-col justify-between flex-1 gap-2">
+              <div class="p-4 flex flex-col justify-between flex-1 gap-3">
                 <div>
-                  <h3 class="serif font-bold text-base text-ink tracking-tight">${item.name}</h3>
-                  <p class="text-[11px] text-stone-500 font-medium">Select preferred style below</p>
+                  <h3 class="serif font-bold text-base text-ink tracking-tight leading-snug">${item.name}</h3>
+                  <p class="text-[11px] text-stone-500 font-medium mt-0.5">Select option below</p>
                 </div>
                 ${variantHtml}
               </div>
@@ -1306,9 +1360,10 @@
       }
     });
 
-    // Initial render
+    // Initial render & scroll observer setup
     renderMenuCards();
     updateCartDisplay();
+    initCategoryObserver();
   </script>
 </body>
 </html>
