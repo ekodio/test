@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eko Kitchen Co. | Artisanal In-Room Dining</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- QRCode.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  
+  <!-- Google Fonts: Cinzel for luxury serif accents & Plus Jakarta Sans for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #faf9f6;
+      color: #0f172a;
+    }
+    .font-serif-luxury {
+      font-family: 'Cinzel', Georgia, serif;
+    }
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+    button:active, a:active {
+      transform: scale(0.98);
+    }
+    .luxe-card {
+      background: #ffffff;
+      border: 1px solid rgba(226, 232, 240, 0.75);
+      box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.035);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .luxe-card:hover {
+      box-shadow: 0 10px 25px -4px rgba(15, 23, 42, 0.065);
+      border-color: rgba(212, 175, 55, 0.3);
+    }
+    /* Custom subtle scrollbar */
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #e2e8f0;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="pb-36 min-h-screen">
+
+  <!-- Top Obsidian Header -->
+  <header class="bg-slate-950 text-white sticky top-0 z-30 border-b border-amber-900/30 shadow-md">
+    <div class="max-w-md mx-auto px-5 py-3.5 flex justify-between items-center">
+      <div class="space-y-0.5">
+        <h1 class="font-serif-luxury font-bold text-sm tracking-[0.2em] text-amber-200 uppercase">Eko Kitchen Co.</h1>
+        <p class="text-[10px] text-slate-400 tracking-wider font-light">Artisanal In-Room Dining • 08:00 AM – 10:00 PM</p>
+      </div>
+      <div class="bg-amber-400/10 border border-amber-400/30 text-amber-200 text-[9px] font-bold tracking-[0.16em] uppercase px-2.5 py-1 rounded-full">
+        Prepaid
+      </div>
+    </div>
+    
+    <!-- Privileges Bar -->
+    <div class="bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 border-t border-amber-500/15 text-amber-200/90 text-[10px] text-center py-1.5 px-4 font-semibold tracking-wider">
+      PRIVILEGES: 10% OFF &gt; ₹299 &bull; 30% OFF &gt; ₹999
+    </div>
+  </header>
+
+  <main class="max-w-md mx-auto p-4 space-y-4">
+
+    <!-- Resident Particulars Card -->
+    <div class="luxe-card p-4 rounded-2xl space-y-3">
+      <div class="flex items-center justify-between">
+        <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-amber-800">Resident Particulars</p>
+        <span class="text-[10px] text-slate-400 font-medium">In-Room Delivery</span>
+      </div>
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="block text-[11px] font-semibold text-slate-600 mb-1">Full Name *</label>
+          <input type="text" id="student-name" placeholder="e.g. Rahul Sharma" 
+                 class="w-full p-2.5 border border-slate-200 rounded-xl focus:ring-1 focus:ring-amber-700/50 focus:border-amber-700 focus:outline-none text-xs font-medium bg-slate-50/50 transition">
+        </div>
+        <div>
+          <label class="block text-[11px] font-semibold text-slate-600 mb-1">Suite / Room *</label>
+          <input type="text" id="room-number" placeholder="e.g. 204" 
+                 class="w-full p-2.5 border border-slate-200 rounded-xl focus:ring-1 focus:ring-amber-700/50 focus:border-amber-700 focus:outline-none text-xs font-medium bg-slate-50/50 transition">
+        </div>
+      </div>
+    </div>
+
+    <!-- Category Pill Dock -->
+    <div class="sticky top-[73px] z-20 bg-[#faf9f6]/95 backdrop-blur-md py-1">
+      <div class="flex bg-slate-200/70 p-1 rounded-2xl gap-1 text-xs font-bold border border-slate-300/40 shadow-inner">
+        <button onclick="switchTab('mains')" id="tab-mains" class="tab-btn flex-1 py-2 rounded-xl bg-slate-900 text-amber-200 shadow-sm transition-all duration-200">Mains</button>
+        <button onclick="switchTab('snacks')" id="tab-snacks" class="tab-btn flex-1 py-2 rounded-xl text-slate-600 hover:text-slate-900 transition-all duration-200">Snacks</button>
+        <button onclick="switchTab('beverages')" id="tab-beverages" class="tab-btn flex-1 py-2 rounded-xl text-slate-600 hover:text-slate-900 transition-all duration-200">Beverages</button>
+        <button onclick="switchTab('desserts')" id="tab-desserts" class="tab-btn flex-1 py-2 rounded-xl text-slate-600 hover:text-slate-900 transition-all duration-200">Desserts</button>
+      </div>
+    </div>
+
+    <!-- Live Cart Summary Pill -->
+    <div id="cart-details-card" class="luxe-card p-4 rounded-2xl border-amber-300/80 space-y-3 hidden">
+      <div class="flex justify-between items-center border-b border-slate-100 pb-2">
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-900">Your Selection</h3>
+        <button onclick="clearCart()" class="text-[11px] font-semibold text-rose-600 hover:underline">Clear All</button>
+      </div>
+      <div id="cart-item-list" class="space-y-2 text-xs"></div>
+    </div>
+
+    <!-- TAB 1: MAINS -->
+    <section id="section-mains" class="menu-section space-y-3">
+      <!-- Handcrafted Pizza -->
+      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
+        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=300&q=80" alt="Pizza" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
+        <div class="flex-1 space-y-1.5 min-w-0">
+          <div class="flex justify-between items-center">
+            <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate">Handcrafted Pizza</h3>
+            <span class="text-[9px] bg-slate-100 text-slate-500 font-bold tracking-wider px-1.5 py-0.5 rounded uppercase flex-shrink-0">4 Slices</span>
+          </div>
+          <div class="grid grid-cols-2 gap-1.5">
+            <button onclick="openCustomizationModal('Veg Pizza (4 slices)', 130, 'pizza')" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1 rounded-lg text-[10px] font-semibold transition truncate">+ Veg ₹130</button>
+            <button onclick="openCustomizationModal('Margherita Pizza (4 slices)', 150, 'pizza')" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1 rounded-lg text-[10px] font-semibold transition truncate">+ Margh. ₹150</button>
+            <button onclick="openCustomizationModal('Paneer Pizza (4 slices)', 160, 'pizza')" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1 rounded-lg text-[10px] font-semibold transition truncate">+ Paneer ₹160</button>
+            <button onclick="openCustomizationModal('Chicken Pizza (4 slices)', 180, 'pizza')" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1 rounded-lg text-[10px] font-semibold transition truncate">+ Chicken ₹180</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Artisan Grilled Sandwich -->
+      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
+        <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=300&q=80" alt="Sandwich" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
+        <div class="flex-1 space-y-2 min-w-0">
+          <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate">Artisan Grilled Sandwich</h3>
+          <div class="flex gap-1.5">
+            <button onclick="openCustomizationModal('Grilled Sandwich (Veg)', 60, 'sandwich')" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[11px] font-semibold transition truncate">+ Veg ₹60</button>
+            <button onclick="openCustomizationModal('Grilled Sandwich (Paneer)', 80, 'sandwich')" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[11px] font-semibold transition truncate">+ Paneer ₹80</button>
+            <button onclick="openCustomizationModal('Grilled Sandwich (Chicken)', 100, 'sandwich')" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[11px] font-semibold transition truncate">+ Chk ₹100</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gourmet Kathi Roll -->
+      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
+        <img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=300&q=80" onerror="this.src='https://placehold.co/300x300/0f172a/d4af37?text=Kathi+Roll'" alt="Kathi Roll" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
+        <div class="flex-1 space-y-2 min-w-0">
+          <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate">Gourmet Kathi Roll</h3>
+          <div class="flex gap-1.5">
+            <button onclick="openCustomizationModal('Kathi Roll (Paneer)', 80, 'kathi')" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[11px] font-semibold transition truncate">+ Paneer ₹80</button>
+            <button onclick="openCustomizationModal('Kathi Roll (Egg)', 100, 'kathi')" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[11px] font-semibold transition truncate">+ Egg ₹100</button>
+            <button onclick="openCustomizationModal('Kathi Roll (Chicken)', 130, 'kathi')" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[11px] font-semibold transition truncate">+ Chk ₹130</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Italian Pasta -->
+      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
+        <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=300&q=80" alt="Pasta" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
+        <div class="flex-1 space-y-1.5 min-w-0">
+          <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate">Italian Pasta</h3>
+          <div class="space-y-1.5">
+            <div class="flex gap-1.5">
+              <button onclick="openCustomizationModal('Veg Alfredo Pasta (White Sauce)', 100, 'pasta')" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[10px] font-semibold transition truncate text-center">+ Veg Alfredo ₹100</button>
+              <button onclick="openCustomizationModal('Veg Arrabiata Pasta (Red Sauce)', 120, 'pasta')" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[10px] font-semibold transition truncate text-center">+ Veg Arrabiata ₹120</button>
+            </div>
+            <div class="flex gap-1.5">
+              <button onclick="openCustomizationModal('Chicken Alfredo Pasta (White Sauce)', 130, 'pasta')" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[10px] font-semibold transition truncate text-center">+ Chk Alfredo ₹130</button>
+              <button onclick="openCustomizationModal('Chicken Arrabiata Pasta (Red Sauce)', 150, 'pasta')" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[10px] font-semibold transition truncate text-center">+ Chk Arrabiata ₹150</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Royal Dum Biryani -->
+      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
+        <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=300&q=80" alt="Biryani" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
+        <div class="flex-1 space-y-1.5 min-w-0">
+          <div>
+            <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate">Royal Dum Biryani</h3>
+            <p class="text-[10px] text-amber-800 italic truncate">Accompanied by house mint raita</p>
+          </div>
+          <div class="flex gap-1.5 pt-0.5">
+            <button onclick="addDirectItem('Biryani (Veg)', 100)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[11px] font-semibold transition truncate">+ Veg ₹100</button>
+            <button onclick="addDirectItem('Biryani (Egg)', 130)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[11px] font-semibold transition truncate">+ Egg ₹130</button>
+            <button onclick="addDirectItem('Biryani (Chicken)', 150)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[11px] font-semibold transition truncate">+ Chk ₹150</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Oriental Chilli Specials -->
+      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
+        <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=300&q=80" onerror="this.src='https://placehold.co/300x300/0f172a/d4af37?text=Chilli+Specials'" alt="Chilli Specials" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
+        <div class="flex-1 space-y-2 min-w-0">
+          <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate">Oriental Chilli Specials</h3>
+          <div class="flex justify-between items-center text-xs">
+            <span class="font-semibold text-slate-700">Paneer (₹180)</span>
+            <div class="flex gap-1">
+              <button onclick="addDirectItem('Chilli Paneer (Dry)', 180)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-2.5 py-0.5 rounded text-[10px] font-semibold transition">+ Dry</button>
+              <button onclick="addDirectItem('Chilli Paneer (Gravy)', 180)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-2.5 py-0.5 rounded text-[10px] font-semibold transition">+ Gravy</button>
+            </div>
+          </div>
+          <div class="flex justify-between items-center text-xs">
+            <span class="font-semibold text-slate-700">Mushroom (₹200)</span>
+            <div class="flex gap-1">
+              <button onclick="addDirectItem('Chilli Mushroom (Dry)', 200)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-2.5 py-0.5 rounded text-[10px] font-semibold transition">+ Dry</button>
+              <button onclick="addDirectItem('Chilli Mushroom (Gravy)', 200)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-2.5 py-0.5 rounded text-[10px] font-semibold transition">+ Gravy</button>
+            </div>
+          </div>
+          <div class="flex justify-between items-center text-xs">
+            <span class="font-semibold text-slate-700">Chicken (₹220)</span>
+            <div class="flex gap-1">
+              <button onclick="addDirectItem('Chilli Chicken (Dry)', 220)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-2.5 py-0.5 rounded text-[10px] font-semibold transition">+ Dry</button>
+              <button onclick="addDirectItem('Chilli Chicken (Gravy)', 220)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-2.5 py-0.5 rounded text-[10px] font-semibold transition">+ Gravy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wok-Tossed Noodles -->
+      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
+        <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=300&q=80" alt="Noodles" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
+        <div class="flex-1 space-y-2 min-w-0">
+          <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate">Wok-Tossed Noodles</h3>
+          <div class="flex gap-1.5">
+            <button onclick="addDirectItem('Noodles (Veg)', 70)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[11px] font-semibold transition truncate">+ Veg ₹70</button>
+            <button onclick="addDirectItem('Noodles (Egg)', 90)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[11px] font-semibold transition truncate">+ Egg ₹90</button>
+            <button onclick="addDirectItem('Noodles (Chicken)', 120)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[11px] font-semibold transition truncate">+ Chk ₹120</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Classic Fried Rice -->
+      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
+        <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=300&q=80" alt="Fried Rice" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
+        <div class="flex-1 space-y-2 min-w-0">
+          <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate">Classic Fried Rice</h3>
+          <div class="flex gap-1.5">
+            <button onclick="addDirectItem('Fried Rice (Veg)', 80)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[11px] font-semibold transition truncate">+ Veg ₹80</button>
+            <button onclick="addDirectItem('Fried Rice (Egg)', 100)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[11px] font-semibold transition truncate">+ Egg ₹100</button>
+            <button onclick="addDirectItem('Fried Rice (Chicken)', 130)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[11px] font-semibold transition truncate">+ Chk ₹130</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: SNACKS -->
+    <section id="section-snacks" class="menu-section space-y-3 hidden">
+      <!-- Crisp Potato Samosa -->
+      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
+        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=300&q=80" alt="Samosa" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
+        <div class="flex-1 flex justify-between items-center min-w-0">
+          <div class="truncate pr-2">
+            <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate">Crisp Potato Samosa</h3>
+            <p class="text-[10px] text-slate-400">2 pcs served with mint & imli chutney</p>
+          </div>
+          <button onclick="addDirectItem('Samosa (2 pcs)', 40)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-4 py-1.5 rounded-lg text-xs font-semibold transition flex-shrink-0">+ ₹40</button>
+        </div>
+      </div>
+
+      <!-- Golden Spring Rolls -->
+      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
+        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=300&q=80" onerror="this.src='https://placehold.co/300x300/0f172a/d4af37?text=Spring+Roll'" alt="Spring Roll" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
+        <div class="flex-1 flex justify-between items-center min-w-0">
+          <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate pr-2">Golden Spring Rolls</h3>
+          <button onclick="addDirectItem('Spring Roll', 80)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-4 py-1.5 rounded-lg text-xs font-semibold transition flex-shrink-0">+ ₹80</button>
+        </div>
+      </div>
+
+      <!-- Dahi Ke Sholey -->
+      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
+        <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=300&q=80" onerror="this.src='https://placehold.co/300x300/0f172a/d4af37?text=Dahi+Sholey'" alt="Dahi Ke Sholey" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
+        <div class="flex-1 flex justify-between items-center min-w-0">
+          <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate pr-2">Dahi Ke Sholey</h3>
+          <button onclick="addDirectItem('Dahi Ke Sholey', 120)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-4 py-1.5 rounded-lg text-xs font-semibold transition flex-shrink-0">+ ₹120</button>
+        </div>
+      </div>
+
+      <!-- Crispy French Fries -->
+      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
+        <img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=300&q=80" alt="Fries" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
+        <div class="flex-1 space-y-2 min-w-0">
+          <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate">Crispy French Fries</h3>
+          <div class="flex gap-1.5">
+            <button onclick="addDirectItem('French Fries (Salted)', 80)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-xs font-semibold transition truncate">+ Salted ₹80</button>
+            <button onclick="addDirectItem('French Fries (Peri Peri)', 100)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-xs font-semibold transition truncate">+ Peri Peri ₹100</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Steamed Momos -->
+      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
+        <img src="https://images.unsplash.com/photo-1625220194771-7ebdea0b70b9?auto=format&fit=crop&w=300&q=80" alt="Momos" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
+        <div class="flex-1 space-y-2 min-w-0">
+          <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate">Steamed Momos</h3>
+          <div class="flex gap-1.5">
+            <button onclick="addDirectItem('Momos (Veg)', 80)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-xs font-semibold transition truncate">+ Veg ₹80</button>
+            <button onclick="addDirectItem('Momos (Paneer)', 100)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-xs font-semibold transition truncate">+ Paneer ₹100</button>
+            <button onclick="addDirectItem('Momos (Chicken)', 120)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-xs font-semibold transition truncate">+ Chk ₹120</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Signature Maggi -->
+      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
+        <img src="https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=300&q=80" onerror="this.src='https://placehold.co/300x300/0f172a/d4af37?text=Maggi'" alt="Maggi" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
+        <div class="flex-1 space-y-2 min-w-0">
+          <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate">Signature Maggi</h3>
+          <div class="flex gap-1.5">
+            <button onclick="addDirectItem('Maggie (Plain)', 40)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-xs font-semibold transition truncate">+ Plain ₹40</button>
+            <button onclick="addDirectItem('Maggie (Veg)', 60)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-xs font-semibold transition truncate">+ Veg ₹60</button>
+            <button onclick="addDirectItem('Maggie (Egg)', 80)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-xs font-semibold transition truncate">+ Egg ₹80</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Farm Eggs & Toast -->
+      <div class="luxe-card p-3.5 rounded-2xl space-y-2">
+        <div class="flex justify-between items-center">
+          <span class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900">Farm Eggs (2 pcs)</span>
+          <div class="flex gap-1.5">
+            <button onclick="addDirectItem('Egg Boiled (2 pcs)', 40)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-3 py-1 rounded-lg text-xs font-semibold transition">+ Boiled ₹40</button>
+            <button onclick="addDirectItem('Egg Omelette (2 pcs)', 50)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-3 py-1 rounded-lg text-xs font-semibold transition">+ Omelette ₹50</button>
+          </div>
+        </div>
+        <div class="flex justify-between items-center pt-1 border-t border-slate-100">
+          <span class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900">Toast & Bread (4 pcs)</span>
+          <div class="flex gap-1.5">
+            <button onclick="addDirectItem('Bread Plain (4 pcs)', 20)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-3 py-1 rounded-lg text-xs font-semibold transition">+ Plain ₹20</button>
+            <button onclick="addDirectItem('Bread Butter Toasted (4 pcs)', 40)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-3 py-1 rounded-lg text-xs font-semibold transition">+ Butter ₹40</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: BEVERAGES -->
+    <section id="section-beverages" class="menu-section space-y-3 hidden">
+      <!-- Specialty Tea -->
+      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
+        <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=300&q=80" onerror="this.src='https://placehold.co/300x300/0f172a/d4af37?text=Chai'" alt="Chai" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
+        <div class="flex-1 flex justify-between items-center min-w-0">
+          <div class="truncate pr-2">
+            <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate">Specialty Tea / Chai</h3>
+            <p class="text-[10px] text-slate-400">Elaichi, Ginger, or Masala</p>
+          </div>
+          <button onclick="openCustomizationModal('Chai (Medium Cup)', 50, 'chai')" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-4 py-1.5 rounded-lg text-xs font-semibold transition flex-shrink-0">+ ₹50</button>
+        </div>
+      </div>
+
+      <!-- Brewed Coffee -->
+      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
+        <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=300&q=80" alt="Coffee" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
+        <div class="flex-1 space-y-2 min-w-0">
+          <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate">Brewed Coffee</h3>
+          <div class="flex gap-1.5">
+            <button onclick="addDirectItem('Coffee (Hot)', 80)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-3 py-1.5 rounded-lg text-xs font-semibold transition truncate">+ Hot ₹80</button>
+            <button onclick="addDirectItem('Coffee (Cold)', 100)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-3 py-1.5 rounded-lg text-xs font-semibold transition truncate">+ Cold ₹100</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Oreo Thickshake -->
+      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
+        <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=300&q=80" alt="Oreo Shake" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
+        <div class="flex-1 flex justify-between items-center min-w-0">
+          <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate pr-2">Oreo Thickshake</h3>
+          <button onclick="addDirectItem('Oreo Shake', 100)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-4 py-1.5 rounded-lg text-xs font-semibold transition flex-shrink-0">+ ₹100</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: DESSERTS -->
+    <section id="section-desserts" class="menu-section space-y-3 hidden">
+      <!-- Fluffy Pancakes -->
+      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
+        <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=300&q=80" alt="Pancake" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
+        <div class="flex-1 space-y-1.5 min-w-0">
+          <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate">Fluffy Pancakes</h3>
+          <div class="grid grid-cols-2 gap-1.5">
+            <button onclick="addDirectItem('Pancake (Plain)', 50)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1 rounded-lg text-[10px] font-semibold transition truncate">+ Plain ₹50</button>
+            <button onclick="addDirectItem('Pancake (+ Choco Sauce)', 60)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1 rounded-lg text-[10px] font-semibold transition truncate">+ Choco ₹60</button>
+            <button onclick="addDirectItem('Pancake (+ Ice Cream)', 70)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1 rounded-lg text-[10px] font-semibold transition truncate">+ Ice Cream ₹70</button>
+            <button onclick="addDirectItem('Pancake (+ Ice Cream & Choco)', 80)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1 rounded-lg text-[10px] font-semibold transition truncate">+ Combo ₹80</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seasonal Fruit Custard -->
+      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
+        <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=300&q=80" onerror="this.src='https://placehold.co/300x300/0f172a/d4af37?text=Fruit+Custard'" alt="Fruit Custard" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
+        <div class="flex-1 flex justify-between items-center min-w-0">
+          <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate pr-2">Seasonal Fruit Custard</h3>
+          <button onclick="addDirectItem('Fruit Custard', 70)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-4 py-1.5 rounded-lg text-xs font-semibold transition flex-shrink-0">+ ₹70</button>
+        </div>
+      </div>
+
+      <!-- Desi Ghee Halwa -->
+      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
+        <img src="https://images.unsplash.com/photo-1606471191009-63994c53433b?auto=format&fit=crop&w=300&q=80" onerror="this.src='https://placehold.co/300x300/0f172a/d4af37?text=Halwa'" alt="Halwa" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
+        <div class="flex-1 flex justify-between items-center min-w-0">
+          <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate pr-2">Desi Ghee Halwa</h3>
+          <button onclick="addDirectItem('Halwa', 60)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-4 py-1.5 rounded-lg text-xs font-semibold transition flex-shrink-0">+ ₹60</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chef's Culinary Instructions Input -->
+    <div class="luxe-card p-4 rounded-2xl">
+      <label class="block text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-1.5">Culinary Requests</label>
+      <input type="text" id="special-instructions" placeholder="e.g., Less spicy, no onions, extra raita on side" 
+             class="w-full p-2.5 border border-slate-200 rounded-xl focus:ring-1 focus:ring-amber-700/50 focus:border-amber-700 focus:outline-none text-xs bg-slate-50/50 transition">
+    </div>
+
+  </main>
+
+  <!-- ITEM-SPECIFIC CUSTOMIZATION MODAL -->
+  <div id="custom-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white w-full max-w-sm rounded-3xl p-5 space-y-4 shadow-2xl relative border border-slate-100">
+      <button onclick="closeCustomizationModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-xl font-bold w-8 h-8 flex items-center justify-center rounded-full hover:bg-slate-100 transition">✕</button>
+      <div class="border-b border-slate-100 pb-2">
+        <h3 class="font-serif-luxury font-bold text-slate-900 text-xs tracking-wider uppercase" id="custom-item-name">Dish Name</h3>
+        <p class="text-xs text-slate-400 font-medium mt-0.5">Base Price: <span id="custom-base-price" class="font-bold text-amber-800">₹0</span></p>
+      </div>
+      <div class="space-y-2.5">
+        <p class="text-[10px] font-bold uppercase tracking-[0.16em] text-slate-400">Preparation & Extras:</p>
+        <div id="custom-options-container" class="space-y-2 text-xs"></div>
+      </div>
+      <div class="pt-2">
+        <button onclick="confirmCustomization()" class="w-full bg-slate-900 hover:bg-slate-800 text-amber-200 font-bold py-3 rounded-xl text-xs tracking-wider uppercase transition shadow-md">
+          Add to Selection
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Bottom Checkout Bar -->
+  <div id="cart-bar" class="fixed bottom-0 left-0 right-0 bg-slate-950/90 backdrop-blur-md text-white p-4 shadow-2xl hidden z-30 border-t border-amber-950/30">
+    <div class="max-w-md mx-auto flex justify-between items-center">
+      <div>
+        <p class="text-[11px] text-slate-400" id="cart-summary">0 items selected</p>
+        <p class="text-[11px] text-emerald-400 font-bold" id="discount-label"></p>
+        <p class="text-lg font-black text-amber-200" id="cart-final-total">₹0</p>
+      </div>
+      <button onclick="openBillModal()" class="bg-amber-400 hover:bg-amber-300 text-slate-950 font-black px-5 py-2.5 rounded-xl text-xs uppercase tracking-wider transition shadow-lg">
+        Review & Pay
+      </button>
+    </div>
+  </div>
+
+  <!-- STEP 1: BILL SUMMARY MODAL -->
+  <div id="bill-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white w-full max-w-sm rounded-3xl p-5 space-y-4 shadow-2xl relative border border-slate-100">
+      <button onclick="closeBillModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-xl font-bold w-8 h-8 flex items-center justify-center rounded-full hover:bg-slate-100 transition">✕</button>
+      <div class="border-b border-slate-200 pb-3 text-center">
+        <h3 class="font-serif-luxury font-bold text-slate-900 text-xs tracking-widest uppercase">Order Invoice</h3>
+        <p class="text-[10px] text-slate-400 tracking-wider font-medium uppercase">Eko Kitchen Co.</p>
+      </div>
+      <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs space-y-1">
+        <div class="flex justify-between">
+          <span class="text-slate-500 font-bold">Resident:</span>
+          <span id="bill-student-name" class="font-black text-slate-800"></span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-500 font-bold">Suite / Room:</span>
+          <span id="bill-room-number" class="font-black text-amber-800"></span>
+        </div>
+      </div>
+      <div class="space-y-2 max-h-48 overflow-y-auto pr-1">
+        <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Order Items</p>
+        <div id="bill-items-container" class="space-y-1.5 text-xs"></div>
+      </div>
+      <div class="border-t border-slate-200 pt-3 space-y-1 text-xs">
+        <div class="flex justify-between text-slate-600">
+          <span>Subtotal:</span>
+          <span id="bill-subtotal" class="font-bold">₹0</span>
+        </div>
+        <div id="bill-discount-row" class="flex justify-between text-emerald-600 hidden">
+          <span id="bill-discount-text">Privilege Discount:</span>
+          <span id="bill-discount-val" class="font-bold">-₹0</span>
+        </div>
+        <div class="flex justify-between text-base font-black text-slate-900 border-t border-dashed border-slate-300 pt-2">
+          <span class="text-xs uppercase tracking-wider font-bold">Total Payable:</span>
+          <span id="bill-grand-total" class="text-amber-800 font-black">₹0</span>
+        </div>
+      </div>
+      <button onclick="goToPaymentModal()" class="w-full bg-slate-900 hover:bg-slate-800 text-amber-200 font-bold py-3 rounded-xl text-xs uppercase tracking-wider transition shadow-lg flex items-center justify-center gap-2">
+        <span>Proceed to Payment →</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- STEP 2: PAYMENT & VERIFICATION MODAL -->
+  <div id="payment-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white w-full max-w-sm rounded-3xl p-5 text-center space-y-3.5 shadow-2xl relative border border-slate-100 max-h-[92vh] overflow-y-auto">
+      <button onclick="closePaymentModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-xl font-bold w-8 h-8 flex items-center justify-center rounded-full hover:bg-slate-100 transition">✕</button>
+      <div>
+        <h3 class="font-serif-luxury font-bold text-slate-900 text-xs tracking-widest uppercase">UPI Transfer</h3>
+        <p class="text-xs text-slate-500 mt-0.5">Exact Amount: <span id="modal-pay-amount" class="font-black text-amber-800 text-base">₹0</span></p>
+      </div>
+      
+      <!-- Dynamic Real-Time QR Code Container -->
+      <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200 flex flex-col items-center">
+        <div id="dynamic-qr-container" class="bg-white p-2 rounded-xl border border-slate-200 shadow-sm flex items-center justify-center min-w-[165px] min-h-[165px]"></div>
+        <p class="text-[10px] font-bold text-slate-400 mt-2">Scan with GPay / PhonePe / Paytm / CRED</p>
+      </div>
+
+      <!-- Android Direct Intent Launcher -->
+      <div id="android-intent-box" class="hidden">
+        <a id="btn-android-upi" href="#" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 px-4 rounded-xl text-xs transition shadow-md flex items-center justify-center gap-2">
+          <span>🚀 Open UPI App on this Phone</span>
+        </a>
+      </div>
+
+      <!-- Copy UPI Address Helper -->
+      <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200 flex justify-between items-center text-xs">
+        <div class="text-left truncate pr-2">
+          <p class="text-[9px] text-slate-400 font-bold uppercase tracking-wider">UPI Address</p>
+          <p class="font-black text-slate-800 text-[11px] truncate">paytm.s1n4ilc@pty</p>
+        </div>
+        <button id="copy-vpa-btn" onclick="copyUPIId()" class="bg-slate-900 hover:bg-slate-800 text-amber-200 font-bold px-3 py-1.5 rounded-lg text-[10px] transition shadow-sm flex-shrink-0">
+          📋 Copy
+        </button>
+      </div>
+
+      <!-- Mandatory Screenshot Verification Warning -->
+      <div class="bg-amber-50/80 p-2.5 rounded-xl border border-amber-200 text-left flex items-start gap-2">
+        <span class="text-amber-700 text-sm font-bold flex-shrink-0">⚠️</span>
+        <p class="text-[10px] text-amber-950 font-bold leading-tight">
+          Verification Notice: The kitchen will not begin preparing your food until the payment receipt screenshot is shared in the WhatsApp chat.
+        </p>
+      </div>
+
+      <!-- Checkbox Confirmation -->
+      <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200 text-left flex items-start gap-2.5">
+        <input type="checkbox" id="payment-checkbox" onchange="toggleOrderButton()" class="mt-0.5 w-4 h-4 text-emerald-600 bg-white border-slate-300 rounded focus:ring-emerald-500 cursor-pointer">
+        <label for="payment-checkbox" class="text-[11px] text-slate-700 font-medium cursor-pointer leading-tight">
+          I have transferred <span id="checkbox-pay-amount" class="font-black text-emerald-700">₹0</span> and will attach my payment screenshot in WhatsApp now.
+        </label>
+      </div>
+
+      <!-- Final WhatsApp Dispatch Button -->
+      <button id="send-whatsapp-btn" onclick="sendWhatsAppOrder()" disabled class="w-full bg-slate-300 text-slate-500 font-bold py-3 rounded-xl text-xs uppercase tracking-wider transition shadow-md flex items-center justify-center gap-2 cursor-not-allowed">
+        <span>📸 Share Screenshot & Confirm Order</span>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    let cart = {};
+    let currentCustomItem = { name: '', price: 0, type: '' };
+
+    const UPI_ID = "paytm.s1n4ilc@pty";
+    const PAYEE_NAME = "Eko Kitchen Co";
+
+    // Customization add-on pricing configuration
+    const customConfig = {
+      pizza: [
+        { label: 'Extra Veggies', price: 30 },
+        { label: 'Extra Paneer', price: 30 },
+        { label: 'Extra Cheese', price: 30 },
+        { label: 'Extra Chicken', price: 30 }
+      ],
+      sandwich: [
+        { label: 'Extra Cheese', price: 30 }
+      ],
+      kathi: [
+        { label: 'Extra Egg (1)', price: 30 }
+      ],
+      pasta: [
+        { label: 'Extra Veggies', price: 30 }
+      ],
+      chai: [
+        { label: 'Elaichi', price: 10 },
+        { label: 'Ginger', price: 10 },
+        { label: 'Masala', price: 10 }
+      ]
+    };
+
+    // Category Tab Switcher
+    function switchTab(category) {
+      document.querySelectorAll('.menu-section').forEach(el => el.classList.add('hidden'));
+      const activeSection = document.getElementById(`section-${category}`);
+      if (activeSection) activeSection.classList.remove('hidden');
+
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('bg-slate-900', 'text-amber-200', 'shadow-sm');
+        btn.classList.add('text-slate-600');
+      });
+
+      const activeBtn = document.getElementById(`tab-${category}`);
+      if (activeBtn) {
+        activeBtn.classList.add('bg-slate-900', 'text-amber-200', 'shadow-sm');
+        activeBtn.classList.remove('text-slate-600');
+      }
+    }
+
+    // Modal Opening with 'Classic / No Extras (+₹0)' selected by default
+    function openCustomizationModal(name, basePrice, type) {
+      currentCustomItem = { name: name, price: basePrice, type: type };
+      document.getElementById('custom-item-name').innerText = name;
+      document.getElementById('custom-base-price').innerText = `₹${basePrice}`;
+      
+      const options = customConfig[type] || [];
+      const container = document.getElementById('custom-options-container');
+      
+      // Mandatory Default Selected Option
+      let html = `
+        <label class="flex items-center justify-between p-2.5 bg-slate-50/80 rounded-xl border border-slate-200 cursor-pointer hover:bg-amber-50/40 transition">
+          <span class="font-bold text-slate-800 flex items-center gap-2">
+            <input type="radio" name="modal-addon" data-label="" data-price="0" checked class="addon-radio w-4 h-4 text-amber-600 focus:ring-amber-500">
+            Classic / No Extras
+          </span>
+          <span class="font-bold text-slate-400">+₹0</span>
+        </label>
+      `;
+
+      html += options.map(opt => `
+        <label class="flex items-center justify-between p-2.5 bg-slate-50/80 rounded-xl border border-slate-200 cursor-pointer hover:bg-amber-50/40 transition">
+          <span class="font-bold text-slate-800 flex items-center gap-2">
+            <input type="radio" name="modal-addon" data-label="${opt.label}" data-price="${opt.price}" class="addon-radio w-4 h-4 text-amber-600 focus:ring-amber-500">
+            ${opt.label}
+          </span>
+          <span class="font-bold text-slate-600">+₹${opt.price}</span>
+        </label>
+      `).join('');
+
+      container.innerHTML = html;
+      document.getElementById('custom-modal').classList.remove('hidden');
+    }
+
+    function closeCustomizationModal() {
+      document.getElementById('custom-modal').classList.add('hidden');
+    }
+
+    function confirmCustomization() {
+      let finalName = currentCustomItem.name;
+      let finalPrice = currentCustomItem.price;
+
+      const selected = document.querySelector('input[name="modal-addon"]:checked');
+      if (selected) {
+        const extraLabel = selected.getAttribute('data-label');
+        const extraPrice = parseInt(selected.getAttribute('data-price'), 10);
+
+        if (extraLabel && extraPrice > 0) {
+          finalName = `${currentCustomItem.name} (+ ${extraLabel})`;
+          finalPrice += extraPrice;
+        }
+      }
+
+      addDirectItem(finalName, finalPrice);
+      closeCustomizationModal();
+    }
+
+    // Direct Add without Modal
+    function addDirectItem(name, price) {
+      if (!cart[name]) {
+        cart[name] = { price: price, qty: 0 };
+      }
+      cart[name].qty += 1;
+      updateCartUI();
+    }
+
+    // Quantity Modifier (+ / -)
+    function changeQty(name, delta) {
+      if (cart[name]) {
+        cart[name].qty += delta;
+        if (cart[name].qty <= 0) {
+          delete cart[name];
+        }
+      }
+      updateCartUI();
+    }
+
+    function clearCart() {
+      cart = {};
+      updateCartUI();
+    }
+
+    function getTotalItemCount() {
+      return Object.values(cart).reduce((sum, item) => sum + item.qty, 0);
+    }
+
+    function calculateTotal() {
+      let subtotal = Object.values(cart).reduce((sum, item) => sum + (item.price * item.qty), 0);
+      let discount = 0;
+      let discountText = "";
+
+      if (subtotal > 999) {
+        discount = subtotal * 0.30;
+        discountText = "30% Privilege Applied";
+      } else if (subtotal > 299) {
+        discount = subtotal * 0.10;
+        discountText = "10% Privilege Applied";
+      }
+
+      let finalTotal = subtotal - discount;
+      return { subtotal, discount, finalTotal, discountText };
+    }
+
+    // Updating UI Displays
+    function updateCartUI() {
+      const cartBar = document.getElementById('cart-bar');
+      const cartCard = document.getElementById('cart-details-card');
+      const cartItemList = document.getElementById('cart-item-list');
+      const totalCount = getTotalItemCount();
+
+      if (totalCount > 0) {
+        cartBar.classList.remove('hidden');
+        cartCard.classList.remove('hidden');
+
+        cartItemList.innerHTML = Object.keys(cart).map(name => {
+          const item = cart[name];
+          return `
+            <div class="flex justify-between items-center bg-slate-50/80 p-2.5 rounded-xl border border-slate-200/80">
+              <div class="flex-1 pr-2">
+                <p class="font-bold text-slate-800 text-xs">${name}</p>
+                <p class="text-[11px] text-slate-500 font-medium">₹${item.price} each</p>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="font-black text-slate-800 text-xs">₹${item.price * item.qty}</span>
+                <div class="flex items-center border border-slate-300 rounded-lg overflow-hidden bg-white shadow-sm">
+                  <button onclick="changeQty('${name}', -1)" class="px-2 py-0.5 bg-slate-100 font-bold text-slate-700 hover:bg-slate-200 transition">-</button>
+                  <span class="px-2 font-black text-amber-800">${item.qty}</span>
+                  <button onclick="changeQty('${name}', 1)" class="px-2 py-0.5 bg-slate-100 font-bold text-slate-700 hover:bg-slate-200 transition">+</button>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        const { finalTotal, discount, discountText } = calculateTotal();
+
+        document.getElementById('cart-summary').innerText = `${totalCount} item(s) selected`;
+        document.getElementById('discount-label').innerText = discountText;
+        document.getElementById('cart-final-total').innerText = `₹${Math.round(finalTotal)} ${discount > 0 ? `(Saved ₹${Math.round(discount)})` : ''}`;
+      } else {
+        cartBar.classList.add('hidden');
+        cartCard.classList.add('hidden');
+      }
+    }
+
+    // Step 1: Open Invoice Modal
+    function openBillModal() {
+      const name = document.getElementById('student-name').value.trim();
+      const room = document.getElementById('room-number').value.trim();
+
+      if (!name || !room) {
+        alert("Please provide both your Full Name and Suite / Room Number at the top before proceeding.");
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+
+      const { subtotal, discount, finalTotal, discountText } = calculateTotal();
+
+      document.getElementById('bill-student-name').innerText = name;
+      document.getElementById('bill-room-number').innerText = `Suite ${room}`;
+      document.getElementById('bill-subtotal').innerText = `₹${subtotal}`;
+      document.getElementById('bill-grand-total').innerText = `₹${Math.round(finalTotal)}`;
+
+      const itemsContainer = document.getElementById('bill-items-container');
+      itemsContainer.innerHTML = Object.keys(cart).map(name => {
+        const item = cart[name];
+        return `
+          <div class="flex justify-between text-slate-700">
+            <span class="pr-2">${name} <span class="font-bold text-amber-800">x${item.qty}</span></span>
+            <span class="font-bold">₹${item.price * item.qty}</span>
+          </div>
+        `;
+      }).join('');
+
+      const discountRow = document.getElementById('bill-discount-row');
+      if (discount > 0) {
+        discountRow.classList.remove('hidden');
+        document.getElementById('bill-discount-text').innerText = discountText;
+        document.getElementById('bill-discount-val').innerText = `-₹${Math.round(discount)}`;
+      } else {
+        discountRow.classList.add('hidden');
+      }
+
+      document.getElementById('bill-modal').classList.remove('hidden');
+    }
+
+    function closeBillModal() {
+      document.getElementById('bill-modal').classList.add('hidden');
+    }
+
+    function goToPaymentModal() {
+      closeBillModal();
+
+      const { finalTotal } = calculateTotal();
+      const roundedTotal = Math.round(finalTotal);
+      const formattedTotal = `₹${roundedTotal}`;
+
+      document.getElementById('modal-pay-amount').innerText = formattedTotal;
+      document.getElementById('checkbox-pay-amount').innerText = roundedTotal > 0 ? formattedTotal : '₹0';
+
+      const isAndroid = /Android/i.test(navigator.userAgent);
+      const upiParams = `pa=${encodeURIComponent(UPI_ID)}&pn=${encodeURIComponent(PAYEE_NAME)}&am=${roundedTotal}&cu=INR&tn=EkoKitchenOrder`;
+
+      const androidBox = document.getElementById('android-intent-box');
+      if (isAndroid) {
+        androidBox.classList.remove('hidden');
+        document.getElementById('btn-android-upi').href = `intent://pay?${upiParams}#Intent;scheme=upi;end`;
+      } else {
+        androidBox.classList.add('hidden');
+      }
+
+      // Generate Clean Dynamic QR
+      const qrContainer = document.getElementById('dynamic-qr-container');
+      qrContainer.innerHTML = '';
+      new QRCode(qrContainer, {
+        text: `upi://pay?${upiParams}`,
+        width: 165,
+        height: 165,
+        colorDark: "#020617",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.M
+      });
+
+      const checkbox = document.getElementById('payment-checkbox');
+      checkbox.checked = false;
+      toggleOrderButton();
+
+      document.getElementById('payment-modal').classList.remove('hidden');
+    }
+
+    function closePaymentModal() {
+      document.getElementById('payment-modal').classList.add('hidden');
+    }
+
+    // Copy UPI ID function with visual feedback
+    function copyUPIId() {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(UPI_ID).then(showCopiedNotice);
+      } else {
+        const dummy = document.createElement('textarea');
+        dummy.value = UPI_ID;
+        document.body.appendChild(dummy);
+        dummy.select();
+        document.execCommand('copy');
+        document.body.removeChild(dummy);
+        showCopiedNotice();
+      }
+    }
+
+    function showCopiedNotice() {
+      const btn = document.getElementById('copy-vpa-btn');
+      btn.innerText = "✅ Copied";
+      btn.classList.add('bg-emerald-700', 'text-white');
+      setTimeout(() => {
+        btn.innerText = "📋 Copy";
+        btn.classList.remove('bg-emerald-700', 'text-white');
+      }, 2000);
+    }
+
+    function toggleOrderButton() {
+      const checkbox = document.getElementById('payment-checkbox');
+      const btn = document.getElementById('send-whatsapp-btn');
+
+      if (checkbox.checked) {
+        btn.disabled = false;
+        btn.classList.remove('bg-slate-300', 'text-slate-500', 'cursor-not-allowed');
+        btn.classList.add('bg-emerald-700', 'hover:bg-emerald-600', 'text-white');
+      } else {
+        btn.disabled = true;
+        btn.classList.add('bg-slate-300', 'text-slate-500', 'cursor-not-allowed');
+        btn.classList.remove('bg-emerald-700', 'hover:bg-emerald-600', 'text-white');
+      }
+    }
+
+    // Final Dispatch to Kitchen WhatsApp
+    function sendWhatsAppOrder() {
+      const name = document.getElementById('student-name').value.trim();
+      const room = document.getElementById('room-number').value.trim();
+      const instructions = document.getElementById('special-instructions').value.trim();
+      const { finalTotal } = calculateTotal();
+
+      let itemSummary = Object.keys(cart)
+        .map(name => `• ${name} x ${cart[name].qty} - ₹${cart[name].price * cart[name].qty}`)
+        .join('\n');
+
+      let text = `✨ *ORDER CONFIRMATION - EKO KITCHEN CO.* ✨\n\n` +
+                 `👤 *Guest:* ${name}\n` +
+                 `🚪 *Suite/Room:* ${room}\n\n` +
+                 `📋 *ORDER PARTICULARS:*\n${itemSummary}\n\n` +
+                 `💰 *Total Transferred:* ₹${Math.round(finalTotal)}\n` +
+                 `📝 *Special Requests:* ${instructions || 'None'}\n\n` +
+                 `⚠️ *VERIFICATION NOTICE:*\nPreparation commences only upon verification of payment proof.\n` +
+                 `📸 *Attaching transaction receipt now...*`;
+
+      alert("Opening WhatsApp...\n\n⚠️ PLEASE ATTACH YOUR PAYMENT SCREENSHOT NOW!\nThe kitchen will commence preparation once transaction proof is received.");
+
+      let encodedText = encodeURIComponent(text);
+      let waUrl = `https://wa.me/918448784783?text=${encodedText}`;
+      
+      window.open(waUrl, '_blank');
+    }
+  </script>
+</body>
+</html>
