@@ -3,248 +3,242 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eko Kitchen Co. | Artisanal In-Room Dining</title>
-  
-  <!-- Tailwind CSS CDN -->
+  <title>Eko Kitchen Co. | In-Room Dining</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- QRCode.js Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-  
-  <!-- Google Fonts: Cinzel for luxury serif accents & Plus Jakarta Sans for body -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #faf9f6;
-      color: #0f172a;
-    }
-    .font-serif-luxury {
-      font-family: 'Cinzel', Georgia, serif;
-    }
-    button, a {
-      -webkit-tap-highlight-color: transparent;
-    }
-    button:active, a:active {
-      transform: scale(0.98);
-    }
-    .luxe-card {
-      background: #ffffff;
-      border: 1px solid rgba(226, 232, 240, 0.75);
-      box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.035);
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .luxe-card:hover {
-      box-shadow: 0 10px 25px -4px rgba(15, 23, 42, 0.065);
-      border-color: rgba(212, 175, 55, 0.3);
-    }
-    /* Custom subtle scrollbar */
-    ::-webkit-scrollbar {
-      width: 4px;
-    }
-    ::-webkit-scrollbar-track {
-      background: transparent;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #e2e8f0;
-      border-radius: 9999px;
-    }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f7f6f2; color: #1c1917; }
+    .font-serif-brand { font-family: 'Playfair Display', Georgia, serif; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button:active, a:active { transform: scale(0.98); }
   </style>
 </head>
-<body class="pb-36 min-h-screen">
+<body class="pb-36">
 
-  <!-- Top Obsidian Header -->
-  <header class="bg-slate-950 text-white sticky top-0 z-30 border-b border-amber-900/30 shadow-md">
-    <div class="max-w-md mx-auto px-5 py-3.5 flex justify-between items-center">
-      <div class="space-y-0.5">
-        <h1 class="font-serif-luxury font-bold text-sm tracking-[0.2em] text-amber-200 uppercase">Eko Kitchen Co.</h1>
-        <p class="text-[10px] text-slate-400 tracking-wider font-light">Artisanal In-Room Dining • 08:00 AM – 10:00 PM</p>
+  <!-- Obsidian Top Bar -->
+  <header class="bg-[#191c18] text-[#f7f6f2] px-6 py-8 border-b border-[#292c27]">
+    <div class="max-w-4xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div>
+        <p class="text-[10px] uppercase tracking-[0.25em] text-[#a8a29e] font-semibold mb-1">Ekodio Homes Presents</p>
+        <h1 class="font-serif-brand text-3xl md:text-4xl font-bold tracking-tight text-[#fdfcf9]">Eko Kitchen Co.</h1>
       </div>
-      <div class="bg-amber-400/10 border border-amber-400/30 text-amber-200 text-[9px] font-bold tracking-[0.16em] uppercase px-2.5 py-1 rounded-full">
-        Prepaid
+      <div class="flex flex-col md:items-end gap-2.5">
+        <p class="text-xs text-[#a8a29e] font-normal">Thoughtfully prepared meals, snacks and beverages, delivered to your room.</p>
+        <div class="flex flex-wrap gap-2 text-[11px] font-medium">
+          <span class="px-3 py-1 rounded-full border border-[#3f3f46] text-[#e4e4e7] bg-[#27272a]/40">In-room dining</span>
+          <span class="px-3 py-1 rounded-full border border-[#3f3f46] text-[#e4e4e7] bg-[#27272a]/40">Prepaid orders</span>
+          <span class="px-3 py-1 rounded-full border border-[#3f3f46] text-[#e4e4e7] bg-[#27272a]/40">8:00 AM – 10:00 PM</span>
+        </div>
       </div>
-    </div>
-    
-    <!-- Privileges Bar -->
-    <div class="bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 border-t border-amber-500/15 text-amber-200/90 text-[10px] text-center py-1.5 px-4 font-semibold tracking-wider">
-      PRIVILEGES: 10% OFF &gt; ₹299 &bull; 30% OFF &gt; ₹999
     </div>
   </header>
 
-  <main class="max-w-md mx-auto p-4 space-y-4">
+  <main class="max-w-4xl mx-auto px-4 py-6 space-y-6">
 
-    <!-- Resident Particulars Card -->
-    <div class="luxe-card p-4 rounded-2xl space-y-3">
-      <div class="flex items-center justify-between">
-        <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-amber-800">Resident Particulars</p>
-        <span class="text-[10px] text-slate-400 font-medium">In-Room Delivery</span>
+    <!-- Resident Privileges Banner -->
+    <div class="bg-[#ece7de] rounded-2xl p-4 flex items-center gap-3.5 border border-[#dfd8cc]">
+      <div class="w-8 h-8 rounded-full bg-[#78716c] text-[#f5f5f4] flex items-center justify-center font-bold text-sm shrink-0">%</div>
+      <div>
+        <p class="text-[10px] uppercase tracking-widest font-bold text-[#78716c]">Resident Privileges</p>
+        <p class="text-xs md:text-sm font-semibold text-[#292524]">Enjoy 10% off orders above ₹299 and 30% off orders above ₹999.</p>
       </div>
-      <div class="grid grid-cols-2 gap-3">
-        <div>
-          <label class="block text-[11px] font-semibold text-slate-600 mb-1">Full Name *</label>
-          <input type="text" id="student-name" placeholder="e.g. Rahul Sharma" 
-                 class="w-full p-2.5 border border-slate-200 rounded-xl focus:ring-1 focus:ring-amber-700/50 focus:border-amber-700 focus:outline-none text-xs font-medium bg-slate-50/50 transition">
+    </div>
+
+    <!-- Where Should We Deliver Card -->
+    <div class="bg-white rounded-2xl p-6 border border-[#e7e5e4] shadow-sm">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+        <div class="md:col-span-6 space-y-1">
+          <p class="text-[10px] uppercase tracking-widest font-bold text-[#a8a29e]">Before You Order</p>
+          <h2 class="font-serif-brand text-xl font-bold text-[#1c1917]">Where should we deliver?</h2>
+          <p class="text-xs text-[#78716c]">Enter your details once. Your order will be confirmed through WhatsApp after payment.</p>
         </div>
-        <div>
-          <label class="block text-[11px] font-semibold text-slate-600 mb-1">Suite / Room *</label>
-          <input type="text" id="room-number" placeholder="e.g. 204" 
-                 class="w-full p-2.5 border border-slate-200 rounded-xl focus:ring-1 focus:ring-amber-700/50 focus:border-amber-700 focus:outline-none text-xs font-medium bg-slate-50/50 transition">
+        <div class="md:col-span-3">
+          <label class="block text-[11px] font-bold uppercase tracking-wider text-[#57534e] mb-1.5">Resident Name</label>
+          <input type="text" id="student-name" placeholder="Your full name" class="w-full px-3.5 py-2.5 border border-[#d6d3d1] rounded-xl text-xs bg-[#fafaf9] focus:outline-none focus:ring-2 focus:ring-[#191c18]">
+        </div>
+        <div class="md:col-span-3">
+          <label class="block text-[11px] font-bold uppercase tracking-wider text-[#57534e] mb-1.5">Room Number</label>
+          <input type="text" id="room-number" placeholder="e.g. 204" class="w-full px-3.5 py-2.5 border border-[#d6d3d1] rounded-xl text-xs bg-[#fafaf9] focus:outline-none focus:ring-2 focus:ring-[#191c18]">
         </div>
       </div>
     </div>
 
-    <!-- Category Pill Dock -->
-    <div class="sticky top-[73px] z-20 bg-[#faf9f6]/95 backdrop-blur-md py-1">
-      <div class="flex bg-slate-200/70 p-1 rounded-2xl gap-1 text-xs font-bold border border-slate-300/40 shadow-inner">
-        <button onclick="switchTab('mains')" id="tab-mains" class="tab-btn flex-1 py-2 rounded-xl bg-slate-900 text-amber-200 shadow-sm transition-all duration-200">Mains</button>
-        <button onclick="switchTab('snacks')" id="tab-snacks" class="tab-btn flex-1 py-2 rounded-xl text-slate-600 hover:text-slate-900 transition-all duration-200">Snacks</button>
-        <button onclick="switchTab('beverages')" id="tab-beverages" class="tab-btn flex-1 py-2 rounded-xl text-slate-600 hover:text-slate-900 transition-all duration-200">Beverages</button>
-        <button onclick="switchTab('desserts')" id="tab-desserts" class="tab-btn flex-1 py-2 rounded-xl text-slate-600 hover:text-slate-900 transition-all duration-200">Desserts</button>
-      </div>
+    <!-- Category Filter Pills -->
+    <div class="flex gap-2 overflow-x-auto py-1">
+      <button onclick="switchTab('mains')" id="tab-mains" class="tab-btn px-5 py-2 rounded-full text-xs font-bold transition bg-[#191c18] text-[#f7f6f2] shadow-sm">Mains</button>
+      <button onclick="switchTab('snacks')" id="tab-snacks" class="tab-btn px-5 py-2 rounded-full text-xs font-bold transition bg-white text-[#57534e] border border-[#e7e5e4] hover:bg-[#f5f5f4]">Snacks</button>
+      <button onclick="switchTab('beverages')" id="tab-beverages" class="tab-btn px-5 py-2 rounded-full text-xs font-bold transition bg-white text-[#57534e] border border-[#e7e5e4] hover:bg-[#f5f5f4]">Beverages</button>
+      <button onclick="switchTab('desserts')" id="tab-desserts" class="tab-btn px-5 py-2 rounded-full text-xs font-bold transition bg-white text-[#57534e] border border-[#e7e5e4] hover:bg-[#f5f5f4]">Desserts</button>
     </div>
 
-    <!-- Live Cart Summary Pill -->
-    <div id="cart-details-card" class="luxe-card p-4 rounded-2xl border-amber-300/80 space-y-3 hidden">
-      <div class="flex justify-between items-center border-b border-slate-100 pb-2">
-        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-900">Your Selection</h3>
-        <button onclick="clearCart()" class="text-[11px] font-semibold text-rose-600 hover:underline">Clear All</button>
+    <!-- Active Cart Summary Bar -->
+    <div id="cart-details-card" class="bg-white p-4 rounded-2xl border border-[#d6d3d1] shadow-sm space-y-3 hidden">
+      <div class="flex justify-between items-center border-b border-[#f5f5f4] pb-2">
+        <h3 class="text-xs font-bold uppercase tracking-wider text-[#1c1917]">Your Tray</h3>
+        <button onclick="clearCart()" class="text-[11px] font-bold text-red-600 hover:underline">Clear</button>
       </div>
       <div id="cart-item-list" class="space-y-2 text-xs"></div>
     </div>
 
     <!-- TAB 1: MAINS -->
     <section id="section-mains" class="menu-section space-y-3">
-      <!-- Handcrafted Pizza -->
-      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
-        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=300&q=80" alt="Pizza" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
-        <div class="flex-1 space-y-1.5 min-w-0">
-          <div class="flex justify-between items-center">
-            <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate">Handcrafted Pizza</h3>
-            <span class="text-[9px] bg-slate-100 text-slate-500 font-bold tracking-wider px-1.5 py-0.5 rounded uppercase flex-shrink-0">4 Slices</span>
-          </div>
-          <div class="grid grid-cols-2 gap-1.5">
-            <button onclick="openCustomizationModal('Veg Pizza (4 slices)', 130, 'pizza')" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1 rounded-lg text-[10px] font-semibold transition truncate">+ Veg ₹130</button>
-            <button onclick="openCustomizationModal('Margherita Pizza (4 slices)', 150, 'pizza')" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1 rounded-lg text-[10px] font-semibold transition truncate">+ Margh. ₹150</button>
-            <button onclick="openCustomizationModal('Paneer Pizza (4 slices)', 160, 'pizza')" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1 rounded-lg text-[10px] font-semibold transition truncate">+ Paneer ₹160</button>
-            <button onclick="openCustomizationModal('Chicken Pizza (4 slices)', 180, 'pizza')" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1 rounded-lg text-[10px] font-semibold transition truncate">+ Chicken ₹180</button>
-          </div>
+      <div class="flex justify-between items-baseline pt-2">
+        <div>
+          <p class="text-[10px] uppercase tracking-widest font-bold text-[#a8a29e]">From The Kitchen</p>
+          <h3 class="font-serif-brand text-2xl font-bold text-[#1c1917]">Mains</h3>
         </div>
+        <span class="text-xs text-[#78716c]">Freshly prepared</span>
       </div>
 
-      <!-- Artisan Grilled Sandwich -->
-      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
-        <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=300&q=80" alt="Sandwich" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
-        <div class="flex-1 space-y-2 min-w-0">
-          <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate">Artisan Grilled Sandwich</h3>
-          <div class="flex gap-1.5">
-            <button onclick="openCustomizationModal('Grilled Sandwich (Veg)', 60, 'sandwich')" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[11px] font-semibold transition truncate">+ Veg ₹60</button>
-            <button onclick="openCustomizationModal('Grilled Sandwich (Paneer)', 80, 'sandwich')" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[11px] font-semibold transition truncate">+ Paneer ₹80</button>
-            <button onclick="openCustomizationModal('Grilled Sandwich (Chicken)', 100, 'sandwich')" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[11px] font-semibold transition truncate">+ Chk ₹100</button>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Pizza -->
+        <div class="bg-white rounded-2xl border border-[#e7e5e4] overflow-hidden shadow-sm flex flex-col justify-between">
+          <div class="relative h-44 w-full bg-[#e7e5e4]">
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=450&q=80" alt="Pizza" class="w-full h-full object-cover">
+            <span class="absolute top-3 left-3 bg-[#191c18]/85 backdrop-blur-sm text-white text-[9px] font-bold tracking-widest uppercase px-2.5 py-0.5 rounded-full">4 Slices</span>
           </div>
-        </div>
-      </div>
-
-      <!-- Gourmet Kathi Roll -->
-      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
-        <img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=300&q=80" onerror="this.src='https://placehold.co/300x300/0f172a/d4af37?text=Kathi+Roll'" alt="Kathi Roll" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
-        <div class="flex-1 space-y-2 min-w-0">
-          <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate">Gourmet Kathi Roll</h3>
-          <div class="flex gap-1.5">
-            <button onclick="openCustomizationModal('Kathi Roll (Paneer)', 80, 'kathi')" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[11px] font-semibold transition truncate">+ Paneer ₹80</button>
-            <button onclick="openCustomizationModal('Kathi Roll (Egg)', 100, 'kathi')" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[11px] font-semibold transition truncate">+ Egg ₹100</button>
-            <button onclick="openCustomizationModal('Kathi Roll (Chicken)', 130, 'kathi')" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[11px] font-semibold transition truncate">+ Chk ₹130</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Italian Pasta -->
-      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
-        <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=300&q=80" alt="Pasta" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
-        <div class="flex-1 space-y-1.5 min-w-0">
-          <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate">Italian Pasta</h3>
-          <div class="space-y-1.5">
-            <div class="flex gap-1.5">
-              <button onclick="openCustomizationModal('Veg Alfredo Pasta (White Sauce)', 100, 'pasta')" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[10px] font-semibold transition truncate text-center">+ Veg Alfredo ₹100</button>
-              <button onclick="openCustomizationModal('Veg Arrabiata Pasta (Red Sauce)', 120, 'pasta')" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[10px] font-semibold transition truncate text-center">+ Veg Arrabiata ₹120</button>
-            </div>
-            <div class="flex gap-1.5">
-              <button onclick="openCustomizationModal('Chicken Alfredo Pasta (White Sauce)', 130, 'pasta')" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[10px] font-semibold transition truncate text-center">+ Chk Alfredo ₹130</button>
-              <button onclick="openCustomizationModal('Chicken Arrabiata Pasta (Red Sauce)', 150, 'pasta')" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[10px] font-semibold transition truncate text-center">+ Chk Arrabiata ₹150</button>
+          <div class="p-3.5 space-y-2">
+            <h4 class="font-serif-brand font-bold text-base text-[#1c1917]">Pizza</h4>
+            <div class="grid grid-cols-2 gap-1.5 text-[11px]">
+              <button onclick="openCustomizationModal('Veg Pizza (4 slices)', 130, 'pizza')" class="py-1.5 px-2 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium transition text-center">+ Veg ₹130</button>
+              <button onclick="openCustomizationModal('Margherita Pizza (4 slices)', 150, 'pizza')" class="py-1.5 px-2 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium transition text-center">+ Marg ₹150</button>
+              <button onclick="openCustomizationModal('Paneer Pizza (4 slices)', 160, 'pizza')" class="py-1.5 px-2 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium transition text-center">+ Paneer ₹160</button>
+              <button onclick="openCustomizationModal('Chicken Pizza (4 slices)', 180, 'pizza')" class="py-1.5 px-2 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium transition text-center">+ Chk ₹180</button>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Royal Dum Biryani -->
-      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
-        <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=300&q=80" alt="Biryani" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
-        <div class="flex-1 space-y-1.5 min-w-0">
-          <div>
-            <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate">Royal Dum Biryani</h3>
-            <p class="text-[10px] text-amber-800 italic truncate">Accompanied by house mint raita</p>
+        <!-- Grilled Sandwich -->
+        <div class="bg-white rounded-2xl border border-[#e7e5e4] overflow-hidden shadow-sm flex flex-col justify-between">
+          <div class="relative h-44 w-full bg-[#e7e5e4]">
+            <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=450&q=80" alt="Sandwich" class="w-full h-full object-cover">
+            <span class="absolute top-3 left-3 bg-[#191c18]/85 backdrop-blur-sm text-white text-[9px] font-bold tracking-widest uppercase px-2.5 py-0.5 rounded-full">Grilled</span>
           </div>
-          <div class="flex gap-1.5 pt-0.5">
-            <button onclick="addDirectItem('Biryani (Veg)', 100)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[11px] font-semibold transition truncate">+ Veg ₹100</button>
-            <button onclick="addDirectItem('Biryani (Egg)', 130)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[11px] font-semibold transition truncate">+ Egg ₹130</button>
-            <button onclick="addDirectItem('Biryani (Chicken)', 150)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[11px] font-semibold transition truncate">+ Chk ₹150</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Oriental Chilli Specials -->
-      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
-        <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=300&q=80" onerror="this.src='https://placehold.co/300x300/0f172a/d4af37?text=Chilli+Specials'" alt="Chilli Specials" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
-        <div class="flex-1 space-y-2 min-w-0">
-          <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate">Oriental Chilli Specials</h3>
-          <div class="flex justify-between items-center text-xs">
-            <span class="font-semibold text-slate-700">Paneer (₹180)</span>
-            <div class="flex gap-1">
-              <button onclick="addDirectItem('Chilli Paneer (Dry)', 180)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-2.5 py-0.5 rounded text-[10px] font-semibold transition">+ Dry</button>
-              <button onclick="addDirectItem('Chilli Paneer (Gravy)', 180)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-2.5 py-0.5 rounded text-[10px] font-semibold transition">+ Gravy</button>
-            </div>
-          </div>
-          <div class="flex justify-between items-center text-xs">
-            <span class="font-semibold text-slate-700">Mushroom (₹200)</span>
-            <div class="flex gap-1">
-              <button onclick="addDirectItem('Chilli Mushroom (Dry)', 200)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-2.5 py-0.5 rounded text-[10px] font-semibold transition">+ Dry</button>
-              <button onclick="addDirectItem('Chilli Mushroom (Gravy)', 200)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-2.5 py-0.5 rounded text-[10px] font-semibold transition">+ Gravy</button>
-            </div>
-          </div>
-          <div class="flex justify-between items-center text-xs">
-            <span class="font-semibold text-slate-700">Chicken (₹220)</span>
-            <div class="flex gap-1">
-              <button onclick="addDirectItem('Chilli Chicken (Dry)', 220)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-2.5 py-0.5 rounded text-[10px] font-semibold transition">+ Dry</button>
-              <button onclick="addDirectItem('Chilli Chicken (Gravy)', 220)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-2.5 py-0.5 rounded text-[10px] font-semibold transition">+ Gravy</button>
+          <div class="p-3.5 space-y-2">
+            <h4 class="font-serif-brand font-bold text-base text-[#1c1917]">Grilled Sandwich</h4>
+            <div class="grid grid-cols-3 gap-1 text-[11px]">
+              <button onclick="openCustomizationModal('Grilled Sandwich (Veg)', 60, 'sandwich')" class="py-1.5 px-1 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium transition text-center">+ Veg ₹60</button>
+              <button onclick="openCustomizationModal('Grilled Sandwich (Paneer)', 80, 'sandwich')" class="py-1.5 px-1 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium transition text-center">+ Pan ₹80</button>
+              <button onclick="openCustomizationModal('Grilled Sandwich (Chicken)', 100, 'sandwich')" class="py-1.5 px-1 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium transition text-center">+ Chk ₹100</button>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Wok-Tossed Noodles -->
-      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
-        <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=300&q=80" alt="Noodles" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
-        <div class="flex-1 space-y-2 min-w-0">
-          <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate">Wok-Tossed Noodles</h3>
-          <div class="flex gap-1.5">
-            <button onclick="addDirectItem('Noodles (Veg)', 70)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[11px] font-semibold transition truncate">+ Veg ₹70</button>
-            <button onclick="addDirectItem('Noodles (Egg)', 90)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[11px] font-semibold transition truncate">+ Egg ₹90</button>
-            <button onclick="addDirectItem('Noodles (Chicken)', 120)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[11px] font-semibold transition truncate">+ Chk ₹120</button>
+        <!-- Kathi Roll -->
+        <div class="bg-white rounded-2xl border border-[#e7e5e4] overflow-hidden shadow-sm flex flex-col justify-between">
+          <div class="relative h-44 w-full bg-[#e7e5e4]">
+            <img src="kathi-roll.jpg" alt="Kathi Roll" class="w-full h-full object-cover">
+            <span class="absolute top-3 left-3 bg-[#191c18]/85 backdrop-blur-sm text-white text-[9px] font-bold tracking-widest uppercase px-2.5 py-0.5 rounded-full">Kathi Roll</span>
+          </div>
+          <div class="p-3.5 space-y-2">
+            <h4 class="font-serif-brand font-bold text-base text-[#1c1917]">Kathi Roll</h4>
+            <div class="grid grid-cols-3 gap-1 text-[11px]">
+              <button onclick="openCustomizationModal('Kathi Roll (Paneer)', 80, 'kathi')" class="py-1.5 px-1 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium transition text-center">+ Pan ₹80</button>
+              <button onclick="openCustomizationModal('Kathi Roll (Egg)', 100, 'kathi')" class="py-1.5 px-1 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium transition text-center">+ Egg ₹100</button>
+              <button onclick="openCustomizationModal('Kathi Roll (Chicken)', 130, 'kathi')" class="py-1.5 px-1 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium transition text-center">+ Chk ₹130</button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Classic Fried Rice -->
-      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
-        <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=300&q=80" alt="Fried Rice" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
-        <div class="flex-1 space-y-2 min-w-0">
-          <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate">Classic Fried Rice</h3>
-          <div class="flex gap-1.5">
-            <button onclick="addDirectItem('Fried Rice (Veg)', 80)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[11px] font-semibold transition truncate">+ Veg ₹80</button>
-            <button onclick="addDirectItem('Fried Rice (Egg)', 100)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[11px] font-semibold transition truncate">+ Egg ₹100</button>
-            <button onclick="addDirectItem('Fried Rice (Chicken)', 130)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-[11px] font-semibold transition truncate">+ Chk ₹130</button>
+        <!-- Pasta -->
+        <div class="bg-white rounded-2xl border border-[#e7e5e4] overflow-hidden shadow-sm flex flex-col justify-between">
+          <div class="relative h-44 w-full bg-[#e7e5e4]">
+            <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=450&q=80" alt="Pasta" class="w-full h-full object-cover">
+            <span class="absolute top-3 left-3 bg-[#191c18]/85 backdrop-blur-sm text-white text-[9px] font-bold tracking-widest uppercase px-2.5 py-0.5 rounded-full">Italian</span>
+          </div>
+          <div class="p-3.5 space-y-2">
+            <h4 class="font-serif-brand font-bold text-base text-[#1c1917]">Pasta</h4>
+            <div class="grid grid-cols-2 gap-1 text-[10px]">
+              <button onclick="openCustomizationModal('Veg Alfredo Pasta (White Sauce)', 100, 'pasta')" class="py-1.5 px-1 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium transition text-center">+ Veg Alf ₹100</button>
+              <button onclick="openCustomizationModal('Veg Arrabiata Pasta (Red Sauce)', 120, 'pasta')" class="py-1.5 px-1 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium transition text-center">+ Veg Arr ₹120</button>
+              <button onclick="openCustomizationModal('Chicken Alfredo Pasta (White Sauce)', 130, 'pasta')" class="py-1.5 px-1 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium transition text-center">+ Chk Alf ₹130</button>
+              <button onclick="openCustomizationModal('Chicken Arrabiata Pasta (Red Sauce)', 150, 'pasta')" class="py-1.5 px-1 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium transition text-center">+ Chk Arr ₹150</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Biryani -->
+        <div class="bg-white rounded-2xl border border-[#e7e5e4] overflow-hidden shadow-sm flex flex-col justify-between">
+          <div class="relative h-44 w-full bg-[#e7e5e4]">
+            <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=450&q=80" alt="Biryani" class="w-full h-full object-cover">
+            <span class="absolute top-3 left-3 bg-[#191c18]/85 backdrop-blur-sm text-white text-[9px] font-bold tracking-widest uppercase px-2.5 py-0.5 rounded-full">Dum Biryani</span>
+          </div>
+          <div class="p-3.5 space-y-2">
+            <h4 class="font-serif-brand font-bold text-base text-[#1c1917]">Biryani</h4>
+            <div class="grid grid-cols-3 gap-1 text-[11px]">
+              <button onclick="addDirectItem('Biryani (Veg)', 100)" class="py-1.5 px-1 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium transition text-center">+ Veg ₹100</button>
+              <button onclick="addDirectItem('Biryani (Egg)', 130)" class="py-1.5 px-1 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium transition text-center">+ Egg ₹130</button>
+              <button onclick="addDirectItem('Biryani (Chicken)', 150)" class="py-1.5 px-1 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium transition text-center">+ Chk ₹150</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chilli Specials -->
+        <div class="bg-white rounded-2xl border border-[#e7e5e4] overflow-hidden shadow-sm flex flex-col justify-between">
+          <div class="relative h-44 w-full bg-[#e7e5e4]">
+            <img src="chilli-specials.jpg" alt="Chilli Specials" class="w-full h-full object-cover">
+            <span class="absolute top-3 left-3 bg-[#191c18]/85 backdrop-blur-sm text-white text-[9px] font-bold tracking-widest uppercase px-2.5 py-0.5 rounded-full">Oriental</span>
+          </div>
+          <div class="p-3.5 space-y-2">
+            <h4 class="font-serif-brand font-bold text-base text-[#1c1917]">Chilli Specials</h4>
+            <div class="space-y-1 text-[11px]">
+              <div class="flex justify-between items-center">
+                <span class="text-[#57534e]">Paneer ₹180</span>
+                <div class="flex gap-1">
+                  <button onclick="addDirectItem('Chilli Paneer (Dry)', 180)" class="px-2 py-0.5 border border-[#d6d3d1] rounded hover:bg-[#191c18] hover:text-white font-medium">Dry</button>
+                  <button onclick="addDirectItem('Chilli Paneer (Gravy)', 180)" class="px-2 py-0.5 border border-[#d6d3d1] rounded hover:bg-[#191c18] hover:text-white font-medium">Gravy</button>
+                </div>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-[#57534e]">Mushroom ₹200</span>
+                <div class="flex gap-1">
+                  <button onclick="addDirectItem('Chilli Mushroom (Dry)', 200)" class="px-2 py-0.5 border border-[#d6d3d1] rounded hover:bg-[#191c18] hover:text-white font-medium">Dry</button>
+                  <button onclick="addDirectItem('Chilli Mushroom (Gravy)', 200)" class="px-2 py-0.5 border border-[#d6d3d1] rounded hover:bg-[#191c18] hover:text-white font-medium">Gravy</button>
+                </div>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-[#57534e]">Chicken ₹220</span>
+                <div class="flex gap-1">
+                  <button onclick="addDirectItem('Chilli Chicken (Dry)', 220)" class="px-2 py-0.5 border border-[#d6d3d1] rounded hover:bg-[#191c18] hover:text-white font-medium">Dry</button>
+                  <button onclick="addDirectItem('Chilli Chicken (Gravy)', 220)" class="px-2 py-0.5 border border-[#d6d3d1] rounded hover:bg-[#191c18] hover:text-white font-medium">Gravy</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Noodles -->
+        <div class="bg-white rounded-2xl border border-[#e7e5e4] overflow-hidden shadow-sm flex flex-col justify-between">
+          <div class="relative h-44 w-full bg-[#e7e5e4]">
+            <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=450&q=80" alt="Noodles" class="w-full h-full object-cover">
+            <span class="absolute top-3 left-3 bg-[#191c18]/85 backdrop-blur-sm text-white text-[9px] font-bold tracking-widest uppercase px-2.5 py-0.5 rounded-full">Wok Tossed</span>
+          </div>
+          <div class="p-3.5 space-y-2">
+            <h4 class="font-serif-brand font-bold text-base text-[#1c1917]">Noodles</h4>
+            <div class="grid grid-cols-3 gap-1 text-[11px]">
+              <button onclick="addDirectItem('Noodles (Veg)', 70)" class="py-1.5 px-1 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium transition text-center">+ Veg ₹70</button>
+              <button onclick="addDirectItem('Noodles (Egg)', 90)" class="py-1.5 px-1 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium transition text-center">+ Egg ₹90</button>
+              <button onclick="addDirectItem('Noodles (Chicken)', 120)" class="py-1.5 px-1 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium transition text-center">+ Chk ₹120</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fried Rice -->
+        <div class="bg-white rounded-2xl border border-[#e7e5e4] overflow-hidden shadow-sm flex flex-col justify-between">
+          <div class="relative h-44 w-full bg-[#e7e5e4]">
+            <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=450&q=80" alt="Fried Rice" class="w-full h-full object-cover">
+            <span class="absolute top-3 left-3 bg-[#191c18]/85 backdrop-blur-sm text-white text-[9px] font-bold tracking-widest uppercase px-2.5 py-0.5 rounded-full">Classic</span>
+          </div>
+          <div class="p-3.5 space-y-2">
+            <h4 class="font-serif-brand font-bold text-base text-[#1c1917]">Fried Rice</h4>
+            <div class="grid grid-cols-3 gap-1 text-[11px]">
+              <button onclick="addDirectItem('Fried Rice (Veg)', 80)" class="py-1.5 px-1 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium transition text-center">+ Veg ₹80</button>
+              <button onclick="addDirectItem('Fried Rice (Egg)', 100)" class="py-1.5 px-1 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium transition text-center">+ Egg ₹100</button>
+              <button onclick="addDirectItem('Fried Rice (Chicken)', 130)" class="py-1.5 px-1 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium transition text-center">+ Chk ₹130</button>
+            </div>
           </div>
         </div>
       </div>
@@ -252,88 +246,109 @@
 
     <!-- TAB 2: SNACKS -->
     <section id="section-snacks" class="menu-section space-y-3 hidden">
-      <!-- Crisp Potato Samosa -->
-      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
-        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=300&q=80" alt="Samosa" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
-        <div class="flex-1 flex justify-between items-center min-w-0">
-          <div class="truncate pr-2">
-            <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate">Crisp Potato Samosa</h3>
-            <p class="text-[10px] text-slate-400">2 pcs served with mint & imli chutney</p>
+      <div class="flex justify-between items-baseline pt-2">
+        <div>
+          <p class="text-[10px] uppercase tracking-widest font-bold text-[#a8a29e]">Light Bites</p>
+          <h3 class="font-serif-brand text-2xl font-bold text-[#1c1917]">Snacks</h3>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Samosa -->
+        <div class="bg-white rounded-2xl border border-[#e7e5e4] overflow-hidden shadow-sm flex flex-col justify-between">
+          <div class="h-44 w-full bg-[#e7e5e4]">
+            <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=450&q=80" alt="Samosa" class="w-full h-full object-cover">
           </div>
-          <button onclick="addDirectItem('Samosa (2 pcs)', 40)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-4 py-1.5 rounded-lg text-xs font-semibold transition flex-shrink-0">+ ₹40</button>
-        </div>
-      </div>
-
-      <!-- Golden Spring Rolls -->
-      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
-        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=300&q=80" onerror="this.src='https://placehold.co/300x300/0f172a/d4af37?text=Spring+Roll'" alt="Spring Roll" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
-        <div class="flex-1 flex justify-between items-center min-w-0">
-          <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate pr-2">Golden Spring Rolls</h3>
-          <button onclick="addDirectItem('Spring Roll', 80)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-4 py-1.5 rounded-lg text-xs font-semibold transition flex-shrink-0">+ ₹80</button>
-        </div>
-      </div>
-
-      <!-- Dahi Ke Sholey -->
-      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
-        <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=300&q=80" onerror="this.src='https://placehold.co/300x300/0f172a/d4af37?text=Dahi+Sholey'" alt="Dahi Ke Sholey" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
-        <div class="flex-1 flex justify-between items-center min-w-0">
-          <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate pr-2">Dahi Ke Sholey</h3>
-          <button onclick="addDirectItem('Dahi Ke Sholey', 120)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-4 py-1.5 rounded-lg text-xs font-semibold transition flex-shrink-0">+ ₹120</button>
-        </div>
-      </div>
-
-      <!-- Crispy French Fries -->
-      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
-        <img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=300&q=80" alt="Fries" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
-        <div class="flex-1 space-y-2 min-w-0">
-          <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate">Crispy French Fries</h3>
-          <div class="flex gap-1.5">
-            <button onclick="addDirectItem('French Fries (Salted)', 80)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-xs font-semibold transition truncate">+ Salted ₹80</button>
-            <button onclick="addDirectItem('French Fries (Peri Peri)', 100)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-xs font-semibold transition truncate">+ Peri Peri ₹100</button>
+          <div class="p-3.5 flex justify-between items-center">
+            <div>
+              <h4 class="font-serif-brand font-bold text-base text-[#1c1917]">Samosa</h4>
+              <p class="text-[11px] text-[#78716c]">2 pcs</p>
+            </div>
+            <button onclick="addDirectItem('Samosa (2 pcs)', 40)" class="py-1.5 px-3 rounded-lg bg-[#191c18] text-white text-xs font-semibold">+ ₹40</button>
           </div>
         </div>
-      </div>
 
-      <!-- Steamed Momos -->
-      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
-        <img src="https://images.unsplash.com/photo-1625220194771-7ebdea0b70b9?auto=format&fit=crop&w=300&q=80" alt="Momos" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
-        <div class="flex-1 space-y-2 min-w-0">
-          <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate">Steamed Momos</h3>
-          <div class="flex gap-1.5">
-            <button onclick="addDirectItem('Momos (Veg)', 80)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-xs font-semibold transition truncate">+ Veg ₹80</button>
-            <button onclick="addDirectItem('Momos (Paneer)', 100)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-xs font-semibold transition truncate">+ Paneer ₹100</button>
-            <button onclick="addDirectItem('Momos (Chicken)', 120)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-xs font-semibold transition truncate">+ Chk ₹120</button>
+        <!-- Spring Roll -->
+        <div class="bg-white rounded-2xl border border-[#e7e5e4] overflow-hidden shadow-sm flex flex-col justify-between">
+          <div class="h-44 w-full bg-[#e7e5e4]">
+            <img src="spring-roll.jpg" alt="Spring Roll" class="w-full h-full object-cover">
+          </div>
+          <div class="p-3.5 flex justify-between items-center">
+            <h4 class="font-serif-brand font-bold text-base text-[#1c1917]">Spring Roll</h4>
+            <button onclick="addDirectItem('Spring Roll', 80)" class="py-1.5 px-3 rounded-lg bg-[#191c18] text-white text-xs font-semibold">+ ₹80</button>
           </div>
         </div>
-      </div>
 
-      <!-- Signature Maggi -->
-      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
-        <img src="https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=300&q=80" onerror="this.src='https://placehold.co/300x300/0f172a/d4af37?text=Maggi'" alt="Maggi" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
-        <div class="flex-1 space-y-2 min-w-0">
-          <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate">Signature Maggi</h3>
-          <div class="flex gap-1.5">
-            <button onclick="addDirectItem('Maggie (Plain)', 40)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-xs font-semibold transition truncate">+ Plain ₹40</button>
-            <button onclick="addDirectItem('Maggie (Veg)', 60)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-xs font-semibold transition truncate">+ Veg ₹60</button>
-            <button onclick="addDirectItem('Maggie (Egg)', 80)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1.5 rounded-lg text-xs font-semibold transition truncate">+ Egg ₹80</button>
+        <!-- Dahi Ke Sholey -->
+        <div class="bg-white rounded-2xl border border-[#e7e5e4] overflow-hidden shadow-sm flex flex-col justify-between">
+          <div class="h-44 w-full bg-[#e7e5e4]">
+            <img src="dahi-sholey.jpg" alt="Dahi Ke Sholey" class="w-full h-full object-cover">
+          </div>
+          <div class="p-3.5 flex justify-between items-center">
+            <h4 class="font-serif-brand font-bold text-base text-[#1c1917]">Dahi Ke Sholey</h4>
+            <button onclick="addDirectItem('Dahi Ke Sholey', 120)" class="py-1.5 px-3 rounded-lg bg-[#191c18] text-white text-xs font-semibold">+ ₹120</button>
           </div>
         </div>
-      </div>
 
-      <!-- Farm Eggs & Toast -->
-      <div class="luxe-card p-3.5 rounded-2xl space-y-2">
-        <div class="flex justify-between items-center">
-          <span class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900">Farm Eggs (2 pcs)</span>
-          <div class="flex gap-1.5">
-            <button onclick="addDirectItem('Egg Boiled (2 pcs)', 40)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-3 py-1 rounded-lg text-xs font-semibold transition">+ Boiled ₹40</button>
-            <button onclick="addDirectItem('Egg Omelette (2 pcs)', 50)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-3 py-1 rounded-lg text-xs font-semibold transition">+ Omelette ₹50</button>
+        <!-- French Fries -->
+        <div class="bg-white rounded-2xl border border-[#e7e5e4] overflow-hidden shadow-sm flex flex-col justify-between">
+          <div class="h-44 w-full bg-[#e7e5e4]">
+            <img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=450&q=80" alt="Fries" class="w-full h-full object-cover">
+          </div>
+          <div class="p-3.5 space-y-2">
+            <h4 class="font-serif-brand font-bold text-base text-[#1c1917]">French Fries</h4>
+            <div class="grid grid-cols-2 gap-1 text-[11px]">
+              <button onclick="addDirectItem('French Fries (Salted)', 80)" class="py-1.5 px-2 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium">Salted ₹80</button>
+              <button onclick="addDirectItem('French Fries (Peri Peri)', 100)" class="py-1.5 px-2 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium">Peri Peri ₹100</button>
+            </div>
           </div>
         </div>
-        <div class="flex justify-between items-center pt-1 border-t border-slate-100">
-          <span class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900">Toast & Bread (4 pcs)</span>
-          <div class="flex gap-1.5">
-            <button onclick="addDirectItem('Bread Plain (4 pcs)', 20)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-3 py-1 rounded-lg text-xs font-semibold transition">+ Plain ₹20</button>
-            <button onclick="addDirectItem('Bread Butter Toasted (4 pcs)', 40)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-3 py-1 rounded-lg text-xs font-semibold transition">+ Butter ₹40</button>
+
+        <!-- Momos -->
+        <div class="bg-white rounded-2xl border border-[#e7e5e4] overflow-hidden shadow-sm flex flex-col justify-between">
+          <div class="h-44 w-full bg-[#e7e5e4]">
+            <img src="https://images.unsplash.com/photo-1625220194771-7ebdea0b70b9?auto=format&fit=crop&w=450&q=80" alt="Momos" class="w-full h-full object-cover">
+          </div>
+          <div class="p-3.5 space-y-2">
+            <h4 class="font-serif-brand font-bold text-base text-[#1c1917]">Momos</h4>
+            <div class="grid grid-cols-3 gap-1 text-[11px]">
+              <button onclick="addDirectItem('Momos (Veg)', 80)" class="py-1.5 px-1 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium">Veg ₹80</button>
+              <button onclick="addDirectItem('Momos (Paneer)', 100)" class="py-1.5 px-1 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium">Pan ₹100</button>
+              <button onclick="addDirectItem('Momos (Chicken)', 120)" class="py-1.5 px-1 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium">Chk ₹120</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Maggie -->
+        <div class="bg-white rounded-2xl border border-[#e7e5e4] overflow-hidden shadow-sm flex flex-col justify-between">
+          <div class="h-44 w-full bg-[#e7e5e4]">
+            <img src="maggie.jpg" alt="Maggie" class="w-full h-full object-cover">
+          </div>
+          <div class="p-3.5 space-y-2">
+            <h4 class="font-serif-brand font-bold text-base text-[#1c1917]">Maggie</h4>
+            <div class="grid grid-cols-3 gap-1 text-[11px]">
+              <button onclick="addDirectItem('Maggie (Plain)', 40)" class="py-1.5 px-1 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium">Plain ₹40</button>
+              <button onclick="addDirectItem('Maggie (Veg)', 60)" class="py-1.5 px-1 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium">Veg ₹60</button>
+              <button onclick="addDirectItem('Maggie (Egg)', 80)" class="py-1.5 px-1 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium">Egg ₹80</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Egg & Bread -->
+        <div class="bg-white rounded-2xl border border-[#e7e5e4] p-4 shadow-sm space-y-3">
+          <div>
+            <span class="text-xs font-bold text-[#1c1917] block mb-1">Egg (2 pcs)</span>
+            <div class="flex gap-1.5">
+              <button onclick="addDirectItem('Egg Boiled (2 pcs)', 40)" class="flex-1 py-1 border border-[#d6d3d1] rounded text-[11px] hover:bg-[#191c18] hover:text-white">Boiled ₹40</button>
+              <button onclick="addDirectItem('Egg Omelette (2 pcs)', 50)" class="flex-1 py-1 border border-[#d6d3d1] rounded text-[11px] hover:bg-[#191c18] hover:text-white">Omelette ₹50</button>
+            </div>
+          </div>
+          <div class="border-t border-[#f5f5f4] pt-2">
+            <span class="text-xs font-bold text-[#1c1917] block mb-1">Bread (4 pcs)</span>
+            <div class="flex gap-1.5">
+              <button onclick="addDirectItem('Bread Plain (4 pcs)', 20)" class="flex-1 py-1 border border-[#d6d3d1] rounded text-[11px] hover:bg-[#191c18] hover:text-white">Plain ₹20</button>
+              <button onclick="addDirectItem('Bread Butter Toasted (4 pcs)', 40)" class="flex-1 py-1 border border-[#d6d3d1] rounded text-[11px] hover:bg-[#191c18] hover:text-white">Toasted ₹40</button>
+            </div>
           </div>
         </div>
       </div>
@@ -341,212 +356,226 @@
 
     <!-- TAB 3: BEVERAGES -->
     <section id="section-beverages" class="menu-section space-y-3 hidden">
-      <!-- Specialty Tea -->
-      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
-        <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=300&q=80" onerror="this.src='https://placehold.co/300x300/0f172a/d4af37?text=Chai'" alt="Chai" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
-        <div class="flex-1 flex justify-between items-center min-w-0">
-          <div class="truncate pr-2">
-            <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate">Specialty Tea / Chai</h3>
-            <p class="text-[10px] text-slate-400">Elaichi, Ginger, or Masala</p>
-          </div>
-          <button onclick="openCustomizationModal('Chai (Medium Cup)', 50, 'chai')" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-4 py-1.5 rounded-lg text-xs font-semibold transition flex-shrink-0">+ ₹50</button>
+      <div class="flex justify-between items-baseline pt-2">
+        <div>
+          <p class="text-[10px] uppercase tracking-widest font-bold text-[#a8a29e]">Warm & Cold</p>
+          <h3 class="font-serif-brand text-2xl font-bold text-[#1c1917]">Beverages</h3>
         </div>
       </div>
 
-      <!-- Brewed Coffee -->
-      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
-        <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=300&q=80" alt="Coffee" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
-        <div class="flex-1 space-y-2 min-w-0">
-          <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate">Brewed Coffee</h3>
-          <div class="flex gap-1.5">
-            <button onclick="addDirectItem('Coffee (Hot)', 80)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-3 py-1.5 rounded-lg text-xs font-semibold transition truncate">+ Hot ₹80</button>
-            <button onclick="addDirectItem('Coffee (Cold)', 100)" class="flex-1 bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-3 py-1.5 rounded-lg text-xs font-semibold transition truncate">+ Cold ₹100</button>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Chai -->
+        <div class="bg-white rounded-2xl border border-[#e7e5e4] overflow-hidden shadow-sm flex flex-col justify-between">
+          <div class="h-44 w-full bg-[#e7e5e4]">
+            <img src="chai.jpg" alt="Chai" class="w-full h-full object-cover">
+          </div>
+          <div class="p-3.5 flex justify-between items-center">
+            <div>
+              <h4 class="font-serif-brand font-bold text-base text-[#1c1917]">Chai</h4>
+              <p class="text-[11px] text-[#78716c]">Medium Cup (Elaichi/Ginger/Masala)</p>
+            </div>
+            <button onclick="openCustomizationModal('Chai (Medium Cup)', 50, 'chai')" class="py-1.5 px-3 rounded-lg bg-[#191c18] text-white text-xs font-semibold">+ ₹50</button>
           </div>
         </div>
-      </div>
 
-      <!-- Oreo Thickshake -->
-      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
-        <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=300&q=80" alt="Oreo Shake" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
-        <div class="flex-1 flex justify-between items-center min-w-0">
-          <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate pr-2">Oreo Thickshake</h3>
-          <button onclick="addDirectItem('Oreo Shake', 100)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-4 py-1.5 rounded-lg text-xs font-semibold transition flex-shrink-0">+ ₹100</button>
+        <!-- Coffee -->
+        <div class="bg-white rounded-2xl border border-[#e7e5e4] overflow-hidden shadow-sm flex flex-col justify-between">
+          <div class="h-44 w-full bg-[#e7e5e4]">
+            <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=450&q=80" alt="Coffee" class="w-full h-full object-cover">
+          </div>
+          <div class="p-3.5 space-y-2">
+            <h4 class="font-serif-brand font-bold text-base text-[#1c1917]">Coffee</h4>
+            <div class="grid grid-cols-2 gap-1.5 text-[11px]">
+              <button onclick="addDirectItem('Coffee (Hot)', 80)" class="py-1.5 px-2 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium text-center">Hot ₹80</button>
+              <button onclick="addDirectItem('Coffee (Cold)', 100)" class="py-1.5 px-2 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium text-center">Cold ₹100</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Oreo Shake -->
+        <div class="bg-white rounded-2xl border border-[#e7e5e4] overflow-hidden shadow-sm flex flex-col justify-between">
+          <div class="h-44 w-full bg-[#e7e5e4]">
+            <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=450&q=80" alt="Oreo Shake" class="w-full h-full object-cover">
+          </div>
+          <div class="p-3.5 flex justify-between items-center">
+            <h4 class="font-serif-brand font-bold text-base text-[#1c1917]">Oreo Shake</h4>
+            <button onclick="addDirectItem('Oreo Shake', 100)" class="py-1.5 px-3 rounded-lg bg-[#191c18] text-white text-xs font-semibold">+ ₹100</button>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- TAB 4: DESSERTS -->
     <section id="section-desserts" class="menu-section space-y-3 hidden">
-      <!-- Fluffy Pancakes -->
-      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
-        <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=300&q=80" alt="Pancake" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
-        <div class="flex-1 space-y-1.5 min-w-0">
-          <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate">Fluffy Pancakes</h3>
-          <div class="grid grid-cols-2 gap-1.5">
-            <button onclick="addDirectItem('Pancake (Plain)', 50)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1 rounded-lg text-[10px] font-semibold transition truncate">+ Plain ₹50</button>
-            <button onclick="addDirectItem('Pancake (+ Choco Sauce)', 60)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1 rounded-lg text-[10px] font-semibold transition truncate">+ Choco ₹60</button>
-            <button onclick="addDirectItem('Pancake (+ Ice Cream)', 70)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1 rounded-lg text-[10px] font-semibold transition truncate">+ Ice Cream ₹70</button>
-            <button onclick="addDirectItem('Pancake (+ Ice Cream & Choco)', 80)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 py-1 rounded-lg text-[10px] font-semibold transition truncate">+ Combo ₹80</button>
+      <div class="flex justify-between items-baseline pt-2">
+        <div>
+          <p class="text-[10px] uppercase tracking-widest font-bold text-[#a8a29e]">Sweet Endings</p>
+          <h3 class="font-serif-brand text-2xl font-bold text-[#1c1917]">Desserts</h3>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Pancakes -->
+        <div class="bg-white rounded-2xl border border-[#e7e5e4] overflow-hidden shadow-sm flex flex-col justify-between">
+          <div class="h-44 w-full bg-[#e7e5e4]">
+            <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=450&q=80" alt="Pancakes" class="w-full h-full object-cover">
+          </div>
+          <div class="p-3.5 space-y-2">
+            <h4 class="font-serif-brand font-bold text-base text-[#1c1917]">Pancake</h4>
+            <div class="grid grid-cols-2 gap-1 text-[11px]">
+              <button onclick="addDirectItem('Pancake (Plain)', 50)" class="py-1.5 px-1 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium text-center">Plain ₹50</button>
+              <button onclick="addDirectItem('Pancake (+ Choco Sauce)', 60)" class="py-1.5 px-1 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium text-center">+ Choco ₹60</button>
+              <button onclick="addDirectItem('Pancake (+ Ice Cream)', 70)" class="py-1.5 px-1 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium text-center">+ Ice Cream ₹70</button>
+              <button onclick="addDirectItem('Pancake (+ Ice Cream & Choco)', 80)" class="py-1.5 px-1 rounded-lg border border-[#d6d3d1] hover:bg-[#191c18] hover:text-white font-medium text-center">Combo ₹80</button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Seasonal Fruit Custard -->
-      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
-        <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=300&q=80" onerror="this.src='https://placehold.co/300x300/0f172a/d4af37?text=Fruit+Custard'" alt="Fruit Custard" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
-        <div class="flex-1 flex justify-between items-center min-w-0">
-          <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate pr-2">Seasonal Fruit Custard</h3>
-          <button onclick="addDirectItem('Fruit Custard', 70)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-4 py-1.5 rounded-lg text-xs font-semibold transition flex-shrink-0">+ ₹70</button>
+        <!-- Fruit Custard -->
+        <div class="bg-white rounded-2xl border border-[#e7e5e4] overflow-hidden shadow-sm flex flex-col justify-between">
+          <div class="h-44 w-full bg-[#e7e5e4]">
+            <img src="fruit-custard.jpg" alt="Fruit Custard" class="w-full h-full object-cover">
+          </div>
+          <div class="p-3.5 flex justify-between items-center">
+            <h4 class="font-serif-brand font-bold text-base text-[#1c1917]">Fruit Custard</h4>
+            <button onclick="addDirectItem('Fruit Custard', 70)" class="py-1.5 px-3 rounded-lg bg-[#191c18] text-white text-xs font-semibold">+ ₹70</button>
+          </div>
         </div>
-      </div>
 
-      <!-- Desi Ghee Halwa -->
-      <div class="luxe-card p-3.5 rounded-2xl flex gap-3 items-center">
-        <img src="https://images.unsplash.com/photo-1606471191009-63994c53433b?auto=format&fit=crop&w=300&q=80" onerror="this.src='https://placehold.co/300x300/0f172a/d4af37?text=Halwa'" alt="Halwa" class="w-16 h-16 rounded-xl object-cover ring-1 ring-black/5 flex-shrink-0">
-        <div class="flex-1 flex justify-between items-center min-w-0">
-          <h3 class="font-serif-luxury font-bold text-xs tracking-wider text-slate-900 truncate pr-2">Desi Ghee Halwa</h3>
-          <button onclick="addDirectItem('Halwa', 60)" class="bg-amber-50/70 border border-amber-200/80 hover:bg-slate-900 hover:text-amber-200 px-4 py-1.5 rounded-lg text-xs font-semibold transition flex-shrink-0">+ ₹60</button>
+        <!-- Halwa -->
+        <div class="bg-white rounded-2xl border border-[#e7e5e4] overflow-hidden shadow-sm flex flex-col justify-between">
+          <div class="h-44 w-full bg-[#e7e5e4]">
+            <img src="halwa.jpg" alt="Halwa" class="w-full h-full object-cover">
+          </div>
+          <div class="p-3.5 flex justify-between items-center">
+            <h4 class="font-serif-brand font-bold text-base text-[#1c1917]">Halwa</h4>
+            <button onclick="addDirectItem('Halwa', 60)" class="py-1.5 px-3 rounded-lg bg-[#191c18] text-white text-xs font-semibold">+ ₹60</button>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Chef's Culinary Instructions Input -->
-    <div class="luxe-card p-4 rounded-2xl">
-      <label class="block text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-1.5">Culinary Requests</label>
-      <input type="text" id="special-instructions" placeholder="e.g., Less spicy, no onions, extra raita on side" 
-             class="w-full p-2.5 border border-slate-200 rounded-xl focus:ring-1 focus:ring-amber-700/50 focus:border-amber-700 focus:outline-none text-xs bg-slate-50/50 transition">
+    <!-- Special Instructions Input -->
+    <div class="bg-white rounded-2xl border border-[#e7e5e4] p-4 shadow-sm">
+      <label class="block text-[11px] font-bold uppercase tracking-wider text-[#57534e] mb-1.5">Special Instructions for Chef</label>
+      <input type="text" id="special-instructions" placeholder="e.g., Less spicy, no onions, extra chutney" class="w-full px-3.5 py-2.5 border border-[#d6d3d1] rounded-xl text-xs bg-[#fafaf9] focus:outline-none focus:ring-2 focus:ring-[#191c18]">
     </div>
 
   </main>
-
-  <!-- ITEM-SPECIFIC CUSTOMIZATION MODAL -->
-  <div id="custom-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
-    <div class="bg-white w-full max-w-sm rounded-3xl p-5 space-y-4 shadow-2xl relative border border-slate-100">
-      <button onclick="closeCustomizationModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-xl font-bold w-8 h-8 flex items-center justify-center rounded-full hover:bg-slate-100 transition">✕</button>
-      <div class="border-b border-slate-100 pb-2">
-        <h3 class="font-serif-luxury font-bold text-slate-900 text-xs tracking-wider uppercase" id="custom-item-name">Dish Name</h3>
-        <p class="text-xs text-slate-400 font-medium mt-0.5">Base Price: <span id="custom-base-price" class="font-bold text-amber-800">₹0</span></p>
+  <!-- CUSTOMIZATION MODAL -->
+  <div id="custom-modal" class="fixed inset-0 bg-[#191c18]/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white w-full max-w-sm rounded-3xl p-5 space-y-4 shadow-2xl relative border border-[#e7e5e4]">
+      <button onclick="closeCustomizationModal()" class="absolute top-4 right-4 text-[#a8a29e] hover:text-[#1c1917] text-xl font-bold">✕</button>
+      <div class="border-b border-[#f5f5f4] pb-2">
+        <h3 class="font-serif-brand font-bold text-[#1c1917] text-base" id="custom-item-name">Dish Name</h3>
+        <p class="text-xs text-[#78716c]">Base Price: <span id="custom-base-price" class="font-bold text-[#1c1917]">₹0</span></p>
       </div>
-      <div class="space-y-2.5">
-        <p class="text-[10px] font-bold uppercase tracking-[0.16em] text-slate-400">Preparation & Extras:</p>
+      <div class="space-y-2">
+        <p class="text-[11px] font-bold uppercase tracking-wider text-[#78716c]">Add-ons & Variations</p>
         <div id="custom-options-container" class="space-y-2 text-xs"></div>
       </div>
-      <div class="pt-2">
-        <button onclick="confirmCustomization()" class="w-full bg-slate-900 hover:bg-slate-800 text-amber-200 font-bold py-3 rounded-xl text-xs tracking-wider uppercase transition shadow-md">
-          Add to Selection
-        </button>
-      </div>
+      <button onclick="confirmCustomization()" class="w-full bg-[#191c18] hover:bg-[#292c27] text-white font-bold py-3 rounded-xl text-xs tracking-wider uppercase transition shadow-sm">
+        Add to Tray
+      </button>
     </div>
   </div>
 
-  <!-- Sticky Bottom Checkout Bar -->
-  <div id="cart-bar" class="fixed bottom-0 left-0 right-0 bg-slate-950/90 backdrop-blur-md text-white p-4 shadow-2xl hidden z-30 border-t border-amber-950/30">
-    <div class="max-w-md mx-auto flex justify-between items-center">
+  <!-- STICKY BOTTOM TRAY BAR -->
+  <div id="cart-bar" class="fixed bottom-0 left-0 right-0 bg-[#191c18] text-[#f7f6f2] p-4 shadow-2xl hidden z-30 border-t border-[#292c27]">
+    <div class="max-w-4xl mx-auto flex justify-between items-center">
       <div>
-        <p class="text-[11px] text-slate-400" id="cart-summary">0 items selected</p>
-        <p class="text-[11px] text-emerald-400 font-bold" id="discount-label"></p>
-        <p class="text-lg font-black text-amber-200" id="cart-final-total">₹0</p>
+        <p class="text-xs text-[#a8a29e]" id="cart-summary">0 items selected</p>
+        <p class="text-xs text-[#86efac] font-bold" id="discount-label"></p>
+        <p class="text-lg font-bold text-[#fdfcf9]" id="cart-final-total">₹0</p>
       </div>
-      <button onclick="openBillModal()" class="bg-amber-400 hover:bg-amber-300 text-slate-950 font-black px-5 py-2.5 rounded-xl text-xs uppercase tracking-wider transition shadow-lg">
-        Review & Pay
+      <button onclick="openBillModal()" class="bg-[#f5f5f4] hover:bg-white text-[#191c18] font-bold px-6 py-2.5 rounded-xl text-xs uppercase tracking-wider transition shadow-sm">
+        Review & Pay →
       </button>
     </div>
   </div>
 
   <!-- STEP 1: BILL SUMMARY MODAL -->
-  <div id="bill-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
-    <div class="bg-white w-full max-w-sm rounded-3xl p-5 space-y-4 shadow-2xl relative border border-slate-100">
-      <button onclick="closeBillModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-xl font-bold w-8 h-8 flex items-center justify-center rounded-full hover:bg-slate-100 transition">✕</button>
-      <div class="border-b border-slate-200 pb-3 text-center">
-        <h3 class="font-serif-luxury font-bold text-slate-900 text-xs tracking-widest uppercase">Order Invoice</h3>
-        <p class="text-[10px] text-slate-400 tracking-wider font-medium uppercase">Eko Kitchen Co.</p>
+  <div id="bill-modal" class="fixed inset-0 bg-[#191c18]/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white w-full max-w-sm rounded-3xl p-5 space-y-4 shadow-2xl relative border border-[#e7e5e4]">
+      <button onclick="closeBillModal()" class="absolute top-4 right-4 text-[#a8a29e] hover:text-[#1c1917] text-xl font-bold">✕</button>
+      <div class="border-b border-[#e7e5e4] pb-3 text-center">
+        <h3 class="font-serif-brand font-bold text-[#1c1917] text-base">Order Summary</h3>
+        <p class="text-[11px] text-[#78716c]">Eko Kitchen Co. • In-room Dining</p>
       </div>
-      <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs space-y-1">
+      <div class="bg-[#fafaf9] p-3 rounded-xl border border-[#e7e5e4] text-xs space-y-1">
         <div class="flex justify-between">
-          <span class="text-slate-500 font-bold">Resident:</span>
-          <span id="bill-student-name" class="font-black text-slate-800"></span>
+          <span class="text-[#78716c] font-medium">Resident:</span>
+          <span id="bill-student-name" class="font-bold text-[#1c1917]"></span>
         </div>
         <div class="flex justify-between">
-          <span class="text-slate-500 font-bold">Suite / Room:</span>
-          <span id="bill-room-number" class="font-black text-amber-800"></span>
+          <span class="text-[#78716c] font-medium">Room Number:</span>
+          <span id="bill-room-number" class="font-bold text-[#1c1917]"></span>
         </div>
       </div>
       <div class="space-y-2 max-h-48 overflow-y-auto pr-1">
-        <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Order Items</p>
+        <p class="text-[10px] font-bold uppercase tracking-wider text-[#a8a29e]">Items Ordered</p>
         <div id="bill-items-container" class="space-y-1.5 text-xs"></div>
       </div>
-      <div class="border-t border-slate-200 pt-3 space-y-1 text-xs">
-        <div class="flex justify-between text-slate-600">
+      <div class="border-t border-[#e7e5e4] pt-3 space-y-1 text-xs">
+        <div class="flex justify-between text-[#78716c]">
           <span>Subtotal:</span>
-          <span id="bill-subtotal" class="font-bold">₹0</span>
+          <span id="bill-subtotal" class="font-bold text-[#1c1917]">₹0</span>
         </div>
-        <div id="bill-discount-row" class="flex justify-between text-emerald-600 hidden">
+        <div id="bill-discount-row" class="flex justify-between text-emerald-700 hidden">
           <span id="bill-discount-text">Privilege Discount:</span>
           <span id="bill-discount-val" class="font-bold">-₹0</span>
         </div>
-        <div class="flex justify-between text-base font-black text-slate-900 border-t border-dashed border-slate-300 pt-2">
-          <span class="text-xs uppercase tracking-wider font-bold">Total Payable:</span>
-          <span id="bill-grand-total" class="text-amber-800 font-black">₹0</span>
+        <div class="flex justify-between text-base font-bold text-[#1c1917] border-t border-dashed border-[#d6d3d1] pt-2">
+          <span>Total:</span>
+          <span id="bill-grand-total">₹0</span>
         </div>
       </div>
-      <button onclick="goToPaymentModal()" class="w-full bg-slate-900 hover:bg-slate-800 text-amber-200 font-bold py-3 rounded-xl text-xs uppercase tracking-wider transition shadow-lg flex items-center justify-center gap-2">
-        <span>Proceed to Payment →</span>
+      <button onclick="goToPaymentModal()" class="w-full bg-[#191c18] hover:bg-[#292c27] text-white font-bold py-3 rounded-xl text-xs uppercase tracking-wider transition shadow-sm flex items-center justify-center gap-2">
+        <span>Proceed to UPI Payment →</span>
       </button>
     </div>
   </div>
 
   <!-- STEP 2: PAYMENT & VERIFICATION MODAL -->
-  <div id="payment-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
-    <div class="bg-white w-full max-w-sm rounded-3xl p-5 text-center space-y-3.5 shadow-2xl relative border border-slate-100 max-h-[92vh] overflow-y-auto">
-      <button onclick="closePaymentModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-xl font-bold w-8 h-8 flex items-center justify-center rounded-full hover:bg-slate-100 transition">✕</button>
+  <div id="payment-modal" class="fixed inset-0 bg-[#191c18]/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white w-full max-w-sm rounded-3xl p-5 text-center space-y-3.5 shadow-2xl relative border border-[#e7e5e4]">
+      <button onclick="closePaymentModal()" class="absolute top-4 right-4 text-[#a8a29e] hover:text-[#1c1917] text-xl font-bold">✕</button>
       <div>
-        <h3 class="font-serif-luxury font-bold text-slate-900 text-xs tracking-widest uppercase">UPI Transfer</h3>
-        <p class="text-xs text-slate-500 mt-0.5">Exact Amount: <span id="modal-pay-amount" class="font-black text-amber-800 text-base">₹0</span></p>
+        <h3 class="font-serif-brand font-bold text-[#1c1917] text-base">Pay via UPI</h3>
+        <p class="text-xs text-[#78716c] mt-0.5">Pay Exact Amount: <span id="modal-pay-amount" class="font-bold text-[#1c1917]">₹0</span></p>
       </div>
-      
-      <!-- Dynamic Real-Time QR Code Container -->
-      <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200 flex flex-col items-center">
-        <div id="dynamic-qr-container" class="bg-white p-2 rounded-xl border border-slate-200 shadow-sm flex items-center justify-center min-w-[165px] min-h-[165px]"></div>
-        <p class="text-[10px] font-bold text-slate-400 mt-2">Scan with GPay / PhonePe / Paytm / CRED</p>
+      <div class="bg-[#fafaf9] p-3 rounded-2xl border border-[#e7e5e4] flex flex-col items-center">
+        <div id="dynamic-qr-container" class="bg-white p-2 rounded-xl border border-[#e7e5e4] shadow-sm"></div>
+        <p class="text-[10px] font-bold text-[#78716c] mt-2">Screenshot & scan in GPay / PhonePe / Paytm</p>
       </div>
-
-      <!-- Android Direct Intent Launcher -->
       <div id="android-intent-box" class="hidden">
-        <a id="btn-android-upi" href="#" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 px-4 rounded-xl text-xs transition shadow-md flex items-center justify-center gap-2">
-          <span>🚀 Open UPI App on this Phone</span>
+        <a id="btn-android-upi" href="#" class="w-full bg-[#15803d] hover:bg-[#166534] text-white font-bold py-2.5 px-4 rounded-xl text-xs transition shadow-sm flex items-center justify-center gap-2">
+          <span>Open UPI App on Phone</span>
         </a>
       </div>
-
-      <!-- Copy UPI Address Helper -->
-      <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200 flex justify-between items-center text-xs">
-        <div class="text-left truncate pr-2">
-          <p class="text-[9px] text-slate-400 font-bold uppercase tracking-wider">UPI Address</p>
-          <p class="font-black text-slate-800 text-[11px] truncate">paytm.s1n4ilc@pty</p>
+      <div class="bg-[#fafaf9] p-2.5 rounded-xl border border-[#e7e5e4] flex justify-between items-center text-xs">
+        <div class="text-left">
+          <p class="text-[9px] text-[#a8a29e] font-bold uppercase tracking-wider">UPI ID</p>
+          <p class="font-bold text-[#1c1917] text-[11px]">paytm.s1n4ilc@pty</p>
         </div>
-        <button id="copy-vpa-btn" onclick="copyUPIId()" class="bg-slate-900 hover:bg-slate-800 text-amber-200 font-bold px-3 py-1.5 rounded-lg text-[10px] transition shadow-sm flex-shrink-0">
-          📋 Copy
+        <button id="copy-vpa-btn" onclick="copyUPIId()" class="bg-[#191c18] text-white font-bold px-3 py-1.5 rounded-lg text-[10px] transition">
+          Copy
         </button>
       </div>
-
-      <!-- Mandatory Screenshot Verification Warning -->
-      <div class="bg-amber-50/80 p-2.5 rounded-xl border border-amber-200 text-left flex items-start gap-2">
-        <span class="text-amber-700 text-sm font-bold flex-shrink-0">⚠️</span>
-        <p class="text-[10px] text-amber-950 font-bold leading-tight">
-          Verification Notice: The kitchen will not begin preparing your food until the payment receipt screenshot is shared in the WhatsApp chat.
+      <div class="bg-red-50 p-2.5 rounded-xl border border-red-200 text-left flex items-start gap-2">
+        <span class="text-red-700 text-sm font-bold">⚠️</span>
+        <p class="text-[11px] text-red-900 font-semibold leading-tight">
+          Important: Order will only be confirmed and prepared once the payment receipt screenshot is sent on WhatsApp.
         </p>
       </div>
-
-      <!-- Checkbox Confirmation -->
-      <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200 text-left flex items-start gap-2.5">
-        <input type="checkbox" id="payment-checkbox" onchange="toggleOrderButton()" class="mt-0.5 w-4 h-4 text-emerald-600 bg-white border-slate-300 rounded focus:ring-emerald-500 cursor-pointer">
-        <label for="payment-checkbox" class="text-[11px] text-slate-700 font-medium cursor-pointer leading-tight">
-          I have transferred <span id="checkbox-pay-amount" class="font-black text-emerald-700">₹0</span> and will attach my payment screenshot in WhatsApp now.
+      <div class="bg-[#fefce8] p-2.5 rounded-xl border border-[#fef08a] text-left flex items-start gap-2.5">
+        <input type="checkbox" id="payment-checkbox" onchange="toggleOrderButton()" class="mt-0.5 w-4 h-4 text-[#191c18] bg-white border-[#d6d3d1] rounded focus:ring-[#191c18] cursor-pointer">
+        <label for="payment-checkbox" class="text-[11px] text-[#713f12] font-medium cursor-pointer leading-tight">
+          I have paid <span id="checkbox-pay-amount" class="font-bold text-[#1c1917]">₹0</span> and will attach the screenshot now.
         </label>
       </div>
-
-      <!-- Final WhatsApp Dispatch Button -->
-      <button id="send-whatsapp-btn" onclick="sendWhatsAppOrder()" disabled class="w-full bg-slate-300 text-slate-500 font-bold py-3 rounded-xl text-xs uppercase tracking-wider transition shadow-md flex items-center justify-center gap-2 cursor-not-allowed">
-        <span>📸 Share Screenshot & Confirm Order</span>
+      <button id="send-whatsapp-btn" onclick="sendWhatsAppOrder()" disabled class="w-full bg-[#d6d3d1] text-[#a8a29e] font-bold py-3 rounded-xl text-xs uppercase tracking-wider transition shadow-sm flex items-center justify-center gap-2 cursor-not-allowed">
+        <span>Share Receipt & Confirm Order →</span>
       </button>
     </div>
   </div>
@@ -558,7 +587,6 @@
     const UPI_ID = "paytm.s1n4ilc@pty";
     const PAYEE_NAME = "Eko Kitchen Co";
 
-    // Customization add-on pricing configuration
     const customConfig = {
       pizza: [
         { label: 'Extra Veggies', price: 30 },
@@ -582,25 +610,20 @@
       ]
     };
 
-    // Category Tab Switcher
     function switchTab(category) {
       document.querySelectorAll('.menu-section').forEach(el => el.classList.add('hidden'));
-      const activeSection = document.getElementById(`section-${category}`);
-      if (activeSection) activeSection.classList.remove('hidden');
+      document.getElementById(`section-${category}`).classList.remove('hidden');
 
       document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.classList.remove('bg-slate-900', 'text-amber-200', 'shadow-sm');
-        btn.classList.add('text-slate-600');
+        btn.classList.remove('bg-[#191c18]', 'text-[#f7f6f2]', 'shadow-sm');
+        btn.classList.add('bg-white', 'text-[#57534e]', 'border', 'border-[#e7e5e4]');
       });
 
       const activeBtn = document.getElementById(`tab-${category}`);
-      if (activeBtn) {
-        activeBtn.classList.add('bg-slate-900', 'text-amber-200', 'shadow-sm');
-        activeBtn.classList.remove('text-slate-600');
-      }
+      activeBtn.classList.add('bg-[#191c18]', 'text-[#f7f6f2]', 'shadow-sm');
+      activeBtn.classList.remove('bg-white', 'text-[#57534e]', 'border', 'border-[#e7e5e4]');
     }
 
-    // Modal Opening with 'Classic / No Extras (+₹0)' selected by default
     function openCustomizationModal(name, basePrice, type) {
       currentCustomItem = { name: name, price: basePrice, type: type };
       document.getElementById('custom-item-name').innerText = name;
@@ -609,24 +632,23 @@
       const options = customConfig[type] || [];
       const container = document.getElementById('custom-options-container');
       
-      // Mandatory Default Selected Option
       let html = `
-        <label class="flex items-center justify-between p-2.5 bg-slate-50/80 rounded-xl border border-slate-200 cursor-pointer hover:bg-amber-50/40 transition">
-          <span class="font-bold text-slate-800 flex items-center gap-2">
-            <input type="radio" name="modal-addon" data-label="" data-price="0" checked class="addon-radio w-4 h-4 text-amber-600 focus:ring-amber-500">
+        <label class="flex items-center justify-between p-2.5 bg-[#fafaf9] rounded-xl border border-[#e7e5e4] cursor-pointer hover:bg-[#f5f5f4] transition">
+          <span class="font-semibold text-[#1c1917] flex items-center gap-2">
+            <input type="radio" name="modal-addon" data-label="" data-price="0" checked class="addon-radio w-4 h-4 text-[#191c18] focus:ring-[#191c18]">
             Classic / No Extras
           </span>
-          <span class="font-bold text-slate-400">+₹0</span>
+          <span class="font-semibold text-[#78716c]">+₹0</span>
         </label>
       `;
 
       html += options.map(opt => `
-        <label class="flex items-center justify-between p-2.5 bg-slate-50/80 rounded-xl border border-slate-200 cursor-pointer hover:bg-amber-50/40 transition">
-          <span class="font-bold text-slate-800 flex items-center gap-2">
-            <input type="radio" name="modal-addon" data-label="${opt.label}" data-price="${opt.price}" class="addon-radio w-4 h-4 text-amber-600 focus:ring-amber-500">
+        <label class="flex items-center justify-between p-2.5 bg-[#fafaf9] rounded-xl border border-[#e7e5e4] cursor-pointer hover:bg-[#f5f5f4] transition">
+          <span class="font-semibold text-[#1c1917] flex items-center gap-2">
+            <input type="radio" name="modal-addon" data-label="${opt.label}" data-price="${opt.price}" class="addon-radio w-4 h-4 text-[#191c18] focus:ring-[#191c18]">
             ${opt.label}
           </span>
-          <span class="font-bold text-slate-600">+₹${opt.price}</span>
+          <span class="font-semibold text-[#1c1917]">+₹${opt.price}</span>
         </label>
       `).join('');
 
@@ -657,7 +679,6 @@
       closeCustomizationModal();
     }
 
-    // Direct Add without Modal
     function addDirectItem(name, price) {
       if (!cart[name]) {
         cart[name] = { price: price, qty: 0 };
@@ -666,7 +687,6 @@
       updateCartUI();
     }
 
-    // Quantity Modifier (+ / -)
     function changeQty(name, delta) {
       if (cart[name]) {
         cart[name].qty += delta;
@@ -693,17 +713,16 @@
 
       if (subtotal > 999) {
         discount = subtotal * 0.30;
-        discountText = "30% Privilege Applied";
+        discountText = "30% Privilege Discount Applied";
       } else if (subtotal > 299) {
         discount = subtotal * 0.10;
-        discountText = "10% Privilege Applied";
+        discountText = "10% Privilege Discount Applied";
       }
 
       let finalTotal = subtotal - discount;
       return { subtotal, discount, finalTotal, discountText };
     }
 
-    // Updating UI Displays
     function updateCartUI() {
       const cartBar = document.getElementById('cart-bar');
       const cartCard = document.getElementById('cart-details-card');
@@ -717,17 +736,17 @@
         cartItemList.innerHTML = Object.keys(cart).map(name => {
           const item = cart[name];
           return `
-            <div class="flex justify-between items-center bg-slate-50/80 p-2.5 rounded-xl border border-slate-200/80">
+            <div class="flex justify-between items-center bg-[#fafaf9] p-2.5 rounded-xl border border-[#e7e5e4]">
               <div class="flex-1 pr-2">
-                <p class="font-bold text-slate-800 text-xs">${name}</p>
-                <p class="text-[11px] text-slate-500 font-medium">₹${item.price} each</p>
+                <p class="font-bold text-[#1c1917] text-xs">${name}</p>
+                <p class="text-[11px] text-[#78716c]">₹${item.price} each</p>
               </div>
               <div class="flex items-center gap-2">
-                <span class="font-black text-slate-800 text-xs">₹${item.price * item.qty}</span>
-                <div class="flex items-center border border-slate-300 rounded-lg overflow-hidden bg-white shadow-sm">
-                  <button onclick="changeQty('${name}', -1)" class="px-2 py-0.5 bg-slate-100 font-bold text-slate-700 hover:bg-slate-200 transition">-</button>
-                  <span class="px-2 font-black text-amber-800">${item.qty}</span>
-                  <button onclick="changeQty('${name}', 1)" class="px-2 py-0.5 bg-slate-100 font-bold text-slate-700 hover:bg-slate-200 transition">+</button>
+                <span class="font-bold text-[#1c1917] text-xs">₹${item.price * item.qty}</span>
+                <div class="flex items-center border border-[#d6d3d1] rounded-lg overflow-hidden bg-white">
+                  <button onclick="changeQty('${name}', -1)" class="px-2 py-0.5 bg-[#f5f5f4] font-bold text-[#1c1917] hover:bg-[#e7e5e4]">-</button>
+                  <span class="px-2 font-bold text-[#1c1917]">${item.qty}</span>
+                  <button onclick="changeQty('${name}', 1)" class="px-2 py-0.5 bg-[#f5f5f4] font-bold text-[#1c1917] hover:bg-[#e7e5e4]">+</button>
                 </div>
               </div>
             </div>
@@ -736,7 +755,7 @@
 
         const { finalTotal, discount, discountText } = calculateTotal();
 
-        document.getElementById('cart-summary').innerText = `${totalCount} item(s) selected`;
+        document.getElementById('cart-summary').innerText = `${totalCount} item(s) in tray`;
         document.getElementById('discount-label').innerText = discountText;
         document.getElementById('cart-final-total').innerText = `₹${Math.round(finalTotal)} ${discount > 0 ? `(Saved ₹${Math.round(discount)})` : ''}`;
       } else {
@@ -745,13 +764,12 @@
       }
     }
 
-    // Step 1: Open Invoice Modal
     function openBillModal() {
       const name = document.getElementById('student-name').value.trim();
       const room = document.getElementById('room-number').value.trim();
 
       if (!name || !room) {
-        alert("Please provide both your Full Name and Suite / Room Number at the top before proceeding.");
+        alert("Please enter both your Name and Room Number before proceeding.");
         window.scrollTo({ top: 0, behavior: 'smooth' });
         return;
       }
@@ -759,7 +777,7 @@
       const { subtotal, discount, finalTotal, discountText } = calculateTotal();
 
       document.getElementById('bill-student-name').innerText = name;
-      document.getElementById('bill-room-number').innerText = `Suite ${room}`;
+      document.getElementById('bill-room-number').innerText = `Room ${room}`;
       document.getElementById('bill-subtotal').innerText = `₹${subtotal}`;
       document.getElementById('bill-grand-total').innerText = `₹${Math.round(finalTotal)}`;
 
@@ -767,9 +785,9 @@
       itemsContainer.innerHTML = Object.keys(cart).map(name => {
         const item = cart[name];
         return `
-          <div class="flex justify-between text-slate-700">
-            <span class="pr-2">${name} <span class="font-bold text-amber-800">x${item.qty}</span></span>
-            <span class="font-bold">₹${item.price * item.qty}</span>
+          <div class="flex justify-between text-[#44403c]">
+            <span class="pr-2">${name} <span class="font-bold text-[#1c1917]">x${item.qty}</span></span>
+            <span class="font-bold text-[#1c1917]">₹${item.price * item.qty}</span>
           </div>
         `;
       }).join('');
@@ -811,14 +829,13 @@
         androidBox.classList.add('hidden');
       }
 
-      // Generate Clean Dynamic QR
       const qrContainer = document.getElementById('dynamic-qr-container');
       qrContainer.innerHTML = '';
       new QRCode(qrContainer, {
         text: `upi://pay?${upiParams}`,
         width: 165,
         height: 165,
-        colorDark: "#020617",
+        colorDark: "#191c18",
         colorLight: "#ffffff",
         correctLevel: QRCode.CorrectLevel.M
       });
@@ -834,29 +851,16 @@
       document.getElementById('payment-modal').classList.add('hidden');
     }
 
-    // Copy UPI ID function with visual feedback
     function copyUPIId() {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(UPI_ID).then(showCopiedNotice);
-      } else {
-        const dummy = document.createElement('textarea');
-        dummy.value = UPI_ID;
-        document.body.appendChild(dummy);
-        dummy.select();
-        document.execCommand('copy');
-        document.body.removeChild(dummy);
-        showCopiedNotice();
-      }
-    }
-
-    function showCopiedNotice() {
-      const btn = document.getElementById('copy-vpa-btn');
-      btn.innerText = "✅ Copied";
-      btn.classList.add('bg-emerald-700', 'text-white');
-      setTimeout(() => {
-        btn.innerText = "📋 Copy";
-        btn.classList.remove('bg-emerald-700', 'text-white');
-      }, 2000);
+      navigator.clipboard.writeText(UPI_ID).then(() => {
+        const btn = document.getElementById('copy-vpa-btn');
+        btn.innerText = "Copied!";
+        btn.classList.add('bg-emerald-700');
+        setTimeout(() => {
+          btn.innerText = "Copy";
+          btn.classList.remove('bg-emerald-700');
+        }, 2000);
+      });
     }
 
     function toggleOrderButton() {
@@ -865,16 +869,15 @@
 
       if (checkbox.checked) {
         btn.disabled = false;
-        btn.classList.remove('bg-slate-300', 'text-slate-500', 'cursor-not-allowed');
-        btn.classList.add('bg-emerald-700', 'hover:bg-emerald-600', 'text-white');
+        btn.classList.remove('bg-[#d6d3d1]', 'text-[#a8a29e]', 'cursor-not-allowed');
+        btn.classList.add('bg-[#15803d]', 'hover:bg-[#166534]', 'text-white');
       } else {
         btn.disabled = true;
-        btn.classList.add('bg-slate-300', 'text-slate-500', 'cursor-not-allowed');
-        btn.classList.remove('bg-emerald-700', 'hover:bg-emerald-600', 'text-white');
+        btn.classList.add('bg-[#d6d3d1]', 'text-[#a8a29e]', 'cursor-not-allowed');
+        btn.classList.remove('bg-[#15803d]', 'hover:bg-[#166534]', 'text-white');
       }
     }
 
-    // Final Dispatch to Kitchen WhatsApp
     function sendWhatsAppOrder() {
       const name = document.getElementById('student-name').value.trim();
       const room = document.getElementById('room-number').value.trim();
@@ -885,16 +888,16 @@
         .map(name => `• ${name} x ${cart[name].qty} - ₹${cart[name].price * cart[name].qty}`)
         .join('\n');
 
-      let text = `✨ *ORDER CONFIRMATION - EKO KITCHEN CO.* ✨\n\n` +
-                 `👤 *Guest:* ${name}\n` +
-                 `🚪 *Suite/Room:* ${room}\n\n` +
-                 `📋 *ORDER PARTICULARS:*\n${itemSummary}\n\n` +
-                 `💰 *Total Transferred:* ₹${Math.round(finalTotal)}\n` +
-                 `📝 *Special Requests:* ${instructions || 'None'}\n\n` +
-                 `⚠️ *VERIFICATION NOTICE:*\nPreparation commences only upon verification of payment proof.\n` +
-                 `📸 *Attaching transaction receipt now...*`;
+      let text = `🚨 *NEW PREPAID ORDER - EKO KITCHEN CO.* 🚨\n\n` +
+                 `👤 *Resident:* ${name}\n` +
+                 `🚪 *Room:* ${room}\n\n` +
+                 `📋 *ORDER TRAY:*\n${itemSummary}\n\n` +
+                 `💰 *Total Paid:* ₹${Math.round(finalTotal)}\n` +
+                 `📝 *Instructions:* ${instructions || 'None'}\n\n` +
+                 `⚠️ *VERIFICATION NOTICE:*\nOrder is *ONLY* confirmed once the payment receipt screenshot is attached below 👇\n` +
+                 `📸 *Attaching screenshot now...*`;
 
-      alert("Opening WhatsApp...\n\n⚠️ PLEASE ATTACH YOUR PAYMENT SCREENSHOT NOW!\nThe kitchen will commence preparation once transaction proof is received.");
+      alert("Opening WhatsApp...\n\n⚠️ PLEASE ATTACH YOUR PAYMENT SCREENSHOT NOW!\nThe kitchen will commence preparation once payment proof is received.");
 
       let encodedText = encodeURIComponent(text);
       let waUrl = `https://wa.me/918448784783?text=${encodedText}`;
