@@ -1,847 +1,1305 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eko Kitchen Co. | In-Room Menu</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-</head>
-<body class="bg-slate-100 text-slate-800 pb-36 font-sans">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Header -->
-  <header class="bg-slate-900 text-white p-4 sticky top-0 z-30 shadow-md">
-    <div class="max-w-md mx-auto flex justify-between items-center">
-      <div>
-        <h1 class="font-black text-xl tracking-wider text-amber-400">EKO KITCHEN CO.</h1>
-        <p class="text-xs text-slate-300 font-medium">In-Room Dining • 08 a.m. to 10 p.m.</p>
-      </div>
-      <div class="bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold px-3 py-1 rounded-full">
-        Prepaid Orders
-      </div>
+  <meta
+    name="description"
+    content="Dr. Swati Ayurveda Clinic in Delhi. Ayurveda-led consultations for women's health, skin concerns and general wellness."
+  />
+
+  <meta name="theme-color" content="#6d7c68" />
+
+  <title>Dr. Swati Ayurveda Clinic | Delhi</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --ivory: #f8f6f0;
+      --paper: #fffdf9;
+      --sage: #6d7c68;
+      --sage-dark: #435443;
+      --ink: #243027;
+      --muted: #6e766d;
+      --line: #e5e5dc;
+      --sand: #e8dfcf;
+      --shadow: 0 18px 50px rgba(45, 59, 45, .08);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--ivory);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(248, 246, 240, .92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(229, 229, 220, .85);
+    }
+
+    .nav-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--sage);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--sage-dark);
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+    }
+
+    .brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      line-height: 1.1;
+    }
+
+    .brand-sub {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      font-size: 13px;
+      color: #4e5a4f;
+    }
+
+    .nav-links a:hover {
+      color: var(--sage-dark);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      padding: 13px 21px;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    .btn-primary {
+      background: var(--sage-dark);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #304130;
+      transform: translateY(-1px);
+    }
+
+    .btn-light {
+      background: transparent;
+      border-color: #b8c0b3;
+      color: var(--sage-dark);
+    }
+
+    .btn-light:hover {
+      background: #edf0e9;
+    }
+
+    .hero {
+      padding: 76px 0 60px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--sage-dark);
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      line-height: 1.13;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(48px, 6vw, 78px);
+      letter-spacing: -2px;
+      margin: 18px 0 24px;
+    }
+
+    h2 {
+      font-size: clamp(34px, 4vw, 50px);
+      letter-spacing: -1px;
+    }
+
+    h3 {
+      font-size: 25px;
+    }
+
+    .hero-copy {
+      max-width: 540px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .hero-note {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-top: 28px;
+      color: #596456;
+      font-size: 12px;
+    }
+
+    .hero-note strong {
+      color: var(--ink);
+    }
+
+    .hero-art {
+      min-height: 480px;
+      border-radius: 140px 140px 24px 24px;
+      background: linear-gradient(145deg, #dce2d5, #b5c2ad);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-art:before {
+      content: '';
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      border: 1px solid rgba(255, 255, 255, .7);
+      border-radius: 50%;
+      left: -100px;
+      bottom: -120px;
+    }
+
+    .hero-art:after {
+      content: 'AYURVEDA';
+      position: absolute;
+      right: -40px;
+      top: 45%;
+      transform: rotate(90deg);
+      letter-spacing: 7px;
+      font-size: 10px;
+      color: rgba(36, 48, 39, .45);
+    }
+
+    .leaf {
+      position: absolute;
+      width: 150px;
+      height: 270px;
+      border-radius: 100% 0 100% 0;
+      background: rgba(67, 84, 67, .5);
+      transform: rotate(28deg);
+      right: 22%;
+      top: 15%;
+    }
+
+    .leaf.two {
+      width: 100px;
+      height: 210px;
+      right: 44%;
+      top: 31%;
+      transform: rotate(-30deg);
+      background: rgba(255, 255, 255, .36);
+    }
+
+    .art-card {
+      position: absolute;
+      left: 26px;
+      bottom: 26px;
+      right: 26px;
+      padding: 22px;
+      background: rgba(255, 253, 249, .9);
+      border: 1px solid rgba(255, 255, 255, .8);
+      border-radius: 18px;
+    }
+
+    .art-card small {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1.7px;
+      font-size: 10px;
+    }
+
+    .art-card strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 25px;
+      margin-top: 5px;
+    }
+
+    .section {
+      padding: 92px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 36px;
+    }
+
+    .section-intro {
+      max-width: 480px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .soft {
+      background: var(--paper);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .card {
+      background: var(--ivory);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px;
+      min-height: 215px;
+    }
+
+    .card-number {
+      color: var(--sage);
+      font-size: 11px;
+      letter-spacing: 2px;
+      font-weight: 700;
+    }
+
+    .card h3 {
+      font-size: 23px;
+      margin: 32px 0 12px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 0;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .portrait {
+      min-height: 410px;
+      background: linear-gradient(145deg, #e8dfcf, #c8c9b6);
+      border-radius: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portrait:after {
+      content: 'DR. SWATI';
+      position: absolute;
+      bottom: 28px;
+      left: 28px;
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      color: rgba(36, 48, 39, .62);
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .credential {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 14px;
+      padding: 10px 15px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--sage-dark);
+      background: var(--paper);
+    }
+
+    .booking-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 55px;
+      align-items: start;
+    }
+
+    .booking-panel {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .price {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      margin: 20px 0 6px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #4f5b50;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid #dfe3da;
+      border-radius: 12px;
+      padding: 12px 13px;
+      background: #fff;
+      color: var(--ink);
+      outline: none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--sage);
+      box-shadow: 0 0 0 3px rgba(109, 124, 104, .12);
+    }
+
+    textarea {
+      min-height: 105px;
+      resize: vertical;
+    }
+
+    .form-foot {
+      margin-top: 18px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .form-note {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 14px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+    }
+
+    .contact-item {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 25px;
+      border-radius: 20px;
+    }
+
+    .contact-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      margin-bottom: 8px;
+    }
+
+    footer {
+      background: var(--sage-dark);
+      color: #eef1e9;
+      padding: 34px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: center;
+    }
+
+    footer small {
+      color: #cbd5c7;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-grid,
+      .booking-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .hero {
+        padding-top: 48px;
+      }
+
+      .hero-art {
+        min-height: 360px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 65px 0;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        width: min(100% - 28px, 1160px);
+      }
+
+      .nav-inner {
+        min-height: 68px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      h1 {
+        font-size: 51px;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-intro {
+        margin-top: 18px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      .booking-panel {
+        padding: 20px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="nav">
+    <div class="container nav-inner">
+
+      <a class="brand" href="#home" aria-label="Dr. Swati Ayurveda Clinic home">
+        <span class="brand-mark">S</span>
+
+        <span>
+          <span class="brand-name">Dr. Swati</span>
+          <span class="brand-sub">Ayurveda Clinic</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#consultations">Consultations</a>
+        <a href="#appointment">Appointment</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="btn btn-primary" href="#appointment">
+        Book consultation
+      </a>
+
     </div>
   </header>
 
-  <!-- Special Offers Banner -->
-  <div class="bg-red-600 text-white text-xs text-center py-2 px-4 font-bold tracking-wide shadow-inner">
-    🎁 OFFERS: 10% OFF on orders > ₹299 | 30% OFF on orders > ₹999
-  </div>
 
-  <main class="max-w-md mx-auto p-4 space-y-4">
+  <main>
 
-    <!-- Resident Details Card -->
-    <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 space-y-3">
-      <h3 class="text-xs font-black uppercase tracking-wider text-amber-600">Resident Info</h3>
-      <div class="grid grid-cols-2 gap-3">
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+
+      <div class="container hero-grid">
+
         <div>
-          <label class="block text-xs font-bold text-slate-600 mb-1">Full Name *</label>
-          <input type="text" id="student-name" placeholder="e.g. Rahul" 
-                 class="w-full p-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-amber-500 focus:outline-none text-xs font-medium">
+
+          <div class="eyebrow">
+            Ayurvedic care · Delhi
+          </div>
+
+          <h1>
+            Care rooted in Ayurveda. Personalised for you.
+          </h1>
+
+          <p class="hero-copy">
+            Consultation-led care for women's health, skin concerns
+            and general wellness, with a thoughtful and patient-focused approach.
+          </p>
+
+          <div class="hero-actions">
+
+            <a class="btn btn-primary" href="#appointment">
+              Book a consultation ↗
+            </a>
+
+            <a class="btn btn-light" href="#consultations">
+              Explore consultations
+            </a>
+
+          </div>
+
+          <div class="hero-note">
+            <strong>₹500</strong>
+            <span>Consultation fee</span>
+            <span>·</span>
+            <span>5:30 PM – 8:00 PM</span>
+          </div>
+
         </div>
+
+
+        <div class="hero-art" aria-label="Decorative botanical illustration">
+
+          <div class="leaf"></div>
+          <div class="leaf two"></div>
+
+          <div class="art-card">
+
+            <small>
+              Private consultation practice
+            </small>
+
+            <strong>
+              Dr. Swati Ayurveda Clinic
+            </strong>
+
+            <span class="muted">
+              Delhi
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONSULTATIONS -->
+    <section class="section soft" id="consultations">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div>
+
+            <div class="eyebrow">
+              Areas of care
+            </div>
+
+            <h2>
+              Consultations designed around your needs.
+            </h2>
+
+          </div>
+
+          <p class="section-intro">
+            Explore the clinic's core consultation areas.
+            A consultation helps determine the appropriate next
+            steps for your individual concerns.
+          </p>
+
+        </div>
+
+
+        <div class="cards">
+
+          <article class="card">
+
+            <div class="card-number">
+              01 / AYURVEDA
+            </div>
+
+            <h3>
+              Ayurvedic consultation
+            </h3>
+
+            <p>
+              Personalised discussion of health concerns
+              and Ayurveda-led care planning.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <div class="card-number">
+              02 / WOMEN'S HEALTH
+            </div>
+
+            <h3>
+              Gynaecological care
+            </h3>
+
+            <p>
+              Consultation for women's health concerns,
+              with assessment and appropriate guidance.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <div class="card-number">
+              03 / SKIN
+            </div>
+
+            <h3>
+              Skin disorders
+            </h3>
+
+            <p>
+              Consultation for skin-related concerns
+              and individual care recommendations.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <div class="card-number">
+              04 / GENERAL
+            </div>
+
+            <h3>
+              General physician
+            </h3>
+
+            <p>
+              General health consultations and guidance
+              on when further medical evaluation is needed.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+
+      <div class="container about-grid">
+
+        <div
+          class="portrait"
+          role="img"
+          aria-label="Placeholder for Dr. Swati's professional portrait"
+        ></div>
+
+
+        <div class="about-copy">
+
+          <div class="eyebrow">
+            Meet your doctor
+          </div>
+
+          <h2>
+            A considered approach to everyday health.
+          </h2>
+
+          <p>
+            Dr. Swati Ayurveda Clinic brings together a calm
+            consultation experience and an individual-focused
+            approach to care.
+          </p>
+
+          <p>
+            The clinic offers Ayurvedic, gynaecological,
+            skin and general physician consultations in Delhi.
+          </p>
+
+          <p>
+            As the website develops, this section can be expanded
+            with Dr. Swati's verified professional background,
+            certifications, clinical experience and approach
+            to patient care.
+          </p>
+
+          <div class="credential">
+            BAMS · Ayurveda consultation
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- APPOINTMENT -->
+    <section class="section soft" id="appointment">
+
+      <div class="container booking-grid">
+
         <div>
-          <label class="block text-xs font-bold text-slate-600 mb-1">Room No. *</label>
-          <input type="text" id="room-number" placeholder="e.g. 204" 
-                 class="w-full p-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-amber-500 focus:outline-none text-xs font-medium">
-        </div>
-      </div>
-    </div>
 
-    <!-- Category Tabs Navigation -->
-    <div class="sticky top-16 z-20 bg-slate-100 py-1">
-      <div class="flex bg-white p-1 rounded-2xl shadow-sm border border-slate-200 gap-1 text-xs font-black">
-        <button onclick="switchTab('mains')" id="tab-mains" class="tab-btn flex-1 py-2 rounded-xl bg-amber-500 text-slate-950 transition">Mains</button>
-        <button onclick="switchTab('snacks')" id="tab-snacks" class="tab-btn flex-1 py-2 rounded-xl text-slate-500 hover:bg-slate-100 transition">Snacks</button>
-        <button onclick="switchTab('beverages')" id="tab-beverages" class="tab-btn flex-1 py-2 rounded-xl text-slate-500 hover:bg-slate-100 transition">Beverages</button>
-        <button onclick="switchTab('desserts')" id="tab-desserts" class="tab-btn flex-1 py-2 rounded-xl text-slate-500 hover:bg-slate-100 transition">Desserts</button>
-      </div>
-    </div>
-
-    <!-- Live Cart Quick Summary -->
-    <div id="cart-details-card" class="bg-white p-4 rounded-2xl shadow-sm border border-amber-300 space-y-3 hidden">
-      <div class="flex justify-between items-center border-b border-slate-200 pb-2">
-        <h3 class="text-xs font-black uppercase tracking-wider text-slate-900">Your Selected Items</h3>
-        <button onclick="clearCart()" class="text-[11px] font-bold text-red-500 hover:underline">Clear All</button>
-      </div>
-      <div id="cart-item-list" class="space-y-2 text-xs"></div>
-    </div>
-
-    <!-- TAB 1: MAINS -->
-    <section id="section-mains" class="menu-section space-y-3">
-      <!-- Pizza -->
-      <div class="bg-white p-3.5 rounded-2xl shadow-sm border border-slate-200 flex gap-3 items-center">
-        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=300&q=80" alt="Pizza" class="w-16 h-16 rounded-xl object-cover">
-        <div class="flex-1 space-y-1.5">
-          <div class="flex justify-between items-center">
-            <h3 class="font-bold text-sm text-slate-800">Pizza</h3>
-            <span class="text-[10px] bg-slate-100 text-slate-600 font-bold px-1.5 py-0.5 rounded">4 Slices</span>
+          <div class="eyebrow">
+            Appointments
           </div>
-          <div class="grid grid-cols-2 gap-1.5">
-            <button onclick="openCustomizationModal('Veg Pizza (4 slices)', 130, 'pizza')" class="bg-amber-50 border border-amber-300 hover:bg-amber-500 hover:text-slate-950 py-1 rounded-lg text-[10px] font-bold">+ Veg ₹130</button>
-            <button onclick="openCustomizationModal('Margherita Pizza (4 slices)', 150, 'pizza')" class="bg-amber-50 border border-amber-300 hover:bg-amber-500 hover:text-slate-950 py-1 rounded-lg text-[10px] font-bold">+ Margherita ₹150</button>
-            <button onclick="openCustomizationModal('Paneer Pizza (4 slices)', 160, 'pizza')" class="bg-amber-50 border border-amber-300 hover:bg-amber-500 hover:text-slate-950 py-1 rounded-lg text-[10px] font-bold">+ Paneer ₹160</button>
-            <button onclick="openCustomizationModal('Chicken Pizza (4 slices)', 180, 'pizza')" class="bg-amber-50 border border-amber-300 hover:bg-amber-500 hover:text-slate-950 py-1 rounded-lg text-[10px] font-bold">+ Chicken ₹180</button>
-          </div>
-        </div>
-      </div>
 
-      <!-- Grilled Sandwich -->
-      <div class="bg-white p-3.5 rounded-2xl shadow-sm border border-slate-200 flex gap-3 items-center">
-        <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=300&q=80" alt="Sandwich" class="w-16 h-16 rounded-xl object-cover">
-        <div class="flex-1 space-y-2">
-          <h3 class="font-bold text-sm text-slate-800">Grilled Sandwich</h3>
-          <div class="flex gap-1.5">
-            <button onclick="openCustomizationModal('Grilled Sandwich (Veg)', 60, 'sandwich')" class="flex-1 bg-amber-50 border border-amber-300 hover:bg-amber-500 hover:text-slate-950 py-1.5 rounded-lg text-[11px] font-bold">+ Veg ₹60</button>
-            <button onclick="openCustomizationModal('Grilled Sandwich (Paneer)', 80, 'sandwich')" class="flex-1 bg-amber-50 border border-amber-300 hover:bg-amber-500 hover:text-slate-950 py-1.5 rounded-lg text-[11px] font-bold">+ Paneer ₹80</button>
-            <button onclick="openCustomizationModal('Grilled Sandwich (Chicken)', 100, 'sandwich')" class="flex-1 bg-amber-50 border border-amber-300 hover:bg-amber-500 hover:text-slate-950 py-1.5 rounded-lg text-[11px] font-bold">+ Chk ₹100</button>
-          </div>
-        </div>
-      </div>
+          <h2>
+            Make time for your health.
+          </h2>
 
-      <!-- Kathi Roll -->
-      <div class="bg-white p-3.5 rounded-2xl shadow-sm border border-slate-200 flex gap-3 items-center">
-        <img src="kathi-roll.jpg" alt="Kathi Roll" class="w-16 h-16 rounded-xl object-cover">
-        <div class="flex-1 space-y-2">
-          <h3 class="font-bold text-sm text-slate-800">Kathi Roll</h3>
-          <div class="flex gap-1.5">
-            <button onclick="openCustomizationModal('Kathi Roll (Paneer)', 80, 'kathi')" class="flex-1 bg-amber-50 border border-amber-300 hover:bg-amber-500 hover:text-slate-950 py-1.5 rounded-lg text-[11px] font-bold">+ Paneer ₹80</button>
-            <button onclick="openCustomizationModal('Kathi Roll (Egg)', 100, 'kathi')" class="flex-1 bg-amber-50 border border-amber-300 hover:bg-amber-500 hover:text-slate-950 py-1.5 rounded-lg text-[11px] font-bold">+ Egg ₹100</button>
-            <button onclick="openCustomizationModal('Kathi Roll (Chicken)', 130, 'kathi')" class="flex-1 bg-amber-50 border border-amber-300 hover:bg-amber-500 hover:text-slate-950 py-1.5 rounded-lg text-[11px] font-bold">+ Chk ₹130</button>
-          </div>
-        </div>
-      </div>
+          <p class="muted">
+            Submit your preferred details below.
+            The clinic can confirm availability through
+            WhatsApp or phone once contact information is added.
+          </p>
 
-      <!-- Pasta -->
-      <div class="bg-white p-3.5 rounded-2xl shadow-sm border border-slate-200 flex gap-3 items-center">
-        <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=300&q=80" alt="Pasta" class="w-16 h-16 rounded-xl object-cover">
-        <div class="flex-1 space-y-1.5">
-          <h3 class="font-bold text-sm text-slate-800">Pasta</h3>
-          <div class="space-y-1.5">
-            <div class="flex gap-1.5">
-              <button onclick="openCustomizationModal('Veg Alfredo Pasta (White Sauce)', 100, 'pasta')" class="flex-1 bg-amber-50 border border-amber-300 hover:bg-amber-500 hover:text-slate-950 py-1.5 rounded-lg text-[10px] font-bold text-center">+ Veg Alfredo ₹100</button>
-              <button onclick="openCustomizationModal('Veg Arrabiata Pasta (Red Sauce)', 120, 'pasta')" class="flex-1 bg-amber-50 border border-amber-300 hover:bg-amber-500 hover:text-slate-950 py-1.5 rounded-lg text-[10px] font-bold text-center">+ Veg Arrabiata ₹120</button>
+          <div class="price">
+            ₹500
+          </div>
+
+          <p class="muted">
+            Consultation fee
+          </p>
+
+          <p>
+            <strong>Clinic hours</strong>
+            <br />
+            5:30 PM – 8:00 PM
+          </p>
+
+          <p class="muted" style="font-size:12px">
+            An appointment request is not a confirmed booking
+            until the clinic confirms the date and time.
+          </p>
+
+        </div>
+
+
+        <div class="booking-panel">
+
+          <form id="bookingForm">
+
+            <div class="form-grid">
+
+              <div class="field">
+
+                <label for="name">
+                  Full name *
+                </label>
+
+                <input
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Your name"
+                />
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="phone">
+                  Phone number *
+                </label>
+
+                <input
+                  id="phone"
+                  name="phone"
+                  required
+                  type="tel"
+                  placeholder="Your phone number"
+                />
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="date">
+                  Preferred date *
+                </label>
+
+                <input
+                  id="date"
+                  name="date"
+                  required
+                  type="date"
+                />
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="time">
+                  Preferred time *
+                </label>
+
+                <select id="time" name="time" required>
+
+                  <option value="">
+                    Select time
+                  </option>
+
+                  <option>5:30 PM</option>
+                  <option>6:00 PM</option>
+                  <option>6:30 PM</option>
+                  <option>7:00 PM</option>
+                  <option>7:30 PM</option>
+
+                </select>
+
+              </div>
+
+
+              <div class="field full">
+
+                <label for="service">
+                  Consultation type *
+                </label>
+
+                <select id="service" name="service" required>
+
+                  <option value="">
+                    Choose a consultation
+                  </option>
+
+                  <option>
+                    Ayurvedic consultation
+                  </option>
+
+                  <option>
+                    Gynaecological consultation
+                  </option>
+
+                  <option>
+                    General physician consultation
+                  </option>
+
+                  <option>
+                    Skin disorders
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <div class="field full">
+
+                <label for="message">
+                  Additional note (optional)
+                </label>
+
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Brief appointment note. Please do not include sensitive medical history here."
+                ></textarea>
+
+              </div>
+
             </div>
-            <div class="flex gap-1.5">
-              <button onclick="openCustomizationModal('Chicken Alfredo Pasta (White Sauce)', 130, 'pasta')" class="flex-1 bg-amber-50 border border-amber-300 hover:bg-amber-500 hover:text-slate-950 py-1.5 rounded-lg text-[10px] font-bold text-center">+ Chk Alfredo ₹130</button>
-              <button onclick="openCustomizationModal('Chicken Arrabiata Pasta (Red Sauce)', 150, 'pasta')" class="flex-1 bg-amber-50 border border-amber-300 hover:bg-amber-500 hover:text-slate-950 py-1.5 rounded-lg text-[10px] font-bold text-center">+ Chk Arrabiata ₹150</button>
+
+
+            <div class="form-foot">
+
+              <button class="btn btn-primary" type="submit">
+                Continue to WhatsApp ↗
+              </button>
+
+              <a
+                class="btn btn-light"
+                href="mailto:ADD-CLINIC-EMAIL-HERE"
+              >
+                Email
+              </a>
+
             </div>
-          </div>
+
+
+            <p class="form-note">
+              Add the clinic WhatsApp number in the script
+              below before launching the booking feature.
+              This form does not store patient information
+              on a server.
+            </p>
+
+          </form>
+
         </div>
+
       </div>
 
-      <!-- Biryani -->
-      <div class="bg-white p-3.5 rounded-2xl shadow-sm border border-slate-200 flex gap-3 items-center">
-        <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=300&q=80" alt="Biryani" class="w-16 h-16 rounded-xl object-cover">
-        <div class="flex-1 space-y-1.5">
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+
+      <div class="container">
+
+        <div class="section-head">
+
           <div>
-            <h3 class="font-bold text-sm text-slate-800">Biryani</h3>
-            <p class="text-[11px] text-amber-700 font-medium italic">Served with mint chutney and raita</p>
-          </div>
-          <div class="flex gap-1.5 pt-0.5">
-            <button onclick="addDirectItem('Biryani (Veg)', 100)" class="flex-1 bg-amber-50 border border-amber-300 hover:bg-amber-500 hover:text-slate-950 py-1.5 rounded-lg text-[11px] font-bold">+ Veg ₹100</button>
-            <button onclick="addDirectItem('Biryani (Egg)', 130)" class="flex-1 bg-amber-50 border border-amber-300 hover:bg-amber-500 hover:text-slate-950 py-1.5 rounded-lg text-[11px] font-bold">+ Egg ₹130</button>
-            <button onclick="addDirectItem('Biryani (Chicken)', 150)" class="flex-1 bg-amber-50 border border-amber-300 hover:bg-amber-500 hover:text-slate-950 py-1.5 rounded-lg text-[11px] font-bold">+ Chk ₹150</button>
-          </div>
-        </div>
-      </div>
 
-      <!-- Chilli Specials -->
-      <div class="bg-white p-3.5 rounded-2xl shadow-sm border border-slate-200 flex gap-3 items-center">
-        <img src="chilli-specials.jpg" alt="Chilli Specials" class="w-16 h-16 rounded-xl object-cover">
-        <div class="flex-1 space-y-2">
-          <h3 class="font-bold text-sm text-slate-800">Chilli Specials (Dry/Gravy)</h3>
-          <div class="flex justify-between items-center text-xs">
-            <span class="font-semibold text-slate-700">Paneer (₹180)</span>
-            <div class="flex gap-1">
-              <button onclick="addDirectItem('Chilli Paneer (Dry)', 180)" class="bg-amber-50 border border-amber-300 hover:bg-amber-500 px-2.5 py-0.5 rounded text-[10px] font-bold">+ Dry</button>
-              <button onclick="addDirectItem('Chilli Paneer (Gravy)', 180)" class="bg-amber-50 border border-amber-300 hover:bg-amber-500 px-2.5 py-0.5 rounded text-[10px] font-bold">+ Gravy</button>
+            <div class="eyebrow">
+              Visit the clinic
             </div>
+
+            <h2>
+              Simple access. Thoughtful care.
+            </h2>
+
           </div>
-          <div class="flex justify-between items-center text-xs">
-            <span class="font-semibold text-slate-700">Mushroom (₹200)</span>
-            <div class="flex gap-1">
-              <button onclick="addDirectItem('Chilli Mushroom (Dry)', 200)" class="bg-amber-50 border border-amber-300 hover:bg-amber-500 px-2.5 py-0.5 rounded text-[10px] font-bold">+ Dry</button>
-              <button onclick="addDirectItem('Chilli Mushroom (Gravy)', 200)" class="bg-amber-50 border border-amber-300 hover:bg-amber-500 px-2.5 py-0.5 rounded text-[10px] font-bold">+ Gravy</button>
-            </div>
-          </div>
-          <div class="flex justify-between items-center text-xs">
-            <span class="font-semibold text-slate-700">Chicken (₹220)</span>
-            <div class="flex gap-1">
-              <button onclick="addDirectItem('Chilli Chicken (Dry)', 220)" class="bg-amber-50 border border-amber-300 hover:bg-amber-500 px-2.5 py-0.5 rounded text-[10px] font-bold">+ Dry</button>
-              <button onclick="addDirectItem('Chilli Chicken (Gravy)', 220)" class="bg-amber-50 border border-amber-300 hover:bg-amber-500 px-2.5 py-0.5 rounded text-[10px] font-bold">+ Gravy</button>
-            </div>
-          </div>
+
+          <p class="section-intro">
+            Add the final clinic address and contact details
+            before publishing this section.
+          </p>
+
         </div>
+
+
+        <div class="contact-grid">
+
+          <div class="contact-item">
+
+            <span>
+              Location
+            </span>
+
+            <strong>
+              Delhi
+            </strong>
+
+            <p class="muted">
+              Full address to be added
+            </p>
+
+          </div>
+
+
+          <div class="contact-item">
+
+            <span>
+              Clinic hours
+            </span>
+
+            <strong>
+              5:30 PM – 8:00 PM
+            </strong>
+
+            <p class="muted">
+              Confirm operating days before launch
+            </p>
+
+          </div>
+
+
+          <div class="contact-item">
+
+            <span>
+              Appointments
+            </span>
+
+            <strong>
+              WhatsApp + online request
+            </strong>
+
+            <p class="muted">
+              Contact number to be added
+            </p>
+
+          </div>
+
+        </div>
+
       </div>
 
-      <!-- Noodles -->
-      <div class="bg-white p-3.5 rounded-2xl shadow-sm border border-slate-200 flex gap-3 items-center">
-        <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=300&q=80" alt="Noodles" class="w-16 h-16 rounded-xl object-cover">
-        <div class="flex-1 space-y-2">
-          <h3 class="font-bold text-sm text-slate-800">Noodles</h3>
-          <div class="flex gap-1.5">
-            <button onclick="addDirectItem('Noodles (Veg)', 70)" class="flex-1 bg-amber-50 border border-amber-300 hover:bg-amber-500 py-1.5 rounded-lg text-[11px] font-bold">+ Veg ₹70</button>
-            <button onclick="addDirectItem('Noodles (Egg)', 90)" class="flex-1 bg-amber-50 border border-amber-300 hover:bg-amber-500 py-1.5 rounded-lg text-[11px] font-bold">+ Egg ₹90</button>
-            <button onclick="addDirectItem('Noodles (Chicken)', 120)" class="flex-1 bg-amber-50 border border-amber-300 hover:bg-amber-500 py-1.5 rounded-lg text-[11px] font-bold">+ Chk ₹120</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Fried Rice -->
-      <div class="bg-white p-3.5 rounded-2xl shadow-sm border border-slate-200 flex gap-3 items-center">
-        <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=300&q=80" alt="Fried Rice" class="w-16 h-16 rounded-xl object-cover">
-        <div class="flex-1 space-y-2">
-          <h3 class="font-bold text-sm text-slate-800">Fried Rice</h3>
-          <div class="flex gap-1.5">
-            <button onclick="addDirectItem('Fried Rice (Veg)', 80)" class="flex-1 bg-amber-50 border border-amber-300 hover:bg-amber-500 py-1.5 rounded-lg text-[11px] font-bold">+ Veg ₹80</button>
-            <button onclick="addDirectItem('Fried Rice (Egg)', 100)" class="flex-1 bg-amber-50 border border-amber-300 hover:bg-amber-500 py-1.5 rounded-lg text-[11px] font-bold">+ Egg ₹100</button>
-            <button onclick="addDirectItem('Fried Rice (Chicken)', 130)" class="flex-1 bg-amber-50 border border-amber-300 hover:bg-amber-500 py-1.5 rounded-lg text-[11px] font-bold">+ Chk ₹130</button>
-          </div>
-        </div>
-      </div>
     </section>
-
-    <!-- TAB 2: SNACKS -->
-    <section id="section-snacks" class="menu-section space-y-3 hidden">
-      <!-- Samosa -->
-      <div class="bg-white p-3.5 rounded-2xl shadow-sm border border-slate-200 flex gap-3 items-center">
-        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=300&q=80" alt="Samosa" class="w-16 h-16 rounded-xl object-cover">
-        <div class="flex-1 flex justify-between items-center">
-          <div>
-            <h3 class="font-bold text-sm text-slate-800">Crispy Samosa</h3>
-            <p class="text-[11px] text-slate-400">2 pcs with chutney</p>
-          </div>
-          <button onclick="addDirectItem('Samosa (2 pcs)', 40)" class="bg-amber-50 border border-amber-300 hover:bg-amber-500 px-4 py-1.5 rounded-lg text-xs font-bold">+ ₹40</button>
-        </div>
-      </div>
-
-      <!-- Spring Roll -->
-      <div class="bg-white p-3.5 rounded-2xl shadow-sm border border-slate-200 flex gap-3 items-center">
-        <img src="spring-roll.jpg" alt="Spring Roll" class="w-16 h-16 rounded-xl object-cover">
-        <div class="flex-1 flex justify-between items-center">
-          <h3 class="font-bold text-sm text-slate-800">Spring Roll</h3>
-          <button onclick="addDirectItem('Spring Roll', 80)" class="bg-amber-50 border border-amber-300 hover:bg-amber-500 px-4 py-1.5 rounded-lg text-xs font-bold">+ ₹80</button>
-        </div>
-      </div>
-
-      <!-- Dahi Ke Sholey -->
-      <div class="bg-white p-3.5 rounded-2xl shadow-sm border border-slate-200 flex gap-3 items-center">
-        <img src="dahi-sholey.jpg" alt="Dahi Ke Sholey" class="w-16 h-16 rounded-xl object-cover">
-        <div class="flex-1 flex justify-between items-center">
-          <h3 class="font-bold text-sm text-slate-800">Dahi Ke Sholey</h3>
-          <button onclick="addDirectItem('Dahi Ke Sholey', 120)" class="bg-amber-50 border border-amber-300 hover:bg-amber-500 px-4 py-1.5 rounded-lg text-xs font-bold">+ ₹120</button>
-        </div>
-      </div>
-
-      <!-- French Fries -->
-      <div class="bg-white p-3.5 rounded-2xl shadow-sm border border-slate-200 flex gap-3 items-center">
-        <img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=300&q=80" alt="Fries" class="w-16 h-16 rounded-xl object-cover">
-        <div class="flex-1 space-y-2">
-          <h3 class="font-bold text-sm text-slate-800">French Fries</h3>
-          <div class="flex gap-1.5">
-            <button onclick="addDirectItem('French Fries (Salted)', 80)" class="flex-1 bg-amber-50 border border-amber-300 hover:bg-amber-500 py-1.5 rounded-lg text-xs font-bold">+ Salted ₹80</button>
-            <button onclick="addDirectItem('French Fries (Peri Peri)', 100)" class="flex-1 bg-amber-50 border border-amber-300 hover:bg-amber-500 py-1.5 rounded-lg text-xs font-bold">+ Peri Peri ₹100</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Momos -->
-      <div class="bg-white p-3.5 rounded-2xl shadow-sm border border-slate-200 flex gap-3 items-center">
-        <img src="https://images.unsplash.com/photo-1625220194771-7ebdea0b70b9?auto=format&fit=crop&w=300&q=80" alt="Momos" class="w-16 h-16 rounded-xl object-cover">
-        <div class="flex-1 space-y-2">
-          <h3 class="font-bold text-sm text-slate-800">Momos</h3>
-          <div class="flex gap-1.5">
-            <button onclick="addDirectItem('Momos (Veg)', 80)" class="flex-1 bg-amber-50 border border-amber-300 hover:bg-amber-500 py-1.5 rounded-lg text-xs font-bold">+ Veg ₹80</button>
-            <button onclick="addDirectItem('Momos (Paneer)', 100)" class="flex-1 bg-amber-50 border border-amber-300 hover:bg-amber-500 py-1.5 rounded-lg text-xs font-bold">+ Paneer ₹100</button>
-            <button onclick="addDirectItem('Momos (Chicken)', 120)" class="flex-1 bg-amber-50 border border-amber-300 hover:bg-amber-500 py-1.5 rounded-lg text-xs font-bold">+ Chk ₹120</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Maggie -->
-      <div class="bg-white p-3.5 rounded-2xl shadow-sm border border-slate-200 flex gap-3 items-center">
-        <img src="maggie.jpg" alt="Maggie" class="w-16 h-16 rounded-xl object-cover">
-        <div class="flex-1 space-y-2">
-          <h3 class="font-bold text-sm text-slate-800">Maggie</h3>
-          <div class="flex gap-1.5">
-            <button onclick="addDirectItem('Maggie (Plain)', 40)" class="flex-1 bg-amber-50 border border-amber-300 hover:bg-amber-500 py-1.5 rounded-lg text-xs font-bold">+ Plain ₹40</button>
-            <button onclick="addDirectItem('Maggie (Veg)', 60)" class="flex-1 bg-amber-50 border border-amber-300 hover:bg-amber-500 py-1.5 rounded-lg text-xs font-bold">+ Veg ₹60</button>
-            <button onclick="addDirectItem('Maggie (Egg)', 80)" class="flex-1 bg-amber-50 border border-amber-300 hover:bg-amber-500 py-1.5 rounded-lg text-xs font-bold">+ Egg ₹80</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Egg & Bread -->
-      <div class="bg-white p-3.5 rounded-2xl shadow-sm border border-slate-200 space-y-2">
-        <div class="flex justify-between items-center">
-          <span class="font-bold text-xs text-slate-800">Egg (2 pcs)</span>
-          <div class="flex gap-1.5">
-            <button onclick="addDirectItem('Egg Boiled (2 pcs)', 40)" class="bg-amber-50 border border-amber-300 hover:bg-amber-500 px-3 py-1 rounded-lg text-xs font-bold">+ Boiled ₹40</button>
-            <button onclick="addDirectItem('Egg Omelette (2 pcs)', 50)" class="bg-amber-50 border border-amber-300 hover:bg-amber-500 px-3 py-1 rounded-lg text-xs font-bold">+ Omelette ₹50</button>
-          </div>
-        </div>
-        <div class="flex justify-between items-center pt-1 border-t border-slate-100">
-          <span class="font-bold text-xs text-slate-800">Bread (4 pcs)</span>
-          <div class="flex gap-1.5">
-            <button onclick="addDirectItem('Bread Plain (4 pcs)', 20)" class="bg-amber-50 border border-amber-300 hover:bg-amber-500 px-3 py-1 rounded-lg text-xs font-bold">+ Plain ₹20</button>
-            <button onclick="addDirectItem('Bread Butter Toasted (4 pcs)', 40)" class="bg-amber-50 border border-amber-300 hover:bg-amber-500 px-3 py-1 rounded-lg text-xs font-bold">+ Toasted ₹40</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TAB 3: BEVERAGES -->
-    <section id="section-beverages" class="menu-section space-y-3 hidden">
-      <!-- Chai -->
-      <div class="bg-white p-3.5 rounded-2xl shadow-sm border border-slate-200 flex gap-3 items-center">
-        <img src="chai.jpg" alt="Chai" class="w-16 h-16 rounded-xl object-cover">
-        <div class="flex-1 flex justify-between items-center">
-          <div>
-            <h3 class="font-bold text-sm text-slate-800">Chai (Medium Cup)</h3>
-            <p class="text-[11px] text-slate-400">Plain, Elaichi, Ginger, Masala</p>
-          </div>
-          <button onclick="openCustomizationModal('Chai (Medium Cup)', 50, 'chai')" class="bg-amber-50 border border-amber-300 hover:bg-amber-500 px-4 py-1.5 rounded-lg text-xs font-bold">+ ₹50</button>
-        </div>
-      </div>
-
-      <!-- Coffee -->
-      <div class="bg-white p-3.5 rounded-2xl shadow-sm border border-slate-200 flex gap-3 items-center">
-        <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=300&q=80" alt="Coffee" class="w-16 h-16 rounded-xl object-cover">
-        <div class="flex-1 space-y-2">
-          <h3 class="font-bold text-sm text-slate-800">Coffee</h3>
-          <div class="flex gap-1.5">
-            <button onclick="addDirectItem('Coffee (Hot)', 80)" class="flex-1 bg-amber-50 border border-amber-300 hover:bg-amber-500 px-3 py-1.5 rounded-lg text-xs font-bold">+ Hot ₹80</button>
-            <button onclick="addDirectItem('Coffee (Cold)', 100)" class="flex-1 bg-amber-50 border border-amber-300 hover:bg-amber-500 px-3 py-1.5 rounded-lg text-xs font-bold">+ Cold ₹100</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Oreo Shake -->
-      <div class="bg-white p-3.5 rounded-2xl shadow-sm border border-slate-200 flex gap-3 items-center">
-        <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=300&q=80" alt="Oreo Shake" class="w-16 h-16 rounded-xl object-cover">
-        <div class="flex-1 flex justify-between items-center">
-          <h3 class="font-bold text-sm text-slate-800">Oreo Shake</h3>
-          <button onclick="addDirectItem('Oreo Shake', 100)" class="bg-amber-50 border border-amber-300 hover:bg-amber-500 px-4 py-1.5 rounded-lg text-xs font-bold">+ ₹100</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- TAB 4: DESSERTS -->
-    <section id="section-desserts" class="menu-section space-y-3 hidden">
-      <!-- Pancakes -->
-      <div class="bg-white p-3.5 rounded-2xl shadow-sm border border-slate-200 flex gap-3 items-center">
-        <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=300&q=80" alt="Pancake" class="w-16 h-16 rounded-xl object-cover">
-        <div class="flex-1 space-y-1.5">
-          <h3 class="font-bold text-sm text-slate-800">Pancakes</h3>
-          <div class="grid grid-cols-2 gap-1.5">
-            <button onclick="addDirectItem('Pancake (Plain)', 50)" class="bg-amber-50 border border-amber-300 hover:bg-amber-500 py-1 rounded-lg text-[10px] font-bold">+ Plain ₹50</button>
-            <button onclick="addDirectItem('Pancake (+ Choco Sauce)', 60)" class="bg-amber-50 border border-amber-300 hover:bg-amber-500 py-1 rounded-lg text-[10px] font-bold">+ Choco ₹60</button>
-            <button onclick="addDirectItem('Pancake (+ Ice Cream)', 70)" class="bg-amber-50 border border-amber-300 hover:bg-amber-500 py-1 rounded-lg text-[10px] font-bold">+ Ice Cream ₹70</button>
-            <button onclick="addDirectItem('Pancake (+ Ice Cream & Choco)', 80)" class="bg-amber-50 border border-amber-300 hover:bg-amber-500 py-1 rounded-lg text-[10px] font-bold">+ Combo ₹80</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Fruit Custard -->
-      <div class="bg-white p-3.5 rounded-2xl shadow-sm border border-slate-200 flex gap-3 items-center">
-        <img src="fruit-custard.jpg" alt="Fruit Custard" class="w-16 h-16 rounded-xl object-cover">
-        <div class="flex-1 flex justify-between items-center">
-          <h3 class="font-bold text-sm text-slate-800">Fruit Custard</h3>
-          <button onclick="addDirectItem('Fruit Custard', 70)" class="bg-amber-50 border border-amber-300 hover:bg-amber-500 px-4 py-1.5 rounded-lg text-xs font-bold">+ ₹70</button>
-        </div>
-      </div>
-
-      <!-- Halwa -->
-      <div class="bg-white p-3.5 rounded-2xl shadow-sm border border-slate-200 flex gap-3 items-center">
-        <img src="halwa.jpg" alt="Halwa" class="w-16 h-16 rounded-xl object-cover">
-        <div class="flex-1 flex justify-between items-center">
-          <h3 class="font-bold text-sm text-slate-800">Halwa</h3>
-          <button onclick="addDirectItem('Halwa', 60)" class="bg-amber-50 border border-amber-300 hover:bg-amber-500 px-4 py-1.5 rounded-lg text-xs font-bold">+ ₹60</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Special Instructions Input -->
-    <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200">
-      <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Special Instructions for Chef</label>
-      <input type="text" id="special-instructions" placeholder="e.g., Less spicy, no onions, extra green chutney" 
-             class="w-full p-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-amber-500 focus:outline-none text-xs">
-    </div>
 
   </main>
 
-  <!-- ITEM-SPECIFIC CUSTOMIZATION MODAL -->
-  <div id="custom-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
-    <div class="bg-white w-full max-w-sm rounded-3xl p-5 space-y-4 shadow-2xl relative">
-      <button onclick="closeCustomizationModal()" class="absolute top-4 right-4 text-slate-400 text-xl font-bold">✕</button>
 
-      <div class="border-b border-slate-100 pb-2">
-        <h3 class="font-black text-slate-900 text-base" id="custom-item-name">Dish Name</h3>
-        <p class="text-xs text-slate-400 font-medium">Base Price: <span id="custom-base-price" class="font-bold text-amber-600">₹0</span></p>
-      </div>
+  <!-- FOOTER -->
+  <footer>
 
-      <div class="space-y-2.5">
-        <p class="text-xs font-bold uppercase tracking-wider text-slate-600">Choose Customization / Add-Ons:</p>
-        <div id="custom-options-container" class="space-y-2 text-xs"></div>
-      </div>
-
-      <!-- Single Primary Action Button -->
-      <div class="pt-2">
-        <button onclick="confirmCustomization()" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-black py-3 rounded-xl text-xs transition shadow-md">
-          Add to Cart
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Sticky Bottom Checkout Bar -->
-  <div id="cart-bar" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl hidden z-30">
-    <div class="max-w-md mx-auto flex justify-between items-center">
-      <div>
-        <p class="text-xs text-slate-400" id="cart-summary">0 items selected</p>
-        <p class="text-xs text-emerald-400 font-bold" id="discount-label"></p>
-        <p class="text-xl font-black text-amber-400" id="cart-final-total">₹0</p>
-      </div>
-      <button onclick="openBillModal()" 
-              class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-black px-6 py-3 rounded-xl text-sm transition shadow-lg">
-        Review Bill & Pay
-      </button>
-    </div>
-  </div>
-
-  <!-- STEP 1: BILL SUMMARY MODAL -->
-  <div id="bill-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
-    <div class="bg-white w-full max-w-sm rounded-3xl p-5 space-y-4 shadow-2xl relative">
-      <button onclick="closeBillModal()" class="absolute top-4 right-4 text-slate-400 text-xl font-bold">✕</button>
-
-      <div class="border-b border-slate-200 pb-3 text-center">
-        <h3 class="font-black text-slate-900 text-base">Order Summary & Bill</h3>
-        <p class="text-xs text-slate-400 font-medium">Eko Kitchen Co.</p>
-      </div>
-
-      <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs space-y-1">
-        <div class="flex justify-between">
-          <span class="text-slate-500 font-bold">Resident:</span>
-          <span id="bill-student-name" class="font-black text-slate-800"></span>
-        </div>
-        <div class="flex justify-between">
-          <span class="text-slate-500 font-bold">Room Number:</span>
-          <span id="bill-room-number" class="font-black text-amber-600"></span>
-        </div>
-      </div>
-
-      <div class="space-y-2 max-h-48 overflow-y-auto pr-1">
-        <p class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Items Ordered</p>
-        <div id="bill-items-container" class="space-y-1.5 text-xs"></div>
-      </div>
-
-      <div class="border-t border-slate-200 pt-3 space-y-1 text-xs">
-        <div class="flex justify-between text-slate-600">
-          <span>Subtotal:</span>
-          <span id="bill-subtotal" class="font-bold">₹0</span>
-        </div>
-        <div id="bill-discount-row" class="flex justify-between text-emerald-600 hidden">
-          <span id="bill-discount-text">Discount:</span>
-          <span id="bill-discount-val" class="font-bold">-₹0</span>
-        </div>
-        <div class="flex justify-between text-base font-black text-slate-900 border-t border-dashed border-slate-300 pt-2">
-          <span>Total Amount:</span>
-          <span id="bill-grand-total" class="text-amber-600 font-black">₹0</span>
-        </div>
-      </div>
-
-      <button onclick="goToPaymentModal()" 
-              class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-black py-3 rounded-xl text-sm transition shadow-lg flex items-center justify-center gap-2">
-        <span>Proceed to Payment →</span>
-      </button>
-    </div>
-  </div>
-
-  <!-- STEP 2: PAYMENT & VERIFICATION MODAL -->
-  <div id="payment-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
-    <div class="bg-white w-full max-w-sm rounded-3xl p-5 text-center space-y-3.5 shadow-2xl relative">
-      <button onclick="closePaymentModal()" class="absolute top-4 right-4 text-slate-400 text-xl font-bold">✕</button>
+    <div class="container footer-inner">
 
       <div>
-        <h3 class="font-black text-slate-900 text-base">Pay via Any UPI App</h3>
-        <p class="text-xs text-slate-500">Pay Exact Amount: <span id="modal-pay-amount" class="font-black text-amber-600 text-base">₹0</span></p>
+
+        <strong>
+          Dr. Swati Ayurveda Clinic
+        </strong>
+
+        <br />
+
+        <small>
+          Ayurvedic care in Delhi
+        </small>
+
       </div>
 
-      <!-- Real-Time Auto-Generated Dynamic Amount QR Code -->
-      <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200 flex flex-col items-center">
-        <div id="dynamic-qr-container" class="bg-white p-2 rounded-xl border border-slate-200 shadow-sm"></div>
-        <p class="text-[10px] font-extrabold text-slate-500 mt-2">Take screenshot & scan in GPay / PhonePe / Paytm</p>
-      </div>
+      <small>
+        © <span id="year"></span>
+        Dr. Swati Ayurveda Clinic.
+        All rights reserved.
+      </small>
 
-      <!-- Android Direct Intent Launcher (Only shown on Android) -->
-      <div id="android-intent-box" class="hidden">
-        <a id="btn-android-upi" href="#" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-black py-2.5 px-4 rounded-xl text-xs transition shadow-md flex items-center justify-center gap-2">
-          <span>🚀 Open UPI App on this Phone</span>
-        </a>
-      </div>
-
-      <!-- Instant Copy UPI ID Helper -->
-      <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200 flex justify-between items-center text-xs">
-        <div class="text-left">
-          <p class="text-[9px] text-slate-400 font-bold uppercase">UPI ID</p>
-          <p class="font-black text-slate-800 text-[11px]">paytm.s1n4ilc@pty</p>
-        </div>
-        <button id="copy-vpa-btn" onclick="copyUPIId()" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-black px-3.5 py-1.5 rounded-lg text-[10px] transition shadow-sm">
-          📋 Copy UPI ID
-        </button>
-      </div>
-
-      <!-- Screenshot Requirement Warning Box -->
-      <div class="bg-red-50 p-2.5 rounded-xl border border-red-200 text-left flex items-start gap-2">
-        <span class="text-red-600 text-sm font-bold">⚠️</span>
-        <p class="text-[11px] text-red-900 font-bold leading-tight">
-          Important: The kitchen will not begin preparing your food until the payment screenshot is shared in the chat.
-        </p>
-      </div>
-
-      <!-- Confirmation Checkbox -->
-      <div class="bg-amber-50/80 p-2.5 rounded-xl border border-amber-200 text-left flex items-start gap-2.5">
-        <input type="checkbox" id="payment-checkbox" onchange="toggleOrderButton()" 
-               class="mt-0.5 w-4 h-4 text-emerald-600 bg-white border-slate-300 rounded focus:ring-emerald-500 cursor-pointer">
-        <label for="payment-checkbox" class="text-[11px] text-amber-950 font-medium cursor-pointer leading-tight">
-          I have completed payment of <span id="checkbox-pay-amount" class="font-black text-emerald-700">₹0</span> and will share the receipt screenshot now.
-        </label>
-      </div>
-
-      <!-- Send Order Button -->
-      <button id="send-whatsapp-btn" onclick="sendWhatsAppOrder()" disabled
-              class="w-full bg-slate-300 text-slate-500 font-black py-3 rounded-xl text-sm transition shadow-md flex items-center justify-center gap-2 cursor-not-allowed">
-        <span>📸 Share Screenshot & Confirm Order</span>
-      </button>
     </div>
-  </div>
 
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
   <script>
-    let cart = {};
-    let currentCustomItem = { name: '', price: 0, type: '' };
 
-    const UPI_ID = "paytm.s1n4ilc@pty";
-    const PAYEE_NAME = "Eko Kitchen Co";
+    /*
+      IMPORTANT:
+      Replace the placeholder below with the clinic's
+      WhatsApp number in international format.
 
-    const customConfig = {
-      pizza: [
-        { label: 'Extra Veggies', price: 30 },
-        { label: 'Extra Paneer', price: 30 },
-        { label: 'Extra Cheese', price: 30 },
-        { label: 'Extra Chicken', price: 30 }
-      ],
-      sandwich: [
-        { label: 'Extra Cheese', price: 30 }
-      ],
-      kathi: [
-        { label: 'Extra Egg (1)', price: 30 }
-      ],
-      pasta: [
-        { label: 'Extra Veggies', price: 30 }
-      ],
-      chai: [
-        { label: 'Elaichi', price: 10 },
-        { label: 'Ginger', price: 10 },
-        { label: 'Masala', price: 10 }
-      ]
-    };
+      Example:
+      const WHATSAPP_NUMBER = '919876543210';
 
-    function switchTab(category) {
-      document.querySelectorAll('.menu-section').forEach(el => el.classList.add('hidden'));
-      document.getElementById(`section-${category}`).classList.remove('hidden');
+      Do not include +, spaces, or hyphens.
+    */
 
-      document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.classList.remove('bg-amber-500', 'text-slate-950');
-        btn.classList.add('text-slate-500');
-      });
+    const WHATSAPP_NUMBER = 'ADD-WHATSAPP-NUMBER-HERE';
 
-      const activeBtn = document.getElementById(`tab-${category}`);
-      activeBtn.classList.add('bg-amber-500', 'text-slate-950');
-      activeBtn.classList.remove('text-slate-500');
-    }
 
-    function openCustomizationModal(name, basePrice, type) {
-      currentCustomItem = { name: name, price: basePrice, type: type };
-      document.getElementById('custom-item-name').innerText = name;
-      document.getElementById('custom-base-price').innerText = `₹${basePrice}`;
-      
-      const options = customConfig[type] || [];
-      const container = document.getElementById('custom-options-container');
-      
-      // Default checked 'Classic / No Extras'
-      let html = `
-        <label class="flex items-center justify-between p-2.5 bg-slate-50 rounded-xl border border-slate-200 cursor-pointer hover:bg-amber-50/50">
-          <span class="font-bold text-slate-800 flex items-center gap-2">
-            <input type="radio" name="modal-addon" data-label="" data-price="0" checked class="addon-radio w-4 h-4 text-amber-500 focus:ring-amber-400">
-            Classic / No Extras
-          </span>
-          <span class="font-bold text-slate-400">+₹0</span>
-        </label>
-      `;
+    // Dynamic copyright year
 
-      html += options.map(opt => `
-        <label class="flex items-center justify-between p-2.5 bg-slate-50 rounded-xl border border-slate-200 cursor-pointer hover:bg-amber-50/50">
-          <span class="font-bold text-slate-800 flex items-center gap-2">
-            <input type="radio" name="modal-addon" data-label="${opt.label}" data-price="${opt.price}" class="addon-radio w-4 h-4 text-amber-500 focus:ring-amber-400">
-            ${opt.label}
-          </span>
-          <span class="font-bold text-slate-600">+₹${opt.price}</span>
-        </label>
-      `).join('');
+    document.getElementById('year').textContent =
+      new Date().getFullYear();
 
-      container.innerHTML = html;
-      document.getElementById('custom-modal').classList.remove('hidden');
-    }
 
-    function closeCustomizationModal() {
-      document.getElementById('custom-modal').classList.add('hidden');
-    }
+    // Prevent selecting past appointment dates
 
-    function confirmCustomization() {
-      let finalName = currentCustomItem.name;
-      let finalPrice = currentCustomItem.price;
+    const dateInput = document.getElementById('date');
 
-      const selected = document.querySelector('input[name="modal-addon"]:checked');
-      if (selected) {
-        const extraLabel = selected.getAttribute('data-label');
-        const extraPrice = parseInt(selected.getAttribute('data-price'), 10);
+    const today = new Date();
 
-        if (extraLabel && extraPrice > 0) {
-          finalName = `${currentCustomItem.name} (+ ${extraLabel})`;
-          finalPrice += extraPrice;
+    const localDate = new Date(
+      today.getTime() - today.getTimezoneOffset() * 60000
+    )
+      .toISOString()
+      .split('T')[0];
+
+    dateInput.min = localDate;
+
+
+    // Appointment form submission
+
+    document
+      .getElementById('bookingForm')
+      .addEventListener('submit', function (event) {
+
+        event.preventDefault();
+
+
+        // Check if WhatsApp number has been configured
+
+        if (
+          WHATSAPP_NUMBER.includes('ADD-') ||
+          !WHATSAPP_NUMBER
+        ) {
+
+          alert(
+            'Please add the clinic WhatsApp number in the script before using appointment booking.'
+          );
+
+          return;
+
         }
-      }
 
-      addDirectItem(finalName, finalPrice);
-      closeCustomizationModal();
-    }
 
-    function addDirectItem(name, price) {
-      if (!cart[name]) {
-        cart[name] = { price: price, qty: 0 };
-      }
-      cart[name].qty += 1;
-      updateCartUI();
-    }
+        const data = new FormData(event.target);
 
-    function changeQty(name, delta) {
-      if (cart[name]) {
-        cart[name].qty += delta;
-        if (cart[name].qty <= 0) {
-          delete cart[name];
-        }
-      }
-      updateCartUI();
-    }
 
-    function clearCart() {
-      cart = {};
-      updateCartUI();
-    }
+        const message = [
 
-    function getTotalItemCount() {
-      return Object.values(cart).reduce((sum, item) => sum + item.qty, 0);
-    }
+          'Hello Dr. Swati Ayurveda Clinic,',
 
-    function calculateTotal() {
-      let subtotal = Object.values(cart).reduce((sum, item) => sum + (item.price * item.qty), 0);
-      let discount = 0;
-      let discountText = "";
+          '',
 
-      if (subtotal > 999) {
-        discount = subtotal * 0.30;
-        discountText = "30% Discount Applied!";
-      } else if (subtotal > 299) {
-        discount = subtotal * 0.10;
-        discountText = "10% Discount Applied!";
-      }
+          'I would like to request a consultation appointment.',
 
-      let finalTotal = subtotal - discount;
-      return { subtotal, discount, finalTotal, discountText };
-    }
+          'Name: ' + data.get('name'),
 
-    function updateCartUI() {
-      const cartBar = document.getElementById('cart-bar');
-      const cartCard = document.getElementById('cart-details-card');
-      const cartItemList = document.getElementById('cart-item-list');
-      const totalCount = getTotalItemCount();
+          'Phone: ' + data.get('phone'),
 
-      if (totalCount > 0) {
-        cartBar.classList.remove('hidden');
-        cartCard.classList.remove('hidden');
+          'Preferred date: ' + data.get('date'),
 
-        cartItemList.innerHTML = Object.keys(cart).map(name => {
-          const item = cart[name];
-          return `
-            <div class="flex justify-between items-center bg-slate-50 p-2.5 rounded-xl border border-slate-200">
-              <div class="flex-1 pr-2">
-                <p class="font-bold text-slate-800 text-xs">${name}</p>
-                <p class="text-[11px] text-slate-500 font-bold">₹${item.price} each</p>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="font-black text-slate-800 text-xs">₹${item.price * item.qty}</span>
-                <div class="flex items-center border border-slate-300 rounded-lg overflow-hidden bg-white">
-                  <button onclick="changeQty('${name}', -1)" class="px-2 py-0.5 bg-slate-100 font-black text-slate-700 hover:bg-slate-200">-</button>
-                  <span class="px-2 font-black text-amber-600">${item.qty}</span>
-                  <button onclick="changeQty('${name}', 1)" class="px-2 py-0.5 bg-slate-100 font-black text-slate-700 hover:bg-slate-200">+</button>
-                </div>
-              </div>
-            </div>
-          `;
-        }).join('');
+          'Preferred time: ' + data.get('time'),
 
-        const { finalTotal, discount, discountText } = calculateTotal();
+          'Consultation: ' + data.get('service'),
 
-        document.getElementById('cart-summary').innerText = `${totalCount} item(s) selected`;
-        document.getElementById('discount-label').innerText = discountText;
-        document.getElementById('cart-final-total').innerText = `₹${Math.round(finalTotal)} ${discount > 0 ? `(Saved ₹${Math.round(discount)})` : ''}`;
-      } else {
-        cartBar.classList.add('hidden');
-        cartCard.classList.add('hidden');
-      }
-    }
+          'Additional note: ' +
+            (data.get('message') || 'None'),
 
-    function openBillModal() {
-      const name = document.getElementById('student-name').value.trim();
-      const room = document.getElementById('room-number').value.trim();
+          '',
 
-      if (!name || !room) {
-        alert("Please enter both your Name and Room Number at the top before proceeding!");
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        return;
-      }
+          'Please confirm availability. Thank you.'
 
-      const { subtotal, discount, finalTotal, discountText } = calculateTotal();
+        ].join('\n');
 
-      document.getElementById('bill-student-name').innerText = name;
-      document.getElementById('bill-room-number').innerText = `Room ${room}`;
-      document.getElementById('bill-subtotal').innerText = `₹${subtotal}`;
-      document.getElementById('bill-grand-total').innerText = `₹${Math.round(finalTotal)}`;
 
-      const itemsContainer = document.getElementById('bill-items-container');
-      itemsContainer.innerHTML = Object.keys(cart).map(name => {
-        const item = cart[name];
-        return `
-          <div class="flex justify-between text-slate-700">
-            <span class="pr-2">${name} <span class="font-bold text-amber-600">x${item.qty}</span></span>
-            <span class="font-bold">₹${item.price * item.qty}</span>
-          </div>
-        `;
-      }).join('');
+        // Open WhatsApp with appointment details
 
-      const discountRow = document.getElementById('bill-discount-row');
-      if (discount > 0) {
-        discountRow.classList.remove('hidden');
-        document.getElementById('bill-discount-text').innerText = discountText;
-        document.getElementById('bill-discount-val').innerText = `-₹${Math.round(discount)}`;
-      } else {
-        discountRow.classList.add('hidden');
-      }
+        window.open(
+          'https://wa.me/' +
+          WHATSAPP_NUMBER +
+          '?text=' +
+          encodeURIComponent(message),
 
-      document.getElementById('bill-modal').classList.remove('hidden');
-    }
+          '_blank',
 
-    function closeBillModal() {
-      document.getElementById('bill-modal').classList.add('hidden');
-    }
+          'noopener'
+        );
 
-    function goToPaymentModal() {
-      closeBillModal();
-
-      const { finalTotal } = calculateTotal();
-      const roundedTotal = Math.round(finalTotal);
-      const formattedTotal = `₹${roundedTotal}`;
-
-      document.getElementById('modal-pay-amount').innerText = formattedTotal;
-      document.getElementById('checkbox-pay-amount').innerText = roundedTotal > 0 ? formattedTotal : '₹0';
-
-      const isAndroid = /Android/i.test(navigator.userAgent);
-      const upiParams = `pa=${encodeURIComponent(UPI_ID)}&pn=${encodeURIComponent(PAYEE_NAME)}&am=${roundedTotal}&cu=INR&tn=EkoKitchenOrder`;
-
-      const androidBox = document.getElementById('android-intent-box');
-      if (isAndroid) {
-        androidBox.classList.remove('hidden');
-        document.getElementById('btn-android-upi').href = `intent://pay?${upiParams}#Intent;scheme=upi;end`;
-      } else {
-        androidBox.classList.add('hidden');
-      }
-
-      const qrContainer = document.getElementById('dynamic-qr-container');
-      qrContainer.innerHTML = '';
-      new QRCode(qrContainer, {
-        text: `upi://pay?${upiParams}`,
-        width: 165,
-        height: 165,
-        colorDark: "#0f172a",
-        colorLight: "#ffffff",
-        correctLevel: QRCode.CorrectLevel.M
       });
 
-      const checkbox = document.getElementById('payment-checkbox');
-      checkbox.checked = false;
-      toggleOrderButton();
-
-      document.getElementById('payment-modal').classList.remove('hidden');
-    }
-
-    function closePaymentModal() {
-      document.getElementById('payment-modal').classList.add('hidden');
-    }
-
-    function copyUPIId() {
-      navigator.clipboard.writeText(UPI_ID).then(() => {
-        const btn = document.getElementById('copy-vpa-btn');
-        btn.innerText = "✅ Copied!";
-        btn.classList.remove('bg-amber-500');
-        btn.classList.add('bg-emerald-400');
-        setTimeout(() => {
-          btn.innerText = "📋 Copy UPI ID";
-          btn.classList.remove('bg-emerald-400');
-          btn.classList.add('bg-amber-500');
-        }, 2000);
-      });
-    }
-
-    function toggleOrderButton() {
-      const checkbox = document.getElementById('payment-checkbox');
-      const btn = document.getElementById('send-whatsapp-btn');
-
-      if (checkbox.checked) {
-        btn.disabled = false;
-        btn.classList.remove('bg-slate-300', 'text-slate-500', 'cursor-not-allowed');
-        btn.classList.add('bg-emerald-600', 'hover:bg-emerald-500', 'text-white');
-      } else {
-        btn.disabled = true;
-        btn.classList.add('bg-slate-300', 'text-slate-500', 'cursor-not-allowed');
-        btn.classList.remove('bg-emerald-600', 'hover:bg-emerald-500', 'text-white');
-      }
-    }
-
-    function sendWhatsAppOrder() {
-      const name = document.getElementById('student-name').value.trim();
-      const room = document.getElementById('room-number').value.trim();
-      const instructions = document.getElementById('special-instructions').value.trim();
-      const { finalTotal } = calculateTotal();
-
-      let itemSummary = Object.keys(cart)
-        .map(name => `• ${name} x ${cart[name].qty} - ₹${cart[name].price * cart[name].qty}`)
-        .join('\n');
-
-      let text = `🚨 *NEW PREPAID ORDER - EKO KITCHEN CO.* 🚨\n\n` +
-                 `👤 *Name:* ${name}\n` +
-                 `🚪 *Room:* ${room}\n\n` +
-                 `📋 *ORDER ITEMS:*\n${itemSummary}\n\n` +
-                 `💰 *Total Paid:* ₹${Math.round(finalTotal)}\n` +
-                 `📝 *Instructions:* ${instructions || 'None'}\n\n` +
-                 `⚠️ *IMPORTANT:*\nOrder is *ONLY* confirmed once payment screenshot is attached below 👇\n` +
-                 `📸 *Attaching screenshot now...*`;
-
-      alert("Opening WhatsApp...\n\n⚠️ PLEASE ATTACH YOUR PAYMENT SCREENSHOT NOW!\nThe kitchen will not start preparing your order without payment proof.");
-
-      let encodedText = encodeURIComponent(text);
-      let waUrl = `https://wa.me/918448784783?text=${encodedText}`;
-      
-      window.open(waUrl, '_blank');
-    }
   </script>
+
 </body>
 </html>
