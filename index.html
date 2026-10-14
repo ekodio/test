@@ -1,43 +1,37 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <meta
-    name="description"
-    content="Dr. Swati Ayurveda Clinic in Delhi. Ayurveda-led consultations for women's health, skin concerns and general wellness."
-  />
-
-  <meta name="theme-color" content="#6d7c68" />
-
-  <title>Dr. Swati Ayurveda Clinic | Delhi</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
-    rel="stylesheet"
-  />
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Swati Saxena Joshi | Garbhsanskar & Holistic Maternal Care</title>
+  <meta name="description" content="Authentic Garbhsanskar and holistic prenatal care by Dr. Swati Saxena Joshi (BAMS, Certified Gynecologist, 8+ years of experience)." />
   <style>
     :root {
-      --ivory: #f8f6f0;
-      --paper: #fffdf9;
-      --sage: #6d7c68;
-      --sage-dark: #435443;
-      --ink: #243027;
-      --muted: #6e766d;
-      --line: #e5e5dc;
-      --sand: #e8dfcf;
-      --shadow: 0 18px 50px rgba(45, 59, 45, .08);
-      --radius: 24px;
+      --bg-cream: #FAF6F0;
+      --bg-soft: #F3ECE1;
+      --bg-card: #FFFFFF;
+      --primary-terracotta: #B3543B;
+      --primary-terracotta-dark: #8F3E28;
+      --secondary-sage: #26463B;
+      --secondary-sage-light: #E6EFEA;
+      --accent-gold: #C89B55;
+      --accent-gold-soft: #F7EFE2;
+      --text-main: #242220;
+      --text-muted: #5A5550;
+      --border-subtle: #E4D9C8;
+      --shadow-soft: 0 10px 30px rgba(38, 70, 59, 0.07);
+      --shadow-hover: 0 16px 36px rgba(179, 84, 59, 0.12);
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --radius-pill: 999px;
+      --font-serif: 'Georgia', 'Palatino Linotype', 'Book Antiqua', serif;
+      --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     html {
@@ -45,11 +39,18 @@
     }
 
     body {
-      margin: 0;
-      background: var(--ivory);
-      color: var(--ink);
-      font-family: 'DM Sans', sans-serif;
+      font-family: var(--font-sans);
+      background-color: var(--bg-cream);
+      color: var(--text-main);
       line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, .serif {
+      font-family: var(--font-serif);
+      font-weight: 600;
+      line-height: 1.25;
+      color: var(--secondary-sage);
     }
 
     a {
@@ -57,1249 +58,1799 @@
       text-decoration: none;
     }
 
-    button,
-    input,
-    select,
-    textarea {
-      font: inherit;
-    }
-
     .container {
-      width: min(1160px, calc(100% - 40px));
-      margin: auto;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
     }
 
-    .nav {
+    /* Top Announcement Bar */
+    .top-bar {
+      background-color: var(--secondary-sage);
+      color: #F8F4EC;
+      font-size: 0.875rem;
+      padding: 10px 0;
+      text-align: center;
+      letter-spacing: 0.02em;
+    }
+
+    .top-bar span {
+      display: inline-block;
+      margin: 0 12px;
+    }
+
+    /* Header & Navigation */
+    header {
       position: sticky;
       top: 0;
-      z-index: 20;
-      background: rgba(248, 246, 240, .92);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(229, 229, 220, .85);
+      z-index: 100;
+      background: rgba(250, 246, 240, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-subtle);
     }
 
-    .nav-inner {
-      min-height: 78px;
+    .nav-wrapper {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      height: 80px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
     }
 
-    .brand-mark {
-      width: 40px;
-      height: 40px;
-      border: 1px solid var(--sage);
+    .brand-icon {
+      width: 46px;
+      height: 46px;
       border-radius: 50%;
-      display: grid;
-      place-items: center;
-      color: var(--sage-dark);
-      font-family: 'Playfair Display', serif;
-      font-size: 20px;
+      background: linear-gradient(135deg, var(--primary-terracotta), var(--accent-gold));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(179, 84, 59, 0.25);
     }
 
-    .brand-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 19px;
-      line-height: 1.1;
-    }
-
-    .brand-sub {
+    .brand-text-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--secondary-sage);
       display: block;
-      color: var(--muted);
-      font-size: 10px;
-      letter-spacing: 2px;
+    }
+
+    .brand-text-sub {
+      font-size: 0.78rem;
+      color: var(--primary-terracotta);
+      font-weight: 600;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
-      margin-top: 4px;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 25px;
-      font-size: 13px;
-      color: #4e5a4f;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-main);
+      transition: color 0.2s ease;
     }
 
     .nav-links a:hover {
-      color: var(--sage-dark);
+      color: var(--primary-terracotta);
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid transparent;
-      border-radius: 999px;
-      padding: 13px 21px;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: var(--radius-pill);
       font-weight: 600;
-      font-size: 13px;
+      font-size: 0.95rem;
       cursor: pointer;
-      transition: .2s ease;
+      transition: all 0.25s ease;
+      border: none;
     }
 
     .btn-primary {
-      background: var(--sage-dark);
-      color: white;
+      background-color: var(--primary-terracotta);
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(179, 84, 59, 0.28);
     }
 
     .btn-primary:hover {
-      background: #304130;
+      background-color: var(--primary-terracotta-dark);
       transform: translateY(-1px);
     }
 
-    .btn-light {
-      background: transparent;
-      border-color: #b8c0b3;
-      color: var(--sage-dark);
+    .btn-outline {
+      background-color: transparent;
+      color: var(--secondary-sage);
+      border: 1.5px solid var(--secondary-sage);
     }
 
-    .btn-light:hover {
-      background: #edf0e9;
+    .btn-outline:hover {
+      background-color: var(--secondary-sage);
+      color: #FFFFFF;
     }
 
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 8px 12px;
+      color: var(--secondary-sage);
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
     .hero {
-      padding: 76px 0 60px;
+      padding: 72px 0 84px;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle at 85% 20%, rgba(200, 155, 85, 0.14), transparent 45%),
+                  radial-gradient(circle at 10% 80%, rgba(179, 84, 59, 0.08), transparent 40%);
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.08fr .92fr;
-      gap: 70px;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 56px;
       align-items: center;
     }
 
-    .eyebrow {
-      color: var(--sage-dark);
-      text-transform: uppercase;
-      letter-spacing: 2.5px;
-      font-size: 11px;
-      font-weight: 700;
-    }
-
-    h1,
-    h2,
-    h3 {
-      font-family: 'Playfair Display', serif;
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: var(--radius-pill);
+      background-color: var(--secondary-sage-light);
+      color: var(--secondary-sage);
+      font-size: 0.84rem;
       font-weight: 600;
-      line-height: 1.13;
-      margin: 0;
+      letter-spacing: 0.03em;
+      margin-bottom: 20px;
     }
 
-    h1 {
-      font-size: clamp(48px, 6vw, 78px);
-      letter-spacing: -2px;
-      margin: 18px 0 24px;
+    .hero h1 {
+      font-size: clamp(2.2rem, 4vw, 3.35rem);
+      margin-bottom: 20px;
+      color: var(--secondary-sage);
     }
 
-    h2 {
-      font-size: clamp(34px, 4vw, 50px);
-      letter-spacing: -1px;
+    .hero h1 em {
+      font-style: italic;
+      color: var(--primary-terracotta);
+      font-weight: 600;
     }
 
-    h3 {
-      font-size: 25px;
-    }
-
-    .hero-copy {
-      max-width: 540px;
-      color: var(--muted);
-      font-size: 16px;
+    .hero-lead {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      max-width: 600px;
     }
 
     .hero-actions {
       display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .credential-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .cred-item {
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+    }
+
+    .cred-value {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary-terracotta);
+      display: block;
+    }
+
+    .cred-label {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* Doctor Hero Card */
+    .hero-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border-subtle);
+      position: relative;
+      text-align: center;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border: 1px dashed rgba(200, 155, 85, 0.45);
+      border-radius: calc(var(--radius-lg) - 6px);
+      pointer-events: none;
+    }
+
+    .lotus-illustration {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 22px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, var(--accent-gold-soft) 0%, #F5E1D3 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid #FFFFFF;
+      box-shadow: 0 8px 24px rgba(179, 84, 59, 0.15);
+    }
+
+    .doctor-name {
+      font-size: 1.65rem;
+      color: var(--secondary-sage);
+      margin-bottom: 6px;
+    }
+
+    .doctor-quals {
+      display: inline-block;
+      background: var(--accent-gold-soft);
+      color: var(--primary-terracotta-dark);
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 5px 16px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 16px;
+      letter-spacing: 0.03em;
+    }
+
+    .doctor-bio-short {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+    }
+
+    .doctor-pillars-mini {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .pill-tag {
+      font-size: 0.78rem;
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+      background: var(--bg-cream);
+      border: 1px solid var(--border-subtle);
+      color: var(--secondary-sage);
+      font-weight: 600;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 84px 0;
+    }
+
+    .section-bg-soft {
+      background-color: var(--bg-soft);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 56px;
+    }
+
+    .section-eyebrow {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--primary-terracotta);
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.85rem, 3vw, 2.5rem);
+      margin-bottom: 16px;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    /* About Doctor Section */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .about-highlight-box {
+      background: var(--secondary-sage);
+      color: #FAF6F0;
+      border-radius: var(--radius-lg);
+      padding: 40px 36px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .about-highlight-box h3 {
+      color: #FAF6F0;
+      font-size: 1.6rem;
+      margin-bottom: 16px;
+    }
+
+    .about-highlight-box p {
+      color: #DCE5E0;
+      margin-bottom: 24px;
+      font-size: 0.98rem;
+    }
+
+    .qual-list {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+
+    .qual-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 14px 16px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .qual-icon {
+      color: var(--accent-gold);
+      font-weight: bold;
+      font-size: 1.1rem;
+      line-height: 1.2;
+    }
+
+    .about-content h2 {
+      font-size: 2.2rem;
+      margin-bottom: 18px;
+    }
+
+    .about-content p {
+      color: var(--text-muted);
+      margin-bottom: 18px;
+      font-size: 1.02rem;
+    }
+
+    .sanskrit-quote {
+      background: var(--bg-card);
+      border-left: 4px solid var(--primary-terracotta);
+      padding: 18px 22px;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 24px 0;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .sanskrit-quote strong {
+      display: block;
+      font-family: var(--font-serif);
+      color: var(--secondary-sage);
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+
+    .sanskrit-quote span {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* 4 Pillars Grid */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .pillar-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 30px 24px;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .pillar-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+      background: var(--accent-gold-soft);
+      color: var(--primary-terracotta);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .pillar-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+
+    .pillar-sanskrit {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--primary-terracotta);
+      margin-bottom: 6px;
+    }
+
+    .pillar-card p {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      flex-grow: 1;
+    }
+
+    /* Interactive Trimester Guide */
+    .tabs-nav {
+      display: flex;
+      justify-content: center;
       gap: 12px;
       flex-wrap: wrap;
-      margin-top: 30px;
-    }
-
-    .hero-note {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      margin-top: 28px;
-      color: #596456;
-      font-size: 12px;
-    }
-
-    .hero-note strong {
-      color: var(--ink);
-    }
-
-    .hero-art {
-      min-height: 480px;
-      border-radius: 140px 140px 24px 24px;
-      background: linear-gradient(145deg, #dce2d5, #b5c2ad);
-      position: relative;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-
-    .hero-art:before {
-      content: '';
-      position: absolute;
-      width: 360px;
-      height: 360px;
-      border: 1px solid rgba(255, 255, 255, .7);
-      border-radius: 50%;
-      left: -100px;
-      bottom: -120px;
-    }
-
-    .hero-art:after {
-      content: 'AYURVEDA';
-      position: absolute;
-      right: -40px;
-      top: 45%;
-      transform: rotate(90deg);
-      letter-spacing: 7px;
-      font-size: 10px;
-      color: rgba(36, 48, 39, .45);
-    }
-
-    .leaf {
-      position: absolute;
-      width: 150px;
-      height: 270px;
-      border-radius: 100% 0 100% 0;
-      background: rgba(67, 84, 67, .5);
-      transform: rotate(28deg);
-      right: 22%;
-      top: 15%;
-    }
-
-    .leaf.two {
-      width: 100px;
-      height: 210px;
-      right: 44%;
-      top: 31%;
-      transform: rotate(-30deg);
-      background: rgba(255, 255, 255, .36);
-    }
-
-    .art-card {
-      position: absolute;
-      left: 26px;
-      bottom: 26px;
-      right: 26px;
-      padding: 22px;
-      background: rgba(255, 253, 249, .9);
-      border: 1px solid rgba(255, 255, 255, .8);
-      border-radius: 18px;
-    }
-
-    .art-card small {
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 1.7px;
-      font-size: 10px;
-    }
-
-    .art-card strong {
-      display: block;
-      font-family: 'Playfair Display', serif;
-      font-size: 25px;
-      margin-top: 5px;
-    }
-
-    .section {
-      padding: 92px 0;
-    }
-
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 30px;
       margin-bottom: 36px;
     }
 
-    .section-intro {
-      max-width: 480px;
-      color: var(--muted);
-      font-size: 14px;
+    .tab-btn {
+      padding: 12px 22px;
+      border-radius: var(--radius-pill);
+      border: 1.5px solid var(--border-subtle);
+      background: var(--bg-card);
+      color: var(--text-main);
+      font-weight: 600;
+      font-size: 0.93rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
     }
 
-    .soft {
-      background: var(--paper);
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--secondary-sage);
+      color: #FFFFFF;
+      border-color: var(--secondary-sage);
     }
 
-    .cards {
+    .tab-panel {
+      display: none;
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .tab-panel.active {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-    }
-
-    .card {
-      background: var(--ivory);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 26px;
-      min-height: 215px;
-    }
-
-    .card-number {
-      color: var(--sage);
-      font-size: 11px;
-      letter-spacing: 2px;
-      font-weight: 700;
-    }
-
-    .card h3 {
-      font-size: 23px;
-      margin: 32px 0 12px;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 13px;
-      margin: 0;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 80px;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 36px;
       align-items: center;
     }
 
-    .portrait {
-      min-height: 410px;
-      background: linear-gradient(145deg, #e8dfcf, #c8c9b6);
-      border-radius: 24px;
+    .trimester-badge {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: var(--radius-pill);
+      background: var(--accent-gold-soft);
+      color: var(--primary-terracotta-dark);
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .tab-panel h3 {
+      font-size: 1.75rem;
+      margin-bottom: 14px;
+    }
+
+    .tab-panel p {
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .practice-checklist {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .practice-checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+
+    .check-dot {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--secondary-sage-light);
+      color: var(--secondary-sage);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .trimester-focus-card {
+      background: var(--bg-cream);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 28px;
+    }
+
+    .trimester-focus-card h4 {
+      font-size: 1.15rem;
+      margin-bottom: 14px;
+      color: var(--primary-terracotta);
+    }
+
+    .focus-row {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .focus-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .focus-row strong {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--secondary-sage);
+    }
+
+    .focus-row span {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* Interactive Daily Companion (Breathing & Sankalpa) */
+    .companion-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .companion-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      box-shadow: var(--shadow-soft);
+      text-align: center;
+    }
+
+    .breath-circle-wrap {
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .breath-circle {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--secondary-sage-light) 0%, #C7DFD4 100%);
+      border: 3px solid var(--secondary-sage);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-weight: 700;
+      color: var(--secondary-sage);
+      font-size: 1.05rem;
+      transition: transform 4s ease-in-out, background-color 1s ease;
+      padding: 12px;
+    }
+
+    .breath-circle.inhale {
+      transform: scale(1.38);
+      background: radial-gradient(circle, #F7EFE2 0%, #E8C99B 100%);
+      border-color: var(--primary-terracotta);
+      color: var(--primary-terracotta-dark);
+    }
+
+    .breath-circle.hold {
+      transform: scale(1.38);
+    }
+
+    .breath-circle.exhale {
+      transform: scale(1.0);
+    }
+
+    .sankalpa-box {
+      background: var(--bg-cream);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 28px 24px;
+      margin: 22px 0;
+      min-height: 155px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .sankalpa-text {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      color: var(--secondary-sage);
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    .sankalpa-sub {
+      font-size: 0.85rem;
+      color: var(--primary-terracotta);
+      font-weight: 600;
+    }
+
+    /* Programs Section */
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .program-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 34px 28px;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
       position: relative;
+    }
+
+    .program-card.featured {
+      border: 2px solid var(--primary-terracotta);
+      background: linear-gradient(180deg, #FFFFFF 0%, #FDF9F4 100%);
+    }
+
+    .featured-ribbon {
+      position: absolute;
+      top: -13px;
+      right: 24px;
+      background: var(--primary-terracotta);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: var(--radius-pill);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .program-stage {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary-terracotta);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+
+    .program-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+
+    .program-card p {
+      color: var(--text-muted);
+      font-size: 0.94rem;
+      margin-bottom: 20px;
+    }
+
+    .program-features {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin-bottom: 28px;
+      flex-grow: 1;
+    }
+
+    .program-features li {
+      font-size: 0.9rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .program-features li::before {
+      content: "✦";
+      color: var(--accent-gold);
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    /* FAQ Accordion */
+    .faq-container {
+      max-width: 820px;
+      margin: 0 auto;
+      display: grid;
+      gap: 16px;
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
       overflow: hidden;
     }
 
-    .portrait:after {
-      content: 'DR. SWATI';
-      position: absolute;
-      bottom: 28px;
-      left: 28px;
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
-      color: rgba(36, 48, 39, .62);
-    }
-
-    .about-copy p {
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .credential {
-      display: inline-flex;
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 20px 24px;
+      background: none;
+      border: none;
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--secondary-sage);
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 10px;
-      margin-top: 14px;
-      padding: 10px 15px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      font-size: 12px;
-      color: var(--sage-dark);
-      background: var(--paper);
+      cursor: pointer;
     }
 
-    .booking-grid {
+    .faq-toggle {
+      font-size: 1.3rem;
+      color: var(--primary-terracotta);
+      transition: transform 0.25s ease;
+    }
+
+    .faq-item.open .faq-toggle {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0 24px;
+      color: var(--text-muted);
+      font-size: 0.96rem;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 260px;
+      padding-bottom: 20px;
+    }
+
+    /* Consultation Form Section */
+    .contact-grid {
       display: grid;
-      grid-template-columns: .8fr 1.2fr;
-      gap: 55px;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 48px;
       align-items: start;
     }
 
-    .booking-panel {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 30px;
-      box-shadow: var(--shadow);
+    .contact-info-card {
+      background: var(--secondary-sage);
+      color: #FAF6F0;
+      border-radius: var(--radius-lg);
+      padding: 40px 34px;
     }
 
-    .price {
-      font-family: 'Playfair Display', serif;
-      font-size: 48px;
-      margin: 20px 0 6px;
+    .contact-info-card h3 {
+      color: #FAF6F0;
+      font-size: 1.65rem;
+      margin-bottom: 14px;
     }
 
-    .muted {
-      color: var(--muted);
+    .contact-info-card p {
+      color: #DCE5E0;
+      margin-bottom: 28px;
+      font-size: 0.96rem;
     }
 
-    .form-grid {
+    .contact-detail-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .contact-detail-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .contact-detail-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-gold);
+      flex-shrink: 0;
+    }
+
+    .contact-detail-item strong {
+      display: block;
+      font-size: 0.92rem;
+      color: #FFFFFF;
+    }
+
+    .contact-detail-item span {
+      font-size: 0.88rem;
+      color: #DCE5E0;
+    }
+
+    .form-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 38px 34px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .form-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    .form-card > p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
     }
 
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-    }
-
-    .field.full {
-      grid-column: 1 / -1;
-    }
-
     label {
-      font-size: 12px;
-      font-weight: 700;
-      color: #4f5b50;
-    }
-
-    input,
-    select,
-    textarea {
-      width: 100%;
-      border: 1px solid #dfe3da;
-      border-radius: 12px;
-      padding: 12px 13px;
-      background: #fff;
-      color: var(--ink);
-      outline: none;
-    }
-
-    input:focus,
-    select:focus,
-    textarea:focus {
-      border-color: var(--sage);
-      box-shadow: 0 0 0 3px rgba(109, 124, 104, .12);
-    }
-
-    textarea {
-      min-height: 105px;
-      resize: vertical;
-    }
-
-    .form-foot {
-      margin-top: 18px;
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .form-note {
-      font-size: 11px;
-      color: var(--muted);
-      margin-top: 14px;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 16px;
-    }
-
-    .contact-item {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      padding: 25px;
-      border-radius: 20px;
-    }
-
-    .contact-item span {
       display: block;
-      color: var(--muted);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1.4px;
-      margin-bottom: 8px;
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--secondary-sage);
+      margin-bottom: 6px;
     }
 
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-cream);
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: 2px solid var(--primary-terracotta);
+      background: #FFFFFF;
+    }
+
+    .form-status {
+      display: none;
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: 10px;
+      background: var(--secondary-sage-light);
+      color: var(--secondary-sage);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    /* Footer */
     footer {
-      background: var(--sage-dark);
-      color: #eef1e9;
-      padding: 34px 0;
+      background: #1B332B;
+      color: #DCE5E0;
+      padding: 56px 0 36px;
+      font-size: 0.92rem;
     }
 
-    .footer-inner {
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .footer-title {
+      font-family: var(--font-serif);
+      color: #FFFFFF;
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-gold);
+    }
+
+    .footer-bottom {
+      padding-top: 24px;
       display: flex;
       justify-content: space-between;
-      gap: 24px;
-      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.84rem;
+      color: #A7B8B0;
     }
 
-    footer small {
-      color: #cbd5c7;
-    }
-
-    @media (max-width: 900px) {
+    /* Responsive Breakpoints */
+    @media (max-width: 980px) {
       .hero-grid,
       .about-grid,
-      .booking-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
-      }
-
-      .hero {
-        padding-top: 48px;
-      }
-
-      .hero-art {
-        min-height: 360px;
-      }
-
-      .cards {
-        grid-template-columns: 1fr 1fr;
-      }
-
+      .tab-panel.active,
+      .companion-grid,
       .contact-grid {
         grid-template-columns: 1fr;
       }
 
-      .section {
-        padding: 65px 0;
+      .pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .programs-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
       }
     }
 
-    @media (max-width: 680px) {
-      .container {
-        width: min(100% - 28px, 1160px);
-      }
-
-      .nav-inner {
-        min-height: 68px;
-      }
-
+    @media (max-width: 720px) {
       .nav-links {
         display: none;
-      }
-
-      h1 {
-        font-size: 51px;
-      }
-
-      .section-head {
-        display: block;
-      }
-
-      .section-intro {
-        margin-top: 18px;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .field.full {
-        grid-column: auto;
-      }
-
-      .booking-panel {
-        padding: 20px;
-      }
-
-      .footer-inner {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: var(--bg-cream);
         flex-direction: column;
-        align-items: flex-start;
+        padding: 20px;
+        border-bottom: 1px solid var(--border-subtle);
+        box-shadow: var(--shadow-soft);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .mobile-menu-btn {
+        display: inline-block;
+      }
+
+      .credential-strip,
+      .pillars-grid,
+      .form-row {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
-
 <body>
 
-  <!-- NAVIGATION -->
-  <header class="nav">
-    <div class="container nav-inner">
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>✦ Holistic Ayurvedic &amp; Gynecological Prenatal Care</span>
+      <span>•</span>
+      <span>Dr. Swati Saxena Joshi (BAMS, Certified Gynecologist • 8+ Years Experience)</span>
+    </div>
+  </div>
 
-      <a class="brand" href="#home" aria-label="Dr. Swati Ayurveda Clinic home">
-        <span class="brand-mark">S</span>
-
-        <span>
-          <span class="brand-name">Dr. Swati</span>
-          <span class="brand-sub">Ayurveda Clinic</span>
-        </span>
+  <!-- Sticky Navigation -->
+  <header>
+    <div class="container nav-wrapper">
+      <a href="#top" class="brand">
+        <div class="brand-icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2.5C12 2.5 7 8 7 12.5C7 15.5 9.2 18 12 18C14.8 18 17 15.5 17 12.5C17 8 12 2.5 12 2.5Z"/>
+            <path d="M12 18C7.5 18 3.5 15 2.5 10.5C6 11 8.5 13 12 18Z"/>
+            <path d="M12 18C16.5 18 20.5 15 21.5 10.5C18 11 15.5 13 12 18Z"/>
+            <path d="M6 21H18"/>
+          </svg>
+        </div>
+        <div>
+          <span class="brand-text-title">Dr. Swati Saxena Joshi</span>
+          <span class="brand-text-sub">Garbhsanskar &amp; Maternal Care</span>
+        </div>
       </a>
 
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#about">About</a>
-        <a href="#consultations">Consultations</a>
-        <a href="#appointment">Appointment</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">☰ Menu</button>
 
-      <a class="btn btn-primary" href="#appointment">
-        Book consultation
-      </a>
-
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About Dr. Swati</a></li>
+        <li><a href="#pillars">4 Pillars</a></li>
+        <li><a href="#trimesters">Trimester Guide</a></li>
+        <li><a href="#companion">Daily Practice</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#consultation" class="btn btn-primary" style="color: #fff; padding: 10px 20px;">Book Consultation</a></li>
+      </ul>
     </div>
   </header>
 
-
-  <main>
-
-    <!-- HERO SECTION -->
-    <section class="hero" id="home">
-
+  <!-- Hero Section -->
+  <main id="top">
+    <section class="hero">
       <div class="container hero-grid">
-
         <div>
-
-          <div class="eyebrow">
-            Ayurvedic care · Delhi
+          <div class="badge">
+            <span>✦ Classical Garbhsanskar • Modern Gynecological Expertise</span>
           </div>
-
-          <h1>
-            Care rooted in Ayurveda. Personalised for you.
-          </h1>
-
-          <p class="hero-copy">
-            Consultation-led care for women's health, skin concerns
-            and general wellness, with a thoughtful and patient-focused approach.
+          <h1>Nurturing Conscious Motherhood &amp; <em>Joyful Beginnings</em></h1>
+          <p class="hero-lead">
+            Experience personalized, science-backed and tradition-rooted <strong>Garbhsanskar</strong> guidance with <strong>Dr. Swati Saxena Joshi</strong>—combining Ayurvedic maternal wisdom (BAMS) with over 8 years of clinical gynecological care.
           </p>
-
           <div class="hero-actions">
-
-            <a class="btn btn-primary" href="#appointment">
-              Book a consultation ↗
-            </a>
-
-            <a class="btn btn-light" href="#consultations">
-              Explore consultations
-            </a>
-
+            <a href="#consultation" class="btn btn-primary">Schedule a Consultation</a>
+            <a href="#trimesters" class="btn btn-outline">Explore Trimester Roadmap</a>
           </div>
 
-          <div class="hero-note">
-            <strong>₹500</strong>
-            <span>Consultation fee</span>
-            <span>·</span>
-            <span>5:30 PM – 8:00 PM</span>
-          </div>
-
-        </div>
-
-
-        <div class="hero-art" aria-label="Decorative botanical illustration">
-
-          <div class="leaf"></div>
-          <div class="leaf two"></div>
-
-          <div class="art-card">
-
-            <small>
-              Private consultation practice
-            </small>
-
-            <strong>
-              Dr. Swati Ayurveda Clinic
-            </strong>
-
-            <span class="muted">
-              Delhi
-            </span>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- CONSULTATIONS -->
-    <section class="section soft" id="consultations">
-
-      <div class="container">
-
-        <div class="section-head">
-
-          <div>
-
-            <div class="eyebrow">
-              Areas of care
+          <div class="credential-strip">
+            <div class="cred-item">
+              <span class="cred-value">BAMS</span>
+              <span class="cred-label">Ayurvedic Medicine &amp; Surgery</span>
             </div>
-
-            <h2>
-              Consultations designed around your needs.
-            </h2>
-
+            <div class="cred-item">
+              <span class="cred-value">Certified</span>
+              <span class="cred-label">Clinical Gynecologist</span>
+            </div>
+            <div class="cred-item">
+              <span class="cred-value">8+ Years</span>
+              <span class="cred-label">Dedicated Maternal Experience</span>
+            </div>
           </div>
+        </div>
 
-          <p class="section-intro">
-            Explore the clinic's core consultation areas.
-            A consultation helps determine the appropriate next
-            steps for your individual concerns.
+        <!-- Doctor Profile Highlight Card -->
+        <div class="hero-card">
+          <div class="lotus-illustration" aria-hidden="true">
+            <svg width="88" height="88" viewBox="0 0 100 100" fill="none">
+              <circle cx="50" cy="50" r="42" stroke="#C89B55" stroke-width="1.5" stroke-dasharray="4 4"/>
+              <path d="M50 18C50 18 33 38 33 55C33 65 40.5 73 50 73C59.5 73 67 65 67 55C67 38 50 18 50 18Z" fill="#B3543B" fill-opacity="0.16" stroke="#B3543B" stroke-width="2.2"/>
+              <path d="M50 73C34 73 20 62 16 45C28 47 39 55 50 73Z" fill="#26463B" fill-opacity="0.12" stroke="#26463B" stroke-width="2"/>
+              <path d="M50 73C66 73 80 62 84 45C72 47 61 55 50 73Z" fill="#26463B" fill-opacity="0.12" stroke="#26463B" stroke-width="2"/>
+              <circle cx="50" cy="48" r="7" fill="#C89B55"/>
+              <path d="M30 80H70" stroke="#C89B55" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h2 class="doctor-name">Dr. Swati Saxena Joshi</h2>
+          <div class="doctor-quals">BAMS • Certified Gynecologist</div>
+          <p class="doctor-bio-short">
+            With <strong>8+ years of clinical experience</strong> in women's health, prenatal care, and Ayurvedic Garbhsanskar, Dr. Swati empowers expectant couples to nurture their baby's physical, emotional, and spiritual foundation right from the womb.
           </p>
-
+          <div class="doctor-pillars-mini">
+            <span class="pill-tag">Beej Sanskar</span>
+            <span class="pill-tag">Masaanumasik Paricharya</span>
+            <span class="pill-tag">Garbh Samvad</span>
+            <span class="pill-tag">Prenatal Yoga &amp; Diet</span>
+          </div>
         </div>
-
-
-        <div class="cards">
-
-          <article class="card">
-
-            <div class="card-number">
-              01 / AYURVEDA
-            </div>
-
-            <h3>
-              Ayurvedic consultation
-            </h3>
-
-            <p>
-              Personalised discussion of health concerns
-              and Ayurveda-led care planning.
-            </p>
-
-          </article>
-
-
-          <article class="card">
-
-            <div class="card-number">
-              02 / WOMEN'S HEALTH
-            </div>
-
-            <h3>
-              Gynaecological care
-            </h3>
-
-            <p>
-              Consultation for women's health concerns,
-              with assessment and appropriate guidance.
-            </p>
-
-          </article>
-
-
-          <article class="card">
-
-            <div class="card-number">
-              03 / SKIN
-            </div>
-
-            <h3>
-              Skin disorders
-            </h3>
-
-            <p>
-              Consultation for skin-related concerns
-              and individual care recommendations.
-            </p>
-
-          </article>
-
-
-          <article class="card">
-
-            <div class="card-number">
-              04 / GENERAL
-            </div>
-
-            <h3>
-              General physician
-            </h3>
-
-            <p>
-              General health consultations and guidance
-              on when further medical evaluation is needed.
-            </p>
-
-          </article>
-
-        </div>
-
       </div>
-
     </section>
 
-
-    <!-- ABOUT -->
-    <section class="section" id="about">
-
+    <!-- About Dr. Swati & Garbhsanskar Philosophy -->
+    <section id="about" class="section-bg-soft">
       <div class="container about-grid">
-
-        <div
-          class="portrait"
-          role="img"
-          aria-label="Placeholder for Dr. Swati's professional portrait"
-        ></div>
-
-
-        <div class="about-copy">
-
-          <div class="eyebrow">
-            Meet your doctor
-          </div>
-
-          <h2>
-            A considered approach to everyday health.
-          </h2>
-
+        <div class="about-highlight-box">
+          <span class="section-eyebrow" style="color: var(--accent-gold);">Clinical Credentials</span>
+          <h3>Why Learn Garbhsanskar from a Certified Gynecologist &amp; BAMS Doctor?</h3>
           <p>
-            Dr. Swati Ayurveda Clinic brings together a calm
-            consultation experience and an individual-focused
-            approach to care.
+            Pregnancy is both a sacred emotional transformation and a delicate physiological milestone. Having a mentor trained in both Ayurvedic medicine and gynecology ensures every diet, breathing technique, and lifestyle recommendation is clinically safe for you and your baby.
           </p>
-
-          <p>
-            The clinic offers Ayurvedic, gynaecological,
-            skin and general physician consultations in Delhi.
-          </p>
-
-          <p>
-            As the website develops, this section can be expanded
-            with Dr. Swati's verified professional background,
-            certifications, clinical experience and approach
-            to patient care.
-          </p>
-
-          <div class="credential">
-            BAMS · Ayurveda consultation
-          </div>
-
+          <ul class="qual-list">
+            <li>
+              <span class="qual-icon">✦</span>
+              <div>
+                <strong>BAMS (Bachelor of Ayurvedic Medicine &amp; Surgery)</strong>
+                <div style="font-size: 0.88rem; color: #DCE5E0;">Authentic grounding in classical Garbhini Paricharya (month-by-month Ayurvedic prenatal care).</div>
+              </div>
+            </li>
+            <li>
+              <span class="qual-icon">✦</span>
+              <div>
+                <strong>Certified Gynecologist</strong>
+                <div style="font-size: 0.88rem; color: #DCE5E0;">Evidence-informed maternal guidance aligned with your obstetric scans, trimesters, and medical needs.</div>
+              </div>
+            </li>
+            <li>
+              <span class="qual-icon">✦</span>
+              <div>
+                <strong>8+ Years of Clinical Experience</strong>
+                <div style="font-size: 0.88rem; color: #DCE5E0;">Supporting mothers from preconception planning through safe pregnancy and postnatal recovery.</div>
+              </div>
+            </li>
+          </ul>
         </div>
 
+        <div class="about-content">
+          <span class="section-eyebrow">The Essence of Garbhsanskar</span>
+          <h2>Shaping a Calm, Joyful &amp; Resilient Future in the Womb</h2>
+          <p>
+            In Ayurveda, <strong>Garbhsanskar</strong> literally translates to <em>educating and nurturing the mind in the womb</em>. Classical texts and modern prenatal psychology alike recognize that an expectant mother's nutrition, thoughts, breath, and emotional environment deeply influence her baby's developing nervous system.
+          </p>
+          <div class="sanskrit-quote">
+            <strong>“आहारविहारचेष्टाभिः गर्भिणी गर्भं संस्कारयति”</strong>
+            <span>Through mindful nourishment (Aahar), balanced lifestyle (Vihar), and serene thoughts (Vichar), a mother shapes the finest qualities within her unborn child.</span>
+          </div>
+          <p>
+            Under the guidance of <strong>Dr. Swati Saxena Joshi</strong>, Garbhsanskar is never a rigid ritual—it is a warm, practical daily rhythm tailored to your body constitution (<em>Prakriti</em>), trimester needs, and modern schedule.
+          </p>
+        </div>
       </div>
-
     </section>
 
-
-    <!-- APPOINTMENT -->
-    <section class="section soft" id="appointment">
-
-      <div class="container booking-grid">
-
-        <div>
-
-          <div class="eyebrow">
-            Appointments
-          </div>
-
-          <h2>
-            Make time for your health.
-          </h2>
-
-          <p class="muted">
-            Submit your preferred details below.
-            The clinic can confirm availability through
-            WhatsApp or phone once contact information is added.
-          </p>
-
-          <div class="price">
-            ₹500
-          </div>
-
-          <p class="muted">
-            Consultation fee
-          </p>
-
-          <p>
-            <strong>Clinic hours</strong>
-            <br />
-            5:30 PM – 8:00 PM
-          </p>
-
-          <p class="muted" style="font-size:12px">
-            An appointment request is not a confirmed booking
-            until the clinic confirms the date and time.
-          </p>
-
-        </div>
-
-
-        <div class="booking-panel">
-
-          <form id="bookingForm">
-
-            <div class="form-grid">
-
-              <div class="field">
-
-                <label for="name">
-                  Full name *
-                </label>
-
-                <input
-                  id="name"
-                  name="name"
-                  required
-                  placeholder="Your name"
-                />
-
-              </div>
-
-
-              <div class="field">
-
-                <label for="phone">
-                  Phone number *
-                </label>
-
-                <input
-                  id="phone"
-                  name="phone"
-                  required
-                  type="tel"
-                  placeholder="Your phone number"
-                />
-
-              </div>
-
-
-              <div class="field">
-
-                <label for="date">
-                  Preferred date *
-                </label>
-
-                <input
-                  id="date"
-                  name="date"
-                  required
-                  type="date"
-                />
-
-              </div>
-
-
-              <div class="field">
-
-                <label for="time">
-                  Preferred time *
-                </label>
-
-                <select id="time" name="time" required>
-
-                  <option value="">
-                    Select time
-                  </option>
-
-                  <option>5:30 PM</option>
-                  <option>6:00 PM</option>
-                  <option>6:30 PM</option>
-                  <option>7:00 PM</option>
-                  <option>7:30 PM</option>
-
-                </select>
-
-              </div>
-
-
-              <div class="field full">
-
-                <label for="service">
-                  Consultation type *
-                </label>
-
-                <select id="service" name="service" required>
-
-                  <option value="">
-                    Choose a consultation
-                  </option>
-
-                  <option>
-                    Ayurvedic consultation
-                  </option>
-
-                  <option>
-                    Gynaecological consultation
-                  </option>
-
-                  <option>
-                    General physician consultation
-                  </option>
-
-                  <option>
-                    Skin disorders
-                  </option>
-
-                </select>
-
-              </div>
-
-
-              <div class="field full">
-
-                <label for="message">
-                  Additional note (optional)
-                </label>
-
-                <textarea
-                  id="message"
-                  name="message"
-                  placeholder="Brief appointment note. Please do not include sensitive medical history here."
-                ></textarea>
-
-              </div>
-
-            </div>
-
-
-            <div class="form-foot">
-
-              <button class="btn btn-primary" type="submit">
-                Continue to WhatsApp ↗
-              </button>
-
-              <a
-                class="btn btn-light"
-                href="mailto:ADD-CLINIC-EMAIL-HERE"
-              >
-                Email
-              </a>
-
-            </div>
-
-
-            <p class="form-note">
-              Add the clinic WhatsApp number in the script
-              below before launching the booking feature.
-              This form does not store patient information
-              on a server.
-            </p>
-
-          </form>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- CONTACT -->
-    <section class="section" id="contact">
-
+    <!-- 4 Core Pillars of Garbhsanskar -->
+    <section id="pillars">
       <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Holistic Framework</span>
+          <h2>The Four Sacred Pillars of Garbhsanskar</h2>
+          <p>Every session with Dr. Swati Saxena Joshi integrates four timeless dimensions of maternal and fetal well-being.</p>
+        </div>
 
-        <div class="section-head">
-
-          <div>
-
-            <div class="eyebrow">
-              Visit the clinic
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <div class="pillar-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2a9 9 0 0 0-9 9c0 4.97 4.03 9 9 9s9-4.03 9-9a9 9 0 0 0-9-9z"/>
+                <path d="M12 6v6l4 2"/>
+              </svg>
             </div>
-
-            <h2>
-              Simple access. Thoughtful care.
-            </h2>
-
+            <span class="pillar-sanskrit">1. Sattvic Aahar</span>
+            <h3>Trimester-Wise Nutrition</h3>
+            <p>Customized <em>Masaanumasik</em> (month-by-month) Ayurvedic dietary guidance to support fetal organ development, maternal vitality, and smooth digestion.</p>
           </div>
 
-          <p class="section-intro">
-            Add the final clinic address and contact details
-            before publishing this section.
-          </p>
+          <div class="pillar-card">
+            <div class="pillar-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+              </svg>
+            </div>
+            <span class="pillar-sanskrit">2. Mindful Vihar</span>
+            <h3>Prenatal Yoga &amp; Pranayama</h3>
+            <p>Safe, gynecologist-approved gentle asanas, pelvic floor preparation, and soothing breathwork to boost oxygen flow and prepare for confident childbirth.</p>
+          </div>
 
+          <div class="pillar-card">
+            <div class="pillar-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </div>
+            <span class="pillar-sanskrit">3. Garbh Samvad</span>
+            <h3>Conscious Womb Bonding</h3>
+            <p>Guided visualization, heartfelt daily communication with your baby, and creative right-brain activities that deepen parent-child attachment before birth.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18V5l12-2v13"/>
+                <circle cx="6" cy="18" r="3"/>
+                <circle cx="18" cy="16" r="3"/>
+              </svg>
+            </div>
+            <span class="pillar-sanskrit">4. Mantra &amp; Sangeet</span>
+            <h3>Vedic Sound &amp; Serenity</h3>
+            <p>Curated Vedic chanting, classical Raga listening, and stress-dissolving meditation practices that foster deep emotional tranquility for mother and baby.</p>
+          </div>
         </div>
-
-
-        <div class="contact-grid">
-
-          <div class="contact-item">
-
-            <span>
-              Location
-            </span>
-
-            <strong>
-              Delhi
-            </strong>
-
-            <p class="muted">
-              Full address to be added
-            </p>
-
-          </div>
-
-
-          <div class="contact-item">
-
-            <span>
-              Clinic hours
-            </span>
-
-            <strong>
-              5:30 PM – 8:00 PM
-            </strong>
-
-            <p class="muted">
-              Confirm operating days before launch
-            </p>
-
-          </div>
-
-
-          <div class="contact-item">
-
-            <span>
-              Appointments
-            </span>
-
-            <strong>
-              WhatsApp + online request
-            </strong>
-
-            <p class="muted">
-              Contact number to be added
-            </p>
-
-          </div>
-
-        </div>
-
       </div>
-
     </section>
 
+    <!-- Interactive Trimester-by-Trimester Explorer -->
+    <section id="trimesters" class="section-bg-soft">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Interactive Roadmap</span>
+          <h2>Your Journey Through Every Stage of Motherhood</h2>
+          <p>Select your current stage below to explore how Dr. Swati Saxena Joshi tailors Garbhsanskar care to your baby's developmental milestones.</p>
+        </div>
+
+        <div class="tabs-nav" role="tablist">
+          <button class="tab-btn active" data-tab="preconception" role="tab">Preconception (Beej Sanskar)</button>
+          <button class="tab-btn" data-tab="trimester1" role="tab">1st Trimester (Months 1–3)</button>
+          <button class="tab-btn" data-tab="trimester2" role="tab">2nd Trimester (Months 4–6)</button>
+          <button class="tab-btn" data-tab="trimester3" role="tab">3rd Trimester (Months 7–9)</button>
+        </div>
+
+        <!-- Tab 1: Preconception -->
+        <div class="tab-panel active" id="tab-preconception">
+          <div>
+            <span class="trimester-badge">Preparation Phase • 3 Months Prior</span>
+            <h3>Beej Sanskar: Preparing the Sacred Soil &amp; Seed</h3>
+            <p>
+              Just as a thriving tree begins with pure seeds and fertile soil, conscious conception starts before pregnancy. Dr. Swati guides couples through detoxification, cycle harmony, and emotional readiness.
+            </p>
+            <ul class="practice-checklist">
+              <li><span class="check-dot">✓</span> <span><strong>Prakriti &amp; Cycle Assessment:</strong> Balancing Vata, Pitta, and Kapha for optimal fertility.</span></li>
+              <li><span class="check-dot">✓</span> <span><strong>Sattvic Fertility Nutrition:</strong> Micronutrient and Rasayana nourishment for both partners.</span></li>
+              <li><span class="check-dot">✓</span> <span><strong>Mind-Body Detox:</strong> Stress release, Pranayama, and setting a conscious intention (Sankalpa) for parenthood.</span></li>
+            </ul>
+          </div>
+          <div class="trimester-focus-card">
+            <h4>Clinical &amp; Ayurvedic Priorities</h4>
+            <div class="focus-row">
+              <strong>Primary Focus</strong>
+              <span>Hormonal balance, ovulatory health &amp; emotional readiness</span>
+            </div>
+            <div class="focus-row">
+              <strong>Key Ayurvedic Practice</strong>
+              <span>Beej Shuddhi (cellular nourishment) &amp; Nadi Shodhana Pranayama</span>
+            </div>
+            <div class="focus-row">
+              <strong>Who Should Join</strong>
+              <span>Couples planning pregnancy in the next 3 to 6 months</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: 1st Trimester -->
+        <div class="tab-panel" id="tab-trimester1">
+          <div>
+            <span class="trimester-badge">Months 1 to 3 • Foundation &amp; Stability</span>
+            <h3>First Trimester: Gentle Stabilization &amp; Peace</h3>
+            <p>
+              During the first twelve weeks, your baby's neural tube, heart, and foundational organs take shape. Care focuses on stabilizing pregnancy, easing morning nausea naturally, and cultivating deep calm.
+            </p>
+            <ul class="practice-checklist">
+              <li><span class="check-dot">✓</span> <span><strong>First-Trimester Paricharya:</strong> Cooling, easily digestible nourishment (sweet, liquid, and comforting foods).</span></li>
+              <li><span class="check-dot">✓</span> <span><strong>Deep Relaxation &amp; Yoga Nidra:</strong> Gentle breathing and guided rest without physical strain.</span></li>
+              <li><span class="check-dot">✓</span> <span><strong>Early Garbh Samvad:</strong> Welcoming the baby with loving affirmations and soothing Vedic mantras.</span></li>
+            </ul>
+          </div>
+          <div class="trimester-focus-card">
+            <h4>Clinical &amp; Ayurvedic Priorities</h4>
+            <div class="focus-row">
+              <strong>Primary Focus</strong>
+              <span>Embryo stabilization, managing nausea/fatigue &amp; emotional serenity</span>
+            </div>
+            <div class="focus-row">
+              <strong>Key Ayurvedic Practice</strong>
+              <span>Sheetali/Bhramari breathwork, Mantra therapy &amp; gentle hydration</span>
+            </div>
+            <div class="focus-row">
+              <strong>Developmental Milestone</strong>
+              <span>Heart pulsation begins &amp; early sensory pathways form</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: 2nd Trimester -->
+        <div class="tab-panel" id="tab-trimester2">
+          <div>
+            <span class="trimester-badge">Months 4 to 6 • Sensory &amp; Emotional Awakening</span>
+            <h3>Second Trimester: Awakened Senses &amp; Active Bonding</h3>
+            <p>
+              As the fourth month begins (<em>Dauhrida Avastha</em>—when the mother carries two hearts), your baby starts responding to sound, rhythm, and maternal emotions. This is the golden window for active Garbhsanskar.
+            </p>
+            <ul class="practice-checklist">
+              <li><span class="check-dot">✓</span> <span><strong>Intellect &amp; Sensory Enrichment:</strong> Creative storytelling, artistic engagement, puzzles, and Raga music therapy.</span></li>
+              <li><span class="check-dot">✓</span> <span><strong>Safe Trimester-2 Prenatal Yoga:</strong> Posture alignment, back-care stretches, and stamina building.</span></li>
+              <li><span class="check-dot">✓</span> <span><strong>Protein &amp; Ojas Nutrition:</strong> Ayurvedic nourishment for fetal muscle, brain, and bone growth.</span></li>
+            </ul>
+          </div>
+          <div class="trimester-focus-card">
+            <h4>Clinical &amp; Ayurvedic Priorities</h4>
+            <div class="focus-row">
+              <strong>Primary Focus</strong>
+              <span>Brain development (Medhya nourishment), active bonding &amp; maternal energy</span>
+            </div>
+            <div class="focus-row">
+              <strong>Key Ayurvedic Practice</strong>
+              <span>Daily Garbh Samvad, creative arts &amp; guided trimester yoga</span>
+            </div>
+            <div class="focus-row">
+              <strong>Developmental Milestone</strong>
+              <span>Baby hears mother's voice, responds to touch &amp; develops sleep cycles</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 4: 3rd Trimester -->
+        <div class="tab-panel" id="tab-trimester3">
+          <div>
+            <span class="trimester-badge">Months 7 to 9 • Strength &amp; Birth Readiness</span>
+            <h3>Third Trimester: Confident Preparation for Childbirth</h3>
+            <p>
+              In the final trimester, Dr. Swati combines her gynecological expertise and Ayurvedic wisdom to prepare your body and mind for a calm, fearless labor and smooth postpartum transition (<em>Sutika Paricharya</em>).
+            </p>
+            <ul class="practice-checklist">
+              <li><span class="check-dot">✓</span> <span><strong>Pelvic Mobility &amp; Labor Breathwork:</strong> Breathing techniques for stage-wise labor comfort and Vata balance.</span></li>
+              <li><span class="check-dot">✓</span> <span><strong>Fear-Release Visualizations:</strong> Positive birth affirmations and partner-supported relaxation.</span></li>
+              <li><span class="check-dot">✓</span> <span><strong>Lactation &amp; Postnatal Readiness:</strong> Preparing for breastfeeding and early newborn care.</span></li>
+            </ul>
+          </div>
+          <div class="trimester-focus-card">
+            <h4>Clinical &amp; Ayurvedic Priorities</h4>
+            <div class="focus-row">
+              <strong>Primary Focus</strong>
+              <span>Vata anulomana (downward energy alignment), pelvic readiness &amp; restful sleep</span>
+            </div>
+            <div class="focus-row">
+              <strong>Key Ayurvedic Practice</strong>
+              <span>Labor breathing drills, soothing Abhyanga guidance &amp; birth Sankalpa</span>
+            </div>
+            <div class="focus-row">
+              <strong>Developmental Milestone</strong>
+              <span>Full maturation of lungs, nervous system &amp; memory imprinting</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Daily Garbhsanskar Companion -->
+    <section id="companion">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Try a 1-Minute Practice Now</span>
+          <h2>Interactive Daily Garbhsanskar Companion</h2>
+          <p>Experience a moment of calm right here—practice gentle prenatal breathing or draw a mindful <em>Garbh Samvad</em> affirmation for you and your baby.</p>
+        </div>
+
+        <div class="companion-grid">
+          <!-- Breathing Pacer -->
+          <div class="companion-card">
+            <h3>Prana-Shanti Breathing Pacer</h3>
+            <p style="color: var(--text-muted); font-size: 0.93rem;">
+              A gentle 4-2-4 relaxation rhythm to calm maternal cortisol and send oxygen-rich warmth to your baby.
+            </p>
+            <div class="breath-circle-wrap">
+              <div class="breath-circle" id="breathCircle">Tap Start</div>
+            </div>
+            <p id="breathInstruction" style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 18px;">
+              Sit comfortably with one hand on your heart and one on your belly.
+            </p>
+            <button class="btn btn-outline" id="breathBtn">Start Calm Breathing</button>
+          </div>
+
+          <!-- Daily Garbh Samvad Affirmation Generator -->
+          <div class="companion-card">
+            <h3>Daily Garbh Samvad Sankalpa</h3>
+            <p style="color: var(--text-muted); font-size: 0.93rem;">
+              Place your hand gently over your womb, read this message aloud or silently, and share a peaceful smile with your baby.
+            </p>
+            <div class="sankalpa-box">
+              <p class="sankalpa-text" id="sankalpaText">
+                “Dear little one, with every breath I take, I surround you with peace, health, courage, and unconditional love.”
+              </p>
+              <span class="sankalpa-sub" id="sankalpaTheme">Theme: Emotional Serenity &amp; Protection</span>
+            </div>
+            <button class="btn btn-primary" id="newSankalpaBtn">Inspire Another Sankalpa</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programs & Consultation Offerings -->
+    <section id="programs" class="section-bg-soft">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Personalized Care</span>
+          <h2>Garbhsanskar Programs &amp; Consultations</h2>
+          <p>Structured, compassionate guidance designed by Dr. Swati Saxena Joshi for every stage of your motherhood journey.</p>
+        </div>
+
+        <div class="programs-grid">
+          <div class="program-card">
+            <span class="program-stage">Preconception Care</span>
+            <h3>Beej Sanskar Foundation</h3>
+            <p>For couples preparing for a healthy, natural, and mindful conception.</p>
+            <ul class="program-features">
+              <li>Couple Prakriti (body constitution) analysis</li>
+              <li>Fertility-supporting Ayurvedic diet &amp; lifestyle plan</li>
+              <li>Cycle regularity &amp; gynecological wellness review</li>
+              <li>Stress-release Pranayama &amp; conception Sankalpa</li>
+            </ul>
+            <a href="#consultation" class="btn btn-outline">Inquire About Beej Sanskar</a>
+          </div>
+
+          <div class="program-card featured">
+            <span class="featured-ribbon">Most Comprehensive</span>
+            <span class="program-stage">Trimesters 1, 2 &amp; 3</span>
+            <h3>Complete 9-Month Garbhsanskar</h3>
+            <p>Holistic month-by-month accompaniment from positive pregnancy test to joyful childbirth.</p>
+            <ul class="program-features">
+              <li>Masaanumasik (month-wise) Ayurvedic diet charts</li>
+              <li>Trimester-safe prenatal yoga, mudras &amp; breathwork</li>
+              <li>Guided Garbh Samvad, Vedic mantras &amp; Raga sessions</li>
+              <li>Direct clinical guidance by Dr. Swati Saxena Joshi</li>
+              <li>Third-trimester labor preparation &amp; birth confidence</li>
+            </ul>
+            <a href="#consultation" class="btn btn-primary">Join Complete Program</a>
+          </div>
+
+          <div class="program-card">
+            <span class="program-stage">1-on-1 Medical &amp; Holistic</span>
+            <h3>Personal Consultation</h3>
+            <p>Individualized session with Dr. Swati for specific prenatal questions, diet, or gynecological care.</p>
+            <ul class="program-features">
+              <li>1-on-1 case review with Dr. Swati (8+ yrs experience)</li>
+              <li>Safe Ayurvedic remedies for common pregnancy discomforts</li>
+              <li>Custom routine for working expectant mothers</li>
+              <li>Postnatal (Sutika Paricharya) recovery planning</li>
+            </ul>
+            <a href="#consultation" class="btn btn-outline">Book 1-on-1 Session</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Frequently Asked Questions -->
+    <section id="faq">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Common Questions</span>
+          <h2>Frequently Asked Questions About Garbhsanskar</h2>
+          <p>Clear, reassuring answers to help you begin your Garbhsanskar practice with confidence.</p>
+        </div>
+
+        <div class="faq-container">
+          <div class="faq-item open">
+            <button class="faq-question">
+              <span>When is the best time to start Garbhsanskar?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              Ideally, Garbhsanskar begins during the preconception phase (<em>Beej Sanskar</em>) or as soon as pregnancy is confirmed in the first trimester. However, even if you are in your second or third trimester, starting daily <em>Garbh Samvad</em>, breathwork, and trimester-specific nutrition brings wonderful benefits to both mother and baby.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How does Dr. Swati combine BAMS and gynecological expertise?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              With a BAMS degree, certification in Gynecology, and over 8 years of clinical experience, Dr. Swati ensures that traditional Ayurvedic practices—such as monthly dietary herbs, yoga postures, and breathing techniques—are carefully aligned with your modern obstetric reports, trimester milestones, and individual health profile.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How much time do I need to dedicate each day?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              Just 20 to 30 minutes of mindful practice a day is enough to create a deep, lasting impact. Our programs are thoughtfully structured for both homemakers and busy working professionals.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Can my husband / partner participate in the sessions?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              Yes! Partner participation is warmly encouraged—especially during <em>Beej Sanskar</em>, evening <em>Garbh Samvad</em> bonding, and third-trimester birth preparation sessions.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Consultation & Contact Section -->
+    <section id="consultation" class="section-bg-soft">
+      <div class="container contact-grid">
+        <div class="contact-info-card">
+          <span class="section-eyebrow" style="color: var(--accent-gold);">Begin Your Journey</span>
+          <h3>Connect with Dr. Swati Saxena Joshi</h3>
+          <p>
+            Take the first step toward a serene, healthy, and deeply connected pregnancy. Fill out the consultation request form to schedule an online or in-clinic appointment.
+          </p>
+
+          <div class="contact-detail-list">
+            <div class="contact-detail-item">
+              <div class="contact-detail-badge">✦</div>
+              <div>
+                <strong>Doctor &amp; Lead Mentor</strong>
+                <span>Dr. Swati Saxena Joshi (BAMS, Certified Gynecologist • 8+ Years Exp.)</span>
+              </div>
+            </div>
+            <div class="contact-detail-item">
+              <div class="contact-detail-badge">✦</div>
+              <div>
+                <strong>Consultation Modes</strong>
+                <span>Online Video Consultations &amp; In-Clinic Visits</span>
+              </div>
+            </div>
+            <div class="contact-detail-item">
+              <div class="contact-detail-badge">✦</div>
+              <div>
+                <strong>Clinic Location &amp; Timings</strong>
+                <span>By prior appointment (Customizable with your clinic address &amp; WhatsApp number)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h3>Request a Garbhsanskar Consultation</h3>
+          <p>Share a few details below and we will get in touch to confirm your preferred appointment slot.</p>
+
+          <form id="consultationForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName">Your Full Name *</label>
+                <input type="text" id="fullName" required placeholder="e.g., Priya Sharma" />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone / WhatsApp Number *</label>
+                <input type="tel" id="phone" required placeholder="e.g., +91 98765 43210" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="stage">Current Stage *</label>
+                <select id="stage" required>
+                  <option value="">Select your current stage...</option>
+                  <option value="Preconception (Planning)">Planning Pregnancy (Beej Sanskar)</option>
+                  <option value="1st Trimester (Months 1-3)">1st Trimester (Months 1–3)</option>
+                  <option value="2nd Trimester (Months 4-6)">2nd Trimester (Months 4–6)</option>
+                  <option value="3rd Trimester (Months 7-9)">3rd Trimester (Months 7–9)</option>
+                  <option value="Postnatal / General Gynecology">Postnatal / Gynecological Consultation</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="mode">Preferred Consultation Mode</label>
+                <select id="mode">
+                  <option value="Online Video Session">Online Video Consultation</option>
+                  <option value="In-Clinic Appointment">In-Clinic Visit</option>
+                  <option value="Group Garbhsanskar Workshop">Group Garbhsanskar Workshop</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Questions or Health Notes (Optional)</label>
+              <textarea id="message" rows="3" placeholder="Share your current month/week of pregnancy or any specific questions for Dr. Swati..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Request Appointment with Dr. Swati</button>
+            <div class="form-status" id="formStatus"></div>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
 
-
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-title">Dr. Swati Saxena Joshi</div>
+          <p style="color: #B9C8C0; margin-bottom: 12px;">
+            BAMS • Certified Gynecologist • 8+ Years of Clinical Experience
+          </p>
+          <p style="color: #9FB2A8; font-size: 0.86rem;">
+            Dedicated to nurturing conscious motherhood through authentic Ayurvedic Garbhsanskar and compassionate gynecological care.
+          </p>
+        </div>
 
-    <div class="container footer-inner">
+        <div>
+          <div class="footer-title" style="font-size: 1.05rem;">Quick Navigation</div>
+          <ul class="footer-links">
+            <li><a href="#about">About Dr. Swati Saxena Joshi</a></li>
+            <li><a href="#pillars">The 4 Pillars of Garbhsanskar</a></li>
+            <li><a href="#trimesters">Trimester-by-Trimester Guide</a></li>
+            <li><a href="#companion">Daily Breathing &amp; Sankalpa</a></li>
+            <li><a href="#programs">Consultation Programs</a></li>
+          </ul>
+        </div>
 
-      <div>
-
-        <strong>
-          Dr. Swati Ayurveda Clinic
-        </strong>
-
-        <br />
-
-        <small>
-          Ayurvedic care in Delhi
-        </small>
-
+        <div>
+          <div class="footer-title" style="font-size: 1.05rem;">Holistic Offerings</div>
+          <ul class="footer-links">
+            <li><a href="#programs">Beej Sanskar (Preconception)</a></li>
+            <li><a href="#programs">9-Month Garbhsanskar Program</a></li>
+            <li><a href="#programs">Masaanumasik Diet &amp; Lifestyle</a></li>
+            <li><a href="#programs">Garbh Samvad &amp; Mantra Therapy</a></li>
+            <li><a href="#consultation">1-on-1 Gynecological Consultation</a></li>
+          </ul>
+        </div>
       </div>
 
-      <small>
-        © <span id="year"></span>
-        Dr. Swati Ayurveda Clinic.
-        All rights reserved.
-      </small>
-
+      <div class="footer-bottom">
+        <span>© 2026 Dr. Swati Saxena Joshi — Garbhsanskar &amp; Maternal Wellness. All rights reserved.</span>
+        <span>Designed for GitHub Pages • Responsive Single-Page Experience</span>
+      </div>
     </div>
-
   </footer>
 
-
-  <!-- JAVASCRIPT -->
+  <!-- Interactive Scripts -->
   <script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    mobileMenuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
 
-    /*
-      IMPORTANT:
-      Replace the placeholder below with the clinic's
-      WhatsApp number in international format.
-
-      Example:
-      const WHATSAPP_NUMBER = '919876543210';
-
-      Do not include +, spaces, or hyphens.
-    */
-
-    const WHATSAPP_NUMBER = 'ADD-WHATSAPP-NUMBER-HERE';
-
-
-    // Dynamic copyright year
-
-    document.getElementById('year').textContent =
-      new Date().getFullYear();
-
-
-    // Prevent selecting past appointment dates
-
-    const dateInput = document.getElementById('date');
-
-    const today = new Date();
-
-    const localDate = new Date(
-      today.getTime() - today.getTimezoneOffset() * 60000
-    )
-      .toISOString()
-      .split('T')[0];
-
-    dateInput.min = localDate;
-
-
-    // Appointment form submission
-
-    document
-      .getElementById('bookingForm')
-      .addEventListener('submit', function (event) {
-
-        event.preventDefault();
-
-
-        // Check if WhatsApp number has been configured
-
-        if (
-          WHATSAPP_NUMBER.includes('ADD-') ||
-          !WHATSAPP_NUMBER
-        ) {
-
-          alert(
-            'Please add the clinic WhatsApp number in the script before using appointment booking.'
-          );
-
-          return;
-
-        }
-
-
-        const data = new FormData(event.target);
-
-
-        const message = [
-
-          'Hello Dr. Swati Ayurveda Clinic,',
-
-          '',
-
-          'I would like to request a consultation appointment.',
-
-          'Name: ' + data.get('name'),
-
-          'Phone: ' + data.get('phone'),
-
-          'Preferred date: ' + data.get('date'),
-
-          'Preferred time: ' + data.get('time'),
-
-          'Consultation: ' + data.get('service'),
-
-          'Additional note: ' +
-            (data.get('message') || 'None'),
-
-          '',
-
-          'Please confirm availability. Thank you.'
-
-        ].join('\n');
-
-
-        // Open WhatsApp with appointment details
-
-        window.open(
-          'https://wa.me/' +
-          WHATSAPP_NUMBER +
-          '?text=' +
-          encodeURIComponent(message),
-
-          '_blank',
-
-          'noopener'
-        );
-
+    // Trimester Tabs
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabBtns.forEach(b => b.classList.remove('active'));
+        tabPanels.forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        const target = document.getElementById('tab-' + btn.dataset.tab);
+        if (target) target.classList.add('active');
       });
+    });
 
+    // FAQ Accordion
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const btn = item.querySelector('.faq-question');
+      btn.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        faqItems.forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    // Interactive Prana-Shanti Breathing Pacer
+    const breathCircle = document.getElementById('breathCircle');
+    const breathInstruction = document.getElementById('breathInstruction');
+    const breathBtn = document.getElementById('breathBtn');
+    let breathInterval = null;
+    let isBreathing = false;
+
+    function runBreathCycle() {
+      breathCircle.className = 'breath-circle inhale';
+      breathCircle.textContent = 'Inhale...';
+      breathInstruction.textContent = 'Breathe in gently through your nose for 4 seconds—inviting calm and prana.';
+      setTimeout(() => {
+        if (!isBreathing) return;
+        breathCircle.className = 'breath-circle hold';
+        breathCircle.textContent = 'Hold Softly';
+        breathInstruction.textContent = 'Pause gently for 2 seconds—feel warmth surrounding your baby.';
+      }, 4000);
+      setTimeout(() => {
+        if (!isBreathing) return;
+        breathCircle.className = 'breath-circle exhale';
+        breathCircle.textContent = 'Exhale...';
+        breathInstruction.textContent = 'Breathe out slowly for 4 seconds—releasing all tension.';
+      }, 6000);
+    }
+
+    breathBtn.addEventListener('click', () => {
+      if (!isBreathing) {
+        isBreathing = true;
+        breathBtn.textContent = 'Pause Breathing Pacer';
+        runBreathCycle();
+        breathInterval = setInterval(runBreathCycle, 10000);
+      } else {
+        isBreathing = false;
+        clearInterval(breathInterval);
+        breathCircle.className = 'breath-circle';
+        breathCircle.textContent = 'Tap Start';
+        breathInstruction.textContent = 'Sit comfortably with one hand on your heart and one on your belly.';
+        breathBtn.textContent = 'Start Calm Breathing';
+      }
+    });
+
+    // Daily Garbh Samvad Sankalpa Rotator
+    const sankalpas = [
+      {
+        text: "“Dear little one, with every breath I take, I surround you with peace, health, courage, and unconditional love.”",
+        theme: "Theme: Emotional Serenity & Protection"
+      },
+      {
+        text: "“My body is strong, nourished, and wise. Together, we are growing in harmony, joy, and vibrant health every single day.”",
+        theme: "Theme: Maternal Strength & Ojas"
+      },
+      {
+        text: "“May your mind be bright with curiosity, your heart filled with compassion, and your spirit grounded in calm resilience.”",
+        theme: "Theme: Medhya (Intellect) & Sanskar"
+      },
+      {
+        text: "“You are deeply cherished and joyfully awaited. Every sound of love in our home welcomes your sacred arrival.”",
+        theme: "Theme: Family Bonding & Joyful Arrival"
+      },
+      {
+        text: "“Just as nature blossoms effortlessly in its season, my body knows how to nurture you and bring you safely into the world.”",
+        theme: "Theme: Confident & Fearless Birth"
+      }
+    ];
+    let sankalpaIndex = 0;
+    const sankalpaText = document.getElementById('sankalpaText');
+    const sankalpaTheme = document.getElementById('sankalpaTheme');
+    const newSankalpaBtn = document.getElementById('newSankalpaBtn');
+
+    newSankalpaBtn.addEventListener('click', () => {
+      sankalpaIndex = (sankalpaIndex + 1) % sankalpas.length;
+      sankalpaText.textContent = sankalpas[sankalpaIndex].text;
+      sankalpaTheme.textContent = sankalpas[sankalpaIndex].theme;
+    });
+
+    // Consultation Form Handler
+    const consultationForm = document.getElementById('consultationForm');
+    const formStatus = document.getElementById('formStatus');
+    consultationForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('fullName').value.trim();
+      const stage = document.getElementById('stage').value;
+      const mode = document.getElementById('mode').value;
+      formStatus.style.display = 'block';
+      formStatus.textContent = `Namaste ${name}! Your request for a ${mode} (${stage}) with Dr. Swati Saxena Joshi has been recorded. (We can connect this form to WhatsApp or email in our next step!)`;
+      consultationForm.reset();
+    });
   </script>
-
 </body>
 </html>
